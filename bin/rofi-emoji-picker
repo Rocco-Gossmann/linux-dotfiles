@@ -1,0 +1,11 @@
+#! /bin/bash
+URL="https://raw.githubusercontent.com/Mange/rofi-emoji/master/all_emojis.txt"
+FILE="$HOME/.cache/all_emojis.txt"
+
+if [ ! -f "$FILE" ]; then
+    curl -o "$FILE" -L "$URL" 
+fi
+
+SELECTION=$(less "$FILE"|rofi -dmenu -p "search")
+echo $SELECTION | cut -d ' ' -f 1 | tr -d ' \r\n' | xclip -i -selection clipboard 
+
