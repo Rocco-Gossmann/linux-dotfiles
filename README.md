@@ -10,11 +10,12 @@ Requires to following apps to be installed:
 - tmux
 - curl
 - lazygit
+- ripgrep
 
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-apt install rofi tmux zsh git xclip
+apt install rofi tmux zsh git xclip ripgrep
 
 apt install curl && \
 mkdir -p ~/bin/programms && \
