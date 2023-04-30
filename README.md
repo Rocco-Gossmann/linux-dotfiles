@@ -15,11 +15,12 @@ Requires to following apps to be installed:
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-apt install rofi tmux zsh git xclip ripgrep
+sudo apt install rofi tmux zsh git xclip ripgrep
 
-apt install curl && \
-mkdir -p ~/bin/programms && \
-curl -o ~/bin/programs/ -L "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage" && \
+sudo apt install curl && \
+mkdir -p ~/bin/programs && \
+curl -o ~/bin/programs/nvim.appimage -L "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage" && \
+chmod +x ~/bin/programs/nvim.appimage && \
 cd ~/bin && ln -s ./programs/nvim.appimage nvim && ln -s nvim vim && \
 \
 mkdir -p /tmp/lazygitinstall && cd /tmp/lazygitinstall && \
