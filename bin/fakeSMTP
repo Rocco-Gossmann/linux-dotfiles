@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cwd="$(dirname "$0")"
+mate-terminal -e 'sudo java -jar '$cwd'/programs/fakeSMTP/fakeSMTP-2.0.jar &'
+
