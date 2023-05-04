@@ -1,0 +1,20 @@
+#!/bin/bash
+
+curdir=`pwd`
+appimgfile=$curdir/$1
+echo $appimgfile
+
+extractfolder=/tmp/appimgextract/
+
+mkdir -p $extractfolder
+cd $extractfolder
+
+$appimgfile --appimage-extract
+
+cd squashfs-root
+
+mc . ~/.local/share
+rm -rf $extractfolder
+
+cd $curdir
+
