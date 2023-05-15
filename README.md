@@ -2,6 +2,7 @@
 The bare minimum required for setting a fresh home directory
 
 Requires to following apps to be installed:
+- curl
 - rofi
 - xclip
 - git
@@ -11,14 +12,16 @@ Requires to following apps to be installed:
 - curl
 - lazygit
 - ripgrep
+- ranger
 
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-sudo apt install rofi tmux zsh git xclip ripgrep
+sudo apt install curl rofi tmux zsh git xclip ripgrep ranger
+
+mkdir -p ~/bin/programs
 
 sudo apt install curl && \
-mkdir -p ~/bin/programs && \
 curl -o ~/bin/programs/nvim.appimage -L "https://github.com/neovim/neovim/releases/download/stable/nvim.appimage" && \
 chmod +x ~/bin/programs/nvim.appimage && \
 cd ~/bin && ln -s ./programs/nvim.appimage nvim && ln -s nvim vim && \
