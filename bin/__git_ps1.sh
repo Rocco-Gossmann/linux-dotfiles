@@ -11,6 +11,7 @@ else
     changes=$(echo "${gitstat}"| grep 'git add')
     staged=$(echo "${gitstat}"| grep 'stage')
     pushable=$(echo "${gitstat}"|grep 'push')
+    pullable=$(echo "${gitstat}"|grep 'pull')
 
     if [ "${changes}" != "" ] ; then
         echo $'%K{red}%F{2}%f%k%K{red}%F{black}  '"$br"$'%f%k%F{red}%f'
@@ -18,6 +19,8 @@ else
         echo $'%K{yellow}%F{2}%f%k%K{yellow}%F{black}  '"$br"$'%k%F{yellow}%f'
     elif [ "${pushable}" != "" ] ; then
         echo $'%K{blue}%F{2}%f%k%K{blue}%F{black}  '"$br"$'%k%F{blue}%f'
+    elif [ "${pullable}" != "" ] ; then
+        echo $'%K{white}%F{2}%f%k%K{white}%F{black}  '"$br"$'%k%F{white}%f'
     else
         echo $'%K{green}%F{2}%f%k%K{green}%F{black}  '"$br"$'%k%F{green}%f'
     fi
