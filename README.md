@@ -14,7 +14,6 @@ Requires to following apps to be installed:
 - ripgrep
 - ranger
 
-
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
 sudo apt install curl rofi tmux zsh git xclip ripgrep ranger
@@ -30,3 +29,12 @@ mkdir -p /tmp/lazygitinstall && cd /tmp/lazygitinstall && \
 curl -L "https://github.com/jesseduffield/lazygit/releases/download/v0.37.0/lazygit_0.37.0_Linux_x86_64.tar.gz" | tar -xzv && \
 cp /tmp/lazygitinstall/lazygit ~/bin/lazygit
 ```
+
+# Optional
+- i3 
+- i3status
+- feh
+```bash
+sudo apt install i3 i3status i3 feh
+```
+
