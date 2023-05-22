@@ -201,8 +201,17 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         i3bar_command i3bar
-        # status_command i3status
-        # position bottom
+        status_command i3status
+        position bottom
+        colors {
+            separator #444444
+            background #222222
+            statusline #B1B1B1
+            focused_workspace #ffb52a #ffb52a #000000
+            active_workspace #ffb52a #333333 #ffb52a
+            inactive_workspace #333333 #333333 #888888
+            urgent_workspace #eb709b #eb709b #ffffff
+        }
 }
 
 #===============================================================================
@@ -230,3 +239,5 @@ client.focused              #ffb52a #ffb52a #000000 #000000
 client.urgent               #e60053 #e60053 #a5a5a5 #1A1A1A
 client.focused_inactive     #222222 #222222 #dfdfdf #dfdfdf
 client.unfocused            #222222 #222222 #dfdfdf #dfdfdf
+
+
