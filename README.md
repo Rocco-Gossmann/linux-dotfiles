@@ -34,9 +34,8 @@ cp /tmp/lazygitinstall/lazygit ~/bin/lazygit
 - i3 
 - i3status
 - feh
-- polybar
 - compton
 ```bash
-sudo apt install i3 i3status i3 feh polybar compton
+sudo apt install i3 i3status i3 feh compton
 ```
 
