@@ -199,18 +199,17 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-        # i3bar_command i3bar
+bar {
+        i3bar_command i3bar
         # status_command i3status
         # position bottom
-#}
+}
 
 #===============================================================================
 # AutoStart
 #===============================================================================
 
 # launch UI 
-exec --no-startup-id ~/.config/polybar/i3wmthemer_bar_launch.sh                 
 exec --no-startup-id feh --bg-fill ~/Bilder/wallpapers/bsp_3x2_conv_16x9.png
 
 # Transparency for Windows
