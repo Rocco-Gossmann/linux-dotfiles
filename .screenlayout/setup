@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+function argcnt {
+    echo $#
+}
+
+screens=$(argcnt `xrandr | grep -e '\sconnected' | awk '{print $1}' | xargs`)
+
+if [[ $screens == "2" ]]; then
+    sh ./stacked_2dp.sh    
+else
+    sh ./1dp.sh    
+fi
+
+sh ./background.sh
