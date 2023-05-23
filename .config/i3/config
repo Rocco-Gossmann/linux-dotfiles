@@ -59,6 +59,8 @@ bindsym $mod+BackSpace kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym Mod1+Tab exec --no-startup-id rofi -show window
+bindsym Mod1+space exec --no-startup-id rofi -show run
 bindsym $mod+period exec --no-startup-id rofi-emoji-picker
 
 # change focus
@@ -219,7 +221,8 @@ bar {
 #===============================================================================
 
 # launch UI 
-exec --no-startup-id feh --bg-fill ~/Bilder/wallpapers/bsp_3x2_conv_16x9.png
+#exec --no-startup-id feh --bg-fill ~/Bilder/wallpapers/bsp_3x2_conv_16x9.png
+exec --no-startup-id sh ~/.screenlayout/background.sh
 
 # Transparency for Windows
 exec --no-startup-id compton
@@ -239,5 +242,3 @@ client.focused              #ffb52a #ffb52a #000000 #000000
 client.urgent               #e60053 #e60053 #a5a5a5 #1A1A1A
 client.focused_inactive     #222222 #222222 #dfdfdf #dfdfdf
 client.unfocused            #222222 #222222 #dfdfdf #dfdfdf
-
-
