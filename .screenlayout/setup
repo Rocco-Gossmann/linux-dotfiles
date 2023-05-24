@@ -1,16 +1,15 @@
 #!/bin/bash
 
 
-function argcnt {
-    echo $#
-}
+DIR=$(dirname $0)
 
-screens=$(argcnt `xrandr | grep -e '\sconnected' | awk '{print $1}' | xargs`)
+config=`$DIR/printlayout.sh`
+file="$DIR/$config.sh"
 
-if [[ $screens == "2" ]]; then
-    sh ./stacked_2dp.sh    
-else
-    sh ./1dp.sh    
+if [[ -f $file ]]; then
+    $file
+else 
+    echo "no setup for screen $file found.  Use Arandr to make one";
 fi
 
-sh ./background.sh
+sh $DIR/background.sh
