@@ -40,8 +40,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Mover entre workspaces 
 #bindsym $mod+Left workspace prev
 #bindsym $mod+Right workspace next
-bindsym $mod+Ctrl+h workspace prev
-bindsym $mod+Ctrl+l workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+n workspace next
 
 bindsym $mod+Ctrl+Shift+h move container to workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+l move container to workspace next; workspace next
