@@ -22,6 +22,9 @@ export PATH=$PATH:~/bin
 #  set terminal to 256 Color Mode
 export TERM=xterm-256color
 
+export VISUAL=nvim
+export EDITOR=nvim
+
 alias ll='ls -lh'
 alias la='ls -alh'
 alias dir='ls -alh'
