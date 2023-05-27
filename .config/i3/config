@@ -203,6 +203,9 @@ bindsym $mod+r mode "resize"
 set $cfg #3b4261
 set $cbg #16161e
 
+set $barfg #7aa2f7
+set $barbg #16161e
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -211,11 +214,11 @@ bar {
         position bottom
         colors {
             separator #444444
-            background $cbg
+            background $barbg
             statusline #B1B1B1
-            focused_workspace $cfg $cfg #000000
-            active_workspace $cfg #333333 $cfg
-            inactive_workspace #333333 #333333 #888888
+            focused_workspace $barfg $barfg #000000
+            active_workspace $barfg $barbg $barfg
+            inactive_workspace $barbg $barbg #888888
             urgent_workspace #eb709b #eb709b #ffffff
         }
 }
@@ -242,7 +245,7 @@ exec --no-startup-id nm-applet
 #===============================================================================
 
 client.background           $cbg
-client.focused              $cfg $cfg #000000 #000000
+client.focused              $cfg $cfg #dfdfdf #dfdfdf
 client.urgent               #e60053 #e60053 #a5a5a5 #1A1A1A
 client.focused_inactive     $cbg $cbg #dfdfdf #dfdfdf
 client.unfocused            $cbg $cbg #dfdfdf #dfdfdf
