@@ -13,10 +13,11 @@ Requires to following apps to be installed:
 - lazygit
 - ripgrep
 - ranger
+- pass
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-sudo apt install curl rofi tmux zsh git xclip ripgrep ranger
+sudo apt install curl rofi tmux zsh git xclip ripgrep ranger pass gpg
 
 mkdir -p ~/bin/programs
 
