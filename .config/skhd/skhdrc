@@ -4,8 +4,8 @@
 
 # stop/start/restart yabai
 ctrl + cmd - q : yabai --stop-service
-ctrl + cmd - s : yabai --start-service
-ctrl + cmd - r : yabai --restart-service
+ctrl + cmd - s : yabai --start-service      && skhd --start-service
+ctrl + cmd - r : yabai --restart-service    && skhd --restart-service
 
 
 ################################################################################
@@ -15,7 +15,6 @@ ctrl + cmd - r : yabai --restart-service
 # Layout Select (w = stack, e = bsp)
 lcmd - w : yabai -m config layout stack 
 lcmd - e : yabai -m config layout bsp 
-
 
 # Focus different Windows
 lcmd - j : yabai -m window --focus south
@@ -57,10 +56,11 @@ shift + lcmd - 0 : yabai -m window --space 0;
         lcmd - r : yabai -m space --rotate 270  # clockwise
 shift + lcmd - r : yabai -m space --rotate 90   # counterclockwise
 
-lcmd - t : yabai -m window --toggle sticky
+lcmd - s : yabai -m window --toggle sticky
+lcmd - t : yabai -m window --toggle topmost
 
 # toggle window float
-lctrl + lcmd - tab : yabai -m window --toggle float --grid 4:4:1:1:2:2
+ctrl + cmd - tab : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # maximize a window
 lcmd - f : yabai -m window --toggle zoom-fullscreen
@@ -76,10 +76,20 @@ alt - h : yabai -m display --focus west
 alt - l : yabai -m display --focus east
 
 # (Alt + CMD) move window to display
-alt + cmd - h : yabai -m window --display west; yabai -m display --focus west;
-alt + cmd - l : yabai -m window --display east; yabai -m display --focus east;
-alt + cmd - j : yabai -m window --display south; yabai -m display --focus south;
-alt + cmd - k : yabai -m window --display north; yabai -m display --focus north;
+alt + shift - h : yabai -m window --display west; yabai -m display --focus west;
+alt + shift - l : yabai -m window --display east; yabai -m display --focus east;
+alt + shift - j : yabai -m window --display south; yabai -m display --focus south;
+alt + shift - k : yabai -m window --display north; yabai -m display --focus north;
+
+
+################################################################################
+# App launchers
+################################################################################
+
+cmd + ctrl - t : open -a iTerm
+cmd + ctrl - e : open -a "System settings"
+
+
 
 
 ################################################################################
