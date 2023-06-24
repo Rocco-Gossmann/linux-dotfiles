@@ -56,32 +56,25 @@ shift + lcmd - 0 : yabai -m window --space 0;
         lcmd - r : yabai -m space --rotate 270  # clockwise
 shift + lcmd - r : yabai -m space --rotate 90   # counterclockwise
 
-lcmd - s : yabai -m window --toggle sticky
-lcmd - t : yabai -m window --toggle topmost
-
-# toggle window float
-ctrl + cmd - tab : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
-# maximize a window
-lcmd - f : yabai -m window --toggle zoom-fullscreen
-
 
 ################################################################################
 # alt = manipulate workspaces
 ################################################################################
-# j/k (down / up) == focus bottom/top screen
-alt - j : yabai -m display --focus south
-alt - k : yabai -m display --focus north
-alt - h : yabai -m display --focus west
-alt - l : yabai -m display --focus east
+# Window on desktop manipulation
+alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2  # make float
+alt - s : yabai -m window --toggle sticky                    # show on all desktops
+alt - t : yabai -m window --toggle topmost                   # always on top
+
+# j/k (down / up) == focus next/ screen
+alt - j : yabai -m display --focus next
+alt - k : yabai -m display --focus prev
 
 # (Alt + CMD) move window to display
-alt + shift - h : yabai -m window --display west; yabai -m display --focus west;
-alt + shift - l : yabai -m window --display east; yabai -m display --focus east;
-alt + shift - j : yabai -m window --display south; yabai -m display --focus south;
-alt + shift - k : yabai -m window --display north; yabai -m display --focus north;
+alt + shift - j : yabai -m window --display next; yabai -m display --focus next;
+alt + shift - k : yabai -m window --display prev; yabai -m display --focus prev;
 
-
+alt + shift - l : yabai -m window --space next; yabai -m space --focus next;
+alt + shift - h : yabai -m window --space prev; yabai -m space --focus prev;
 ################################################################################
 # App launchers
 ################################################################################
