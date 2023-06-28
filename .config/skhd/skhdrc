@@ -1,67 +1,31 @@
 ################################################################################
-# Misc
+# App launchers
 ################################################################################
-
-# stop/start/restart yabai
-ctrl + cmd - q : yabai --stop-service
-ctrl + cmd - s : yabai --start-service      && skhd --start-service
-ctrl + cmd - r : yabai --restart-service    && skhd --restart-service
-
+cmd + ctrl - r : yabai --restart-service    && skhd --restart-service
+cmd + ctrl - t : open -a iTerm
+cmd + ctrl - e : open -a "System settings"
 
 ################################################################################
 # cmd = manipulate windows
 ################################################################################
-
-# Layout Select (w = stack, e = bsp)
-lcmd - w : yabai -m config layout stack 
-lcmd - e : yabai -m config layout bsp 
-
-# Focus different Windows
-lcmd - j : yabai -m window --focus south
-lcmd - k : yabai -m window --focus north
-lcmd - h : yabai -m window --focus west ; yabai -m window --focus stack.next
-lcmd - l : yabai -m window --focus east ; yabai -m window --focus stack.prev
-
-# swap windows
-shift + lcmd - j : yabai -m window --swap south
-shift + lcmd - k : yabai -m window --swap north
-shift + lcmd - h : yabai -m window --swap west
-shift + lcmd - l : yabai -m window --swap east
-
-# resize windows
-ctrl + lcmd - j : yabai -m window --resize bottom:0:4   ;yabai -m window --resize top:0:4
-ctrl + lcmd - k : yabai -m window --resize bottom:0:-4  ;yabai -m window --resize top:0:-4
-ctrl + lcmd - h : yabai -m window --resize right:-4:0   ;yabai -m window --resize left:-4:0
-ctrl + lcmd - l : yabai -m window --resize right:4:0    ;yabai -m window --resize left:4:0
-
-# move window and split
-shift + ctrl + lcmd - j : yabai -m window --warp south
-shift + ctrl + lcmd - k : yabai -m window --warp north
-shift + ctrl + lcmd - h : yabai -m window --warp west
-shift + ctrl + lcmd - l : yabai -m window --warp east
-
 # move window to space #
-shift + lcmd - 1 : yabai -m window --space 1;
-shift + lcmd - 2 : yabai -m window --space 2;
-shift + lcmd - 3 : yabai -m window --space 3;
-shift + lcmd - 4 : yabai -m window --space 4;
-shift + lcmd - 5 : yabai -m window --space 5;
-shift + lcmd - 6 : yabai -m window --space 6;
-shift + lcmd - 7 : yabai -m window --space 7;
-shift + lcmd - 8 : yabai -m window --space 8;
-shift + lcmd - 9 : yabai -m window --space 9;
-shift + lcmd - 0 : yabai -m window --space 0;
-
-# rotate layout 
-        lcmd - r : yabai -m space --rotate 270  # clockwise
-shift + lcmd - r : yabai -m space --rotate 90   # counterclockwise
-
+alt + shift - l : yabai -m window --space next; yabai -m space --focus next;
+alt + shift - h : yabai -m window --space prev; yabai -m space --focus prev;
+alt + shift - 1 : yabai -m window --space 1   ; yabai -m space --focus 1
+alt + shift - 2 : yabai -m window --space 2   ; yabai -m space --focus 2
+alt + shift - 3 : yabai -m window --space 3   ; yabai -m space --focus 3
+alt + shift - 4 : yabai -m window --space 4   ; yabai -m space --focus 4
+alt + shift - 5 : yabai -m window --space 5   ; yabai -m space --focus 5
+alt + shift - 6 : yabai -m window --space 6   ; yabai -m space --focus 6
+alt + shift - 7 : yabai -m window --space 7   ; yabai -m space --focus 7
+alt + shift - 8 : yabai -m window --space 8   ; yabai -m space --focus 8
+alt + shift - 9 : yabai -m window --space 9   ; yabai -m space --focus 9
+alt + shift - 0 : yabai -m window --space 0   ; yabai -m space --focus 10
 
 ################################################################################
 # alt = manipulate workspaces
 ################################################################################
 # Window on desktop manipulation
-alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2  # make float
 alt - s : yabai -m window --toggle sticky                    # show on all desktops
 alt - t : yabai -m window --toggle topmost                   # always on top
 
@@ -73,14 +37,6 @@ alt - k : yabai -m display --focus prev
 alt + shift - j : yabai -m window --display next; yabai -m display --focus next;
 alt + shift - k : yabai -m window --display prev; yabai -m display --focus prev;
 
-alt + shift - l : yabai -m window --space next; yabai -m space --focus next;
-alt + shift - h : yabai -m window --space prev; yabai -m space --focus prev;
-################################################################################
-# App launchers
-################################################################################
-
-cmd + ctrl - t : open -a iTerm
-cmd + ctrl - e : open -a "System settings"
 
 
 
@@ -88,12 +44,57 @@ cmd + ctrl - e : open -a "System settings"
 ################################################################################
 #Unused
 ################################################################################
+# alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2  # make float
+
+# rotate layout 
+#         lcmd - r : yabai -m space --rotate 270  # clockwise
+# shift + lcmd - r : yabai -m space --rotate 90   # counterclockwise
+
+#Layout Select (w = stack, e = bsp)
+# lcmd - w : yabai -m config layout stack 
+# lcmd + shift - w : yabai -m config layout float 
+# lcmd - e : yabai -m config layout bsp 
+
 # flip along y-axis      ; shift + lcmd - x : yabai -m space --mirror y-axis
 # flip along x-axis      ; shift + lcmd - y : yabai -m space --mirror x-axis
-#
-# balance out tree of windows 
+
+#balance out tree of windows 
 # (resize to occupy same area) ; shift + lcmd - e : yabai -m space --balance
-#
+
 #move window to prev and next space
 # alt + cmd - p : yabai -m window --space prev; yabai -m display --focus prev;
 # alt + cmd - n : yabai -m window --space next; yabai -m display --focus next;
+
+################################################################################
+# Misc
+################################################################################
+
+# stop/start/restart yabai
+#ctrl + cmd - q : yabai --stop-service
+#ctrl + cmd - s : yabai --start-service      && skhd --start-service
+
+
+# Focus different Windows
+# lcmd - j : yabai -m window --focus south
+# lcmd - k : yabai -m window --focus north
+# lcmd - h : yabai -m window --focus west ; yabai -m window --focus stack.next
+# lcmd - l : yabai -m window --focus east ; yabai -m window --focus stack.prev
+
+# swap windows
+# shift + lcmd - j : yabai -m window --swap south
+# shift + lcmd - k : yabai -m window --swap north
+# shift + lcmd - h : yabai -m window --swap west
+# shift + lcmd - l : yabai -m window --swap east
+
+# resize windows
+# ctrl + lcmd - j : yabai -m window --resize bottom:0:4   ;yabai -m window --resize top:0:4
+# ctrl + lcmd - k : yabai -m window --resize bottom:0:-4  ;yabai -m window --resize top:0:-4
+# ctrl + lcmd - h : yabai -m window --resize right:-4:0   ;yabai -m window --resize left:-4:0
+# ctrl + lcmd - l : yabai -m window --resize right:4:0    ;yabai -m window --resize left:4:0
+
+# move window and split
+# shift + ctrl + lcmd - j : yabai -m window --warp south
+# shift + ctrl + lcmd - k : yabai -m window --warp north
+# shift + ctrl + lcmd - h : yabai -m window --warp west
+# shift + ctrl + lcmd - l : yabai -m window --warp east
+
