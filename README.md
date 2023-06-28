@@ -14,10 +14,11 @@ Requires to following apps to be installed:
 - ripgrep
 - ranger
 - pass
+- neofetch
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-sudo apt install curl rofi tmux zsh git xclip ripgrep ranger pass gpg
+sudo apt install curl rofi tmux zsh git xclip ripgrep ranger neofetch pass gpg
 
 mkdir -p ~/bin/programs
 
