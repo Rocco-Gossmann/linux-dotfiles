@@ -141,6 +141,16 @@
                         },
                         {
                             "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
                                 "key_code": "f13"
                             },
                             "to": [
@@ -252,16 +262,6 @@
                                 {
                                     "key_code": "grave_accent_and_tilde",
                                     "modifiers": "left_shift"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "consumer_key_code": "eject"
-                            },
-                            "to": [
-                                {
-                                    "apple_vendor_top_case_key_code": "keyboard_fn"
                                 }
                             ]
                         }
