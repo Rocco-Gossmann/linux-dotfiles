@@ -30,8 +30,8 @@ alt - s : yabai -m window --toggle sticky                    # show on all deskt
 alt - t : yabai -m window --toggle topmost                   # always on top
 
 # j/k (down / up) == focus next/ screen
-alt - j : yabai -m display --focus next
-alt - k : yabai -m display --focus prev
+# alt - j : yabai -m display --focus next
+# alt - k : yabai -m display --focus prev
 
 # (Alt + CMD) move window to display
 alt + shift - j : yabai -m window --display next; yabai -m display --focus next;
