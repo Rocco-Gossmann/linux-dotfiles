@@ -1,0 +1,8 @@
+#!/bin/bash
+
+srch=$1
+file=$(printf '%s' `find . -type f -iname "${srch}" -print 2>/dev/null | fzf`)
+
+if [[ "$file" != "" ]]; then
+    echo $file | xargs
+fi
