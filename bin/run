@@ -1,5 +1,10 @@
 #!/bin/bash
 
 in=$(cat /dev/stdin)
-cd $(dirname $in)
-./$(basename $in)
+if [[ "$in" != "" ]]; then
+    cd $(dirname $in)
+    ./$(basename $in)
+else
+    exit 1
+fi
+
