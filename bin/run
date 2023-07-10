@@ -1,0 +1,5 @@
+#!/bin/bash
+
+in=$(cat /dev/stdin)
+cd $(dirname $in)
+./$(basename $in)
