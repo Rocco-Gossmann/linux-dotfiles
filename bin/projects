@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+fnd 'workspace.tmux' | run && tmux attach
