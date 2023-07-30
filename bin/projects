@@ -1,3 +1,14 @@
 #!/bin/zsh
 
-find $(cat $HOME/.projectdirs 2>/dev/null | xargs) -type f -name 'workspace.tmux' 2>/dev/null | fzf | run && tmux attach
+
+
+if [[ -f "$HOME/.projectdirs" ]]; then
+    cmd="cat $HOME/.projectdirs 2>/dev/null"
+else
+    cmd="tree $HOME -d -L 1 -i -a | sed \"s#^#`echo $HOME`/#\" | sed \"s#^`echo $HOME`/`echo $HOME`##g\" "
+fi
+
+echo $cmd 
+eval $cmd | parallel -j 32 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf | run && tmux attach
+
+# find $($cmd | xargs) -type f -name 'workspace.tmux' 2>/dev/null | fzf | run && tmux attach

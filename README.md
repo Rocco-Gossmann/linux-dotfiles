@@ -15,10 +15,11 @@ Requires to following apps to be installed:
 - ranger
 - pass
 - neofetch
+- parallel
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-sudo apt install curl rofi tmux zsh git xclip ripgrep ranger neofetch pass gpg
+sudo apt install curl rofi tmux zsh git xclip ripgrep ranger neofetch pass gpg parallel
 
 mkdir -p ~/bin/programs
 
