@@ -1,4 +1,4 @@
 #!/bin/bash
 
-java -jar "$(dirname "$0")"/programs/fakeSMTP/fakeSMTP-2.0.jar
+java -jar "$(dirname "$0")"/programs/fakeSMTP/fakeSMTP-2.0.jar -s
 
