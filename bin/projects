@@ -5,7 +5,7 @@
 if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
-    cmd="tree $HOME -d -L 1 -i -a | sed \"s#^#`echo $HOME`/#\" | sed \"s#^`echo $HOME`/`echo $HOME`##g\" "
+    cmd="tree $HOME -d -L 1 -i -a | sed '/^$/d' | sed '/\\//D' | sed '$ D' | sed \"s#^#`echo $HOME`/#\" "
 fi
 
 echo $cmd 
