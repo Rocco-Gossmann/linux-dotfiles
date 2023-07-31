@@ -5,10 +5,9 @@
 if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
-    cmd="tree $HOME -d -L 1 -i -a | sed '/^$/d' | sed '/\\//D' | sed '$ D' | sed \"s#^#`echo $HOME`/#\" "
+    #    read all dirs              rem. empty l.    rem. first l.    rem. last l.    prepend $HOME to found dirs
+    cmd="tree $HOME -d -L 1 -i -a | sed '/^$/d' |    sed '/\\//D' |   sed '$ D'     | sed \"s#^#`echo $HOME`/#\" "
 fi
 
-echo $cmd 
 eval $cmd | parallel -j 32 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf | run && tmux attach
-
 # find $($cmd | xargs) -type f -name 'workspace.tmux' 2>/dev/null | fzf | run && tmux attach
