@@ -9,5 +9,14 @@ else
     cmd="tree $HOME -d -L 1 -i -a | sed '/^$/d' |    sed '/\\//D' |   sed '$ D'     | sed \"s#^#`echo $HOME`/#\" "
 fi
 
-eval $cmd | parallel -j 32 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf | run && tmux attach
+while true; do
+    choice=`eval $cmd | parallel -j 32 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf`
+
+    if [[ "$choice" == "" ]]; then
+        break;
+    else
+        echo $choice | run && tmux attach 2>/dev/null
+    fi
+
+done
 # find $($cmd | xargs) -type f -name 'workspace.tmux' 2>/dev/null | fzf | run && tmux attach
