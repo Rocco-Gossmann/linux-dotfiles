@@ -1,0 +1,4 @@
+#!/bin/bash
+
+~/go/bin/godoc -http=:6066 & sleep 4 && open "http://localhost:6066"
+
