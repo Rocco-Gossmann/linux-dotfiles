@@ -10,7 +10,7 @@ fi
 choice="zsh"
 while [[ "$choice" != "" ]]; do
 
-    choice=`eval $cmd | parallel -j 3 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf`
+    choice=`eval $cmd | parallel -j 3 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf &`
 
     if [[ "$choice" == "" ]]; then
         break;
