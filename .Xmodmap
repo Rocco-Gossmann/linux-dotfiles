@@ -10,3 +10,27 @@ keycode 199 = F21 F21 F21
 keycode 200 = F22 F22 F22
 keycode 201 = F23 F23 F23
 keycode 202 = F24 F24 F24
+
+keycode 57 = n N n N less
+keycode 58 = m M m M greater
+keycode 43 = h H h H braceleft
+keycode 44 = j J j J braceright
+keycode 29 = z Z z Z bracketleft
+keycode 30 = u U u U bracketright
+keycode 30 = u U u U bracketright
+keycode 31 = i I i I bar
+keycode 61 = minus underscore minus underscore backslash
+keycode 51 = numbersign apostrophe numbersign apostrophe grave
+
+keycode 10 = 1 exclam          1 exclam         F1
+keycode 11 = 2 quotedbl        2 quotedbl       F2
+keycode 12 = 3 section         3 section        F3
+keycode 13 = 4 dollar          4 dollar         F4
+keycode 14 = 5 percent         5 percent        F5
+keycode 15 = 6 ampersand       6 ampersand      F6
+keycode 16 = 7 slash           7 slash          F7
+keycode 17 = 8 parenleft       8 parenleft      F8
+keycode 18 = 9 parenright      9 parenright     F9
+keycode 19 = 0 equal           0 equal          F10
+keycode 20 = ssharp question   ssharp question  F11
+keycode 21 = acute grave       acute grave      F12

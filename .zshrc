@@ -22,8 +22,8 @@ export PATH=$PATH:~/bin
 #  set terminal to 256 Color Mode
 export TERM=xterm-256color
 
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=codium
+export EDITOR=codium
 
 alias ll='ls -lh'
 alias la='ls -alh'
@@ -35,6 +35,10 @@ alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; 
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
 alias tailf="tf(){ tail -f \$@ | sed -e \"s#\\\\\\\\n#\\n#g\"; unset -f tf }; tf"
 alias ta="tmux attach"
+alias mc="ranger"
+alias code="codium"
+alias vim="nvim"
+alias vi="nvim"
 
 source $HOME/.zsh/zsh-vi-mode.plugin.zsh
 
