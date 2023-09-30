@@ -8,13 +8,18 @@ else
 fi
 
 choice="zsh"
+lst=`eval $cmd | awk '{print "\\\\\""$0"\\\\\""}' | xargs` #<-- surround each line in " to handled dirs with spaces
+
 while [[ "$choice" != "" ]]; do
 
-    choice=`eval $cmd | parallel -j 3 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf &`
+	cmd="parallel -j4 -i find {} -iname workspace.tmux -- $lst"
+	choice=`eval $cmd | fzf`
+    #choice=`eval $cmd | parallel -j 3 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf &`
 
     if [[ "$choice" == "" ]]; then
         break;
     else
+		echo $choice;
         echo $choice | run && tmux attach 2>/dev/null
     fi
 
