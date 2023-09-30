@@ -5,7 +5,7 @@ gitcmd=git
 br=$(${gitcmd} branch 2> /dev/null| grep -e '^\*' | sed -e 's/^* //' | tr -d '\n')
 
 if [ "$br" = "" ] ; then
-    echo $'%F{2}%f%k'
+    echo $'%k%f'
 else
     gitstat=$(${gitcmd} status 2> /dev/null)
     changes=$(echo "${gitstat}"| grep 'git add')
@@ -14,16 +14,17 @@ else
     pullable=$(echo "${gitstat}"|grep 'pull')
 
     if [ "${changes}" != "" ] ; then
-        echo $'%K{red}%F{2}%f%k%K{red}%F{black}  '"$br"$'%f%k%F{red}%f'
+        echo $'%K{red}%F{white}  '"$br"$' %k%F{red}%f'
     elif [ "${staged}" != "" ] ; then
-        echo $'%K{yellow}%F{2}%f%k%K{yellow}%F{black}  '"$br"$'%k%F{yellow}%f'
+        echo $'%K{yellow}%F{black}  '"$br"$' %k%F{yellow}%f'
     elif [ "${pushable}" != "" ] ; then
-        echo $'%K{blue}%F{2}%f%k%K{blue}%F{black}  '"$br"$'%k%F{blue}%f'
+        echo $'%K{blue}%F{black}  '"$br"$' %k%F{blue}%f'
     elif [ "${pullable}" != "" ] ; then
-        echo $'%K{white}%F{2}%f%k%K{white}%F{black}  '"$br"$'%k%F{white}%f'
+        echo $'%K{white}%F{black}  '"$br"$' %k%F{white}%f'
     else
-        echo $'%K{green}%F{2}%f%k%K{green}%F{black}  '"$br"$'%k%F{green}%f'
+        echo $'%K{green}%F{black}  '"$br"$' %k%F{green}%f'
     fi
 fi
+echo $'%(!./!\.---)> '
 
 
