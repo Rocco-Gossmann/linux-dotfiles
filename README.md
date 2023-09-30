@@ -3,7 +3,6 @@ The bare minimum required for setting a fresh home directory
 
 Requires to following apps to be installed:
 - curl
-- rofi
 - xclip
 - git
 - zsh
@@ -14,12 +13,12 @@ Requires to following apps to be installed:
 - ripgrep
 - ranger
 - pass
-- neofetch
-- parallel
+- moreutils-parallel
+- fzf
 
 Install them like this (If you are on Debian/Ubuntu/LinuxMint)
 ```bash
-sudo apt install curl rofi tmux zsh git xclip ripgrep ranger neofetch pass gpg parallel
+sudo apt install curl tmux zsh git xclip ripgrep ranger pass gpg moreutils.parallel fzf
 
 mkdir -p ~/bin/programs
 
@@ -38,7 +37,7 @@ cp /tmp/lazygitinstall/lazygit ~/bin/lazygit
 - i3status
 - feh
 - compton
+
 ```bash
 sudo apt install i3 i3status i3 feh compton
 ```
-
