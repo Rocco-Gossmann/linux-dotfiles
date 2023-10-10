@@ -4,7 +4,7 @@ if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
     #    read all dirs              rem. empty l.    rem. first l.    rem. last l.    prepend $HOME to found dirs
-    cmd="tree $HOME -d -L 1 -i -a | sed '/^$/d' |    sed '/\\//D' |   sed '$ D'     | sed \"s#^#`echo $HOME`/#\" "
+	cmd="ls -md1"	
 fi
 
 choice="zsh"
@@ -12,9 +12,9 @@ lst=`eval $cmd | awk '{print "\\\\\""$0"\\\\\""}' | xargs` #<-- surround each li
 
 while [[ "$choice" != "" ]]; do
 
-	cmd="parallel -j4 -i find {} -iname workspace.tmux -- $lst"
+	cmd="parallel -i find {} -iname workspace.tmux -- $lst"
+	#echo $cmd
 	choice=`eval $cmd | fzf`
-    #choice=`eval $cmd | parallel -j 3 "find {} -name 'workspace.tmux' 2>/dev/null" | fzf &`
 
     if [[ "$choice" == "" ]]; then
         break;
@@ -24,4 +24,3 @@ while [[ "$choice" != "" ]]; do
     fi
 
 done
-# find $($cmd | xargs) -type f -name 'workspace.tmux' 2>/dev/null | fzf | run && tmux attach
