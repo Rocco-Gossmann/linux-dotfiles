@@ -1,9 +1,14 @@
 #!/bin/bash
 
-in=$(cat /dev/stdin)
+in=`cat /dev/stdin | sed -e 's/\s/\\\\ /g'`
+
 if [[ "$in" != "" ]]; then
-    cd $(dirname $in)
-    ./$(basename $in)
+	echo "in: "$in
+	dir=`dirname "$in"`
+	echo "dir: "$dir
+	base=`basename "$in"`
+
+    eval "cd $dir && ./$base"
 else
     exit 1
 fi

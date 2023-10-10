@@ -4,7 +4,7 @@ if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
     #    read all dirs              rem. empty l.    rem. first l.    rem. last l.    prepend $HOME to found dirs
-	cmd="ls -md1"	
+	cmd="ls -Ndm1 */"	
 fi
 
 choice="zsh"
@@ -20,7 +20,7 @@ while [[ "$choice" != "" ]]; do
         break;
     else
 		echo $choice;
-        echo $choice | run && tmux attach 2>/dev/null
+        echo "$choice" | run && tmux attach 2>/dev/null
     fi
 
 done

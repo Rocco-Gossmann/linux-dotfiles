@@ -31,9 +31,9 @@ export TERM=xterm-256color
 export VISUAL=codium
 export EDITOR=codium
 
-alias ll='ls -lh'
-alias la='ls -alh'
-alias dir='ls -alh'
+alias ll='ls -Glh'
+alias la='ls -Galh'
+alias dir='ls -Galh'
 
 alias lg=lazygit
 
