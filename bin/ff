@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+if [[ -f "$HOME/.ffdirs" ]]; then
+    cmd="cat $HOME/.ffdirs 2>/dev/null"
+else
+	cmd="ls -Nd ~/**/"	
+fi
+
+choice=`eval $cmd | fzf`
+
+if [[ "$choice" == "" ]]; then
+	exit 1
+else
+	echo "$choice" > /dev/stdout
+fi
+

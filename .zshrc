@@ -36,6 +36,7 @@ alias la='ls -Galh'
 alias dir='ls -Galh'
 
 alias lg=lazygit
+alias cf='cd "`ff`"'
 
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
