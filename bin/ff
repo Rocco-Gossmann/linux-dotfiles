@@ -3,7 +3,7 @@
 if [[ -f "$HOME/.ffdirs" ]]; then
     cmd="cat $HOME/.ffdirs 2>/dev/null"
 else
-	cmd="ls -Nd ~/**/"	
+	cmd="ls -d ~/**/"	
 fi
 
 choice=`eval $cmd | fzf`
