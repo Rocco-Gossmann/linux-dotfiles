@@ -1,0 +1,67 @@
+// Geben Sie Ihre Tastenzuordnungen in dieser Datei ein, um die Standardwerte außer Kraft zu setzen.auto[]
+[
+
+    //==========================================================================
+    // Sidebar - toggles
+    //==========================================================================
+    { "key": "shift+cmd+g", "command": "workbench.scm.focus" }, // Git
+    { "key": "shift+cmd+e", "command": "workbench.explorer.fileView.focus" }, // Explorer
+    { "key": "shift+cmd+f", "command": "workbench.view.search.focus" }, // Search
+
+    //==========================================================================
+    // Tabs 
+    //==========================================================================
+    // Jump between Tabs
+    { "key": "cmd+h", "command": "workbench.action.previousEditorInGroup"},
+    { "key": "cmd+l", "command": "workbench.action.nextEditorInGroup"},
+
+    // Move Tabs in Bar
+    { "key": "cmd+shift+h", "command": "workbench.action.moveEditorLeftInGroup"},
+    { "key": "cmd+shift+l", "command": "workbench.action.moveEditorRightInGroup"},
+
+
+    //==========================================================================
+    // Splits 
+    //==========================================================================
+    // create splits (ctrl + shift + i/- )
+    { "key": "ctrl+shift+i", "command": "workbench.action.splitEditorRight", "when": "" }, // create vertical
+    { "key": "ctrl+shift+-", "command": "workbench.action.splitEditorDown", "when": "" },  // create horizontal
+
+    // jump to splits (ctrl + h/j/k/l)
+    { "key": "ctrl+h", "command": "workbench.action.navigateLeft"},
+    { "key": "ctrl+j", "command": "workbench.action.navigateDown"},
+    { "key": "ctrl+k", "command": "workbench.action.navigateUp"},
+    { "key": "ctrl+l", "command": "workbench.action.navigateRight"},
+
+    // move editor to splits (ctrl + shift + h/j/k/l)
+    { "key": "ctrl+shift+l", "command": "workbench.action.moveEditorToRightGroup", "when": "" },
+    { "key": "ctrl+shift+h", "command": "workbench.action.moveEditorToLeftGroup", "when": "" },
+    { "key": "ctrl+shift+j", "command": "workbench.action.moveEditorToBelowGroup", "when": "" },
+    { "key": "ctrl+shift+k", "command": "workbench.action.moveEditorToAboveGroup", "when": "" },
+
+    //==========================================================================
+    // To Do Tasks
+    //==========================================================================
+    { "key": "cmd+d", "command": "task.complete", "when": "editorTextFocus" },
+    { "key": "cmd+c", "command": "task.cancel", "when": "editorTextFocus" },
+
+
+    //==========================================================================
+    // Default Tweaks
+    //==========================================================================
+    { "key": "enter", "command": "filesExplorer.openFilePreserveFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" },
+    { "key": "f2", "command": "renameFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+    { "key": "f2", "command": "debug.renameWatchExpression", "when": "watchExpressionsFocused" },
+    { "key": "f2", "command": "workbench.action.terminal.renameActiveTab", "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection" },
+
+
+    //==========================================================================
+    // Disabled Default Mappings
+    //==========================================================================
+    { "key": "alt+c", "command": "-task.cancel", "when": "editorTextFocus" },
+    { "key": "alt+d", "command": "-task.complete", "when": "editorTextFocus" },
+    { "key": "enter", "command": "-workbench.action.terminal.renameActiveTab", "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection" }, 
+    { "key": "enter", "command": "-debug.renameWatchExpression", "when": "watchExpressionsFocused" },
+    { "key": "enter", "command": "-renameFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+
+]

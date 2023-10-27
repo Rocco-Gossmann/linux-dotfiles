@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.fontFamily": "\"FiraCode Nerd Font\", Arial, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "debug.console.fontSize": 15,
+    "terminal.integrated.fontSize": 15,
+    "editor.minimap.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.leader": " ",
+    "vim.matchpairs": "(:),{:},[:],<:>",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/Library/Application Support/VSCodium/User/.vimrc"
+}
