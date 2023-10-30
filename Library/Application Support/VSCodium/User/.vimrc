@@ -16,3 +16,6 @@ vnoremap _ c__<ESC>hmzplv`z
 vnoremap * c**<ESC>hmzplv`z
 vnoremap ~ c~~<ESC>hmzplv`z
 vnoremap / c//<ESC>hmzplv`z
+vnoremap ` c``<ESC>hmzplv`z
+
+vnoremap <C-r> :<,>s/
