@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/sh
 
 if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
     #    read all dirs              rem. empty l.    rem. first l.    rem. last l.    prepend $HOME to found dirs
-	cmd="ls -Ndm1 */"	
+	cmd="ls -dm1 */ .*/ 2>/dev/null"	
 fi
 
 choice="zsh"
@@ -19,7 +19,7 @@ while [[ "$choice" != "" ]]; do
     if [[ "$choice" == "" ]]; then
         break;
     else
-		echo $choice;
+	#echo $choice;
         echo "$choice" | run && tmux attach 2>/dev/null
     fi
 

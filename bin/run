@@ -1,11 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-in=`cat /dev/stdin | sed -e 's/\s/\\\\ /g'`
+read in
+
+in=`sed -e "s| \|\t|\\\\ |g" <<< $in`
 
 if [[ "$in" != "" ]]; then
-	echo "in: "$in
+	# echo "in: "$in
 	dir=`dirname "$in"`
-	echo "dir: "$dir
+	# echo "dir: "$dir
 	base=`basename "$in"`
 
     eval "cd $dir && ./$base"
