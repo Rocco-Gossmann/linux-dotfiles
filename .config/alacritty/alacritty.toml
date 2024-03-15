@@ -5,11 +5,9 @@ size = 17
 [window]
 opacity=0.8
 blur=true
-decorations = "none"
-
 
 [colors]
-transparent_background_colors = true
+transparent_background_colors = false
 
 # TokyoNight Alacritty Colors
 # Default colors
