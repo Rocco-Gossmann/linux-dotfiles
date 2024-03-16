@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
