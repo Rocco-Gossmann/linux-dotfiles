@@ -1,0 +1,18 @@
+keymap:
+  - name: "F13-F24"
+    remap:
+      F13: ALT_R-8                # Layer 3: z => [
+      F14: ALT_R-9                # Layer 3: u => ]
+      F15: ALT_R-102ND            # Layer 3: i => |
+      F16: ALT_R-7                # Layer 3: h => {
+      F17: ALT_R-0                # Layer 3: j => }
+                                  # Layer 3: n => < (hw remap via VIA)
+      F18: SHIFT-102ND            # Layer 3: m => > 
+      F19: F19                    # Layer 3: , unmapped 
+      F20: F20                    # Layer 3: . unmapped 
+      F21: ALT_R-MINUS            # Layer 3: - => \
+      F22: [SLASH, SHIFT-102ND]   # Layer 3: ä =>  -> (thin arrow)
+      F23: [SHIFT-0, SHIFT-102ND] # Layer 3: ENTER/RETURN =>  => (fat arrow)
+      F24: [GRAVE, SPACE]         # Layer 3: PLUS =>  ^ grave
+                                  # Layer 3: # (Hash) => ` (hw remap via VIA) 
+      
