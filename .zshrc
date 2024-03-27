@@ -8,8 +8,7 @@ ZSH_THEME="jonathan"
 plugins=( 
     git
     dnf
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+    zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
