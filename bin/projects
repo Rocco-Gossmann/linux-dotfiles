@@ -1,26 +1,30 @@
-#!/bin/zsh
+#!/bin/bash
+
+baseDir=$(pwd)
 
 if [[ -f "$HOME/.projectdirs" ]]; then
     cmd="cat $HOME/.projectdirs 2>/dev/null"
 else
-    #    read all dirs              rem. empty l.    rem. first l.    rem. last l.    prepend $HOME to found dirs
-	cmd="ls -dm1 */ .*/ 2>/dev/null"	
+    #    read all dirs  in $HOME
+    cd $HOME
+    cmd="ls -dm1 */ .*/ 2>/dev/null | awk '{print \"$HOME/\"\$0}'" 
 fi
 
 choice="zsh"
 lst=`eval $cmd | awk '{print "\\\\\""$0"\\\\\""}' | xargs` #<-- surround each line in " to handled dirs with spaces
 
 while [[ "$choice" != "" ]]; do
-
-	cmd="parallel -i find {} -iname workspace.tmux -- $lst"
-	#echo $cmd
+#	cmd="parallel -i find {} -iname workspace.tmux -- $lst"
+	cmd="parallel find {} -iname workspace.tmux ::: $lst"
 	choice=`eval $cmd | fzf`
 
     if [[ "$choice" == "" ]]; then
+	cd $baseDir
         break;
     else
-	#echo $choice;
-        echo "$choice" | run && tmux attach 2>/dev/null
+	cd $(dirname $choice)
+	./workspace.tmux && tmux attach
+	cd $HOME
     fi
 
 done
