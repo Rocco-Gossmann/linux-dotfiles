@@ -20,7 +20,7 @@ use_8th_bit_as_meta=false
 mouse_move_pages_viewer=true
 mouse_close_dialog=false
 fast_refresh=false
-drop_menus=false
+drop_menus=true
 wrap_mode=true
 old_esc_mode=true
 cd_symlinks=true
@@ -84,11 +84,10 @@ editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=modarin256-defbg
-filepos_max_saved_entries=1024
 
 [Layout]
 output_lines=0
-left_panel_size=40
+left_panel_size=64
 top_panel_size=0
 message_visible=false
 keybar_visible=true
@@ -140,7 +139,7 @@ select_flags=6
 simple_swap=false
 
 [Panelize]
-SUID- und SGID-Programme suchen=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Nach dem Patchen nach Ablehnungen suchen=find . -name \\*.rej -print
 Nach *.orig nach dem Patchen suchen=find . -name \\*.orig -print
 Geänderte Git-Dateien=git ls-files --modified
-Nach dem Patchen nach Ablehnungen suchen=find . -name \\*.rej -print
+SUID- und SGID-Programme suchen=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
