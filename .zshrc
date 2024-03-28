@@ -33,6 +33,7 @@ alias code="codium"
 alias vim="nvim"
 alias vi="nvim"
 alias tm="tmux-workspace \"main\""
+alias no="note"
 
 
 HISTFILE=~/.zshhistory
