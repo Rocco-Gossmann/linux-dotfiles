@@ -34,6 +34,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias tm="tmux-workspace \"main\""
 alias no="note"
+alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
 
 
 HISTFILE=~/.zshhistory
@@ -43,10 +44,11 @@ setopt notify
 unsetopt beep
 bindkey -v
 
+[ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+[ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
+[ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
 
-export PATH="/home/rocco/.local/bin:$PATH"
-export PATH="/home/rocco/DEV/1_workspace/GoLang/tnt:$PATH"
-source <(tnt completion zsh)
+[ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 
 # if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
 # check the dnf plugins commands here
