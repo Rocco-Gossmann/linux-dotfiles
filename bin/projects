@@ -10,13 +10,14 @@ else
     cmd="ls -dm1 */ .*/ 2>/dev/null | awk '{print \"$HOME/\"\$0}'" 
 fi
 
+
 choice="zsh"
 lst=`eval $cmd | awk '{print "\\\\\""$0"\\\\\""}' | xargs` #<-- surround each line in " to handled dirs with spaces
 
 while [[ "$choice" != "" ]]; do
 #	cmd="parallel -i find {} -iname workspace.tmux -- $lst"
-	cmd="parallel find {} -iname workspace.tmux ::: $lst"
-	choice=`eval $cmd | fzf`
+    cmd="parallel find {} -iname workspace.tmux ::: $lst"
+    choice=`eval $cmd | fzf`
 
     if [[ "$choice" == "" ]]; then
 	cd $baseDir

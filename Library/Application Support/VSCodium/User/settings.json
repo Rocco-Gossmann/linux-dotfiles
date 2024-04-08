@@ -17,7 +17,6 @@
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "~/Library/Application Support/VSCodium/User/.vimrc",
     "breadcrumbs.enabled": false,
-    "workbench.activityBar.visible": false,
     "vim.visualstar": true,
     "vim.sneakReplacesF": true,
     "vim.sneak": true,
@@ -25,5 +24,9 @@
     "vim.highlightedyank.enable": true,
     "vim.gdefault": true,
     "editor.lineNumbers": "relative",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "workbench.activityBar.location": "hidden"
 }
