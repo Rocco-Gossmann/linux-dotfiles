@@ -155,7 +155,7 @@ ignore_dirs_enable=true
 ignore_dirs=
 
 [Panelize]
-Nach *.orig nach dem Patchen suchen=find . -name \\*.orig -print
-Geänderte Git-Dateien=git ls-files --modified
-Nach dem Patchen nach Ablehnungen suchen=find . -name \\*.rej -print
 SUID- und SGID-Programme suchen=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Nach dem Patchen nach Ablehnungen suchen=find . -name \\*.rej -print
+Geänderte Git-Dateien=git ls-files --modified
+Nach *.orig nach dem Patchen suchen=find . -name \\*.orig -print
