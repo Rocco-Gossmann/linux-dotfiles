@@ -28,5 +28,7 @@
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "bottom",
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.assignVariableTypes": true,
 }
