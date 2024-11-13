@@ -12,8 +12,7 @@ plugins=(
     zsh-interactive-cd
 )
 
-export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-export FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
 # export TERM=xterm-256color
@@ -82,6 +81,6 @@ GOPRIVATE=github.com/rocco-gossmann
 #source ~/.cache/wal/colors-tty.sh
 
 autoload -Uz compinit
-compinit -U
+compinit
 
 if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
