@@ -1,0 +1,3 @@
+#!/bin/bash
+
+LC_ALL=C tr -dc '[:graph:]' </dev/urandom | head -c $1; echo

@@ -23,7 +23,7 @@ if [ $# != 0 ]; then
     first=1
     cnt=$#
 
-    command="tmux new ";
+    command="tmux -u new ";
 
     if [ $(isCtlArg "$1") == "nope" ]; then 
         command=$command"-s'$1' "
@@ -41,11 +41,11 @@ if [ $# != 0 ]; then
     eval $command
 
     if [[ -z ${session_name} ]]; then 
-        session_name=`tmux ls -F '#{session_created} #{session_name}' | sort | tail -n 1 | cut -d ' ' -f 2-`
+        session_name=`tmux -u ls -F '#{session_created} #{session_name}' | sort | tail -n 1 | cut -d ' ' -f 2-`
         # echo "session created: " $session_name
     fi
 
-    command='tmux ' 
+    command='tmux -u ' 
 
     # echo "--------------------------------------------";
     # echo " process commands "
@@ -126,9 +126,9 @@ if [ $# != 0 ]; then
     eval $command
 
     if [ -n "${TMUX}" ]; then
-        tmux switch-client -t "${session_name}"
+        tmux -u switch-client -t "${session_name}"
     else
-        tmux attach -t "${session_name}"
+        tmux -u attach -t "${session_name}"
     fi
  
 else
