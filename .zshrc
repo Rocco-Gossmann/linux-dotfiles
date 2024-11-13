@@ -1,3 +1,4 @@
+if [[ ":$FPATH:" != *":/Users/st/completions:"* ]]; then export FPATH="/Users/st/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -11,6 +12,8 @@ plugins=(
     zsh-interactive-cd
 )
 
+export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+export FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
 # export TERM=xterm-256color
@@ -28,13 +31,14 @@ alias cf='cd "`ff`"'
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
 alias tailf="tf(){ tail -f \$@ | sed -e \"s#\\\\\\\\n#\\n#g\"; unset -f tf }; tf"
-alias ta="tmux attach"
-alias code="codium"
+alias ta="tmux -u attach"
 alias vim="nvim"
 alias vi="nvim"
 alias tm="tmux-workspace \"main\""
 alias no="note"
 alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
+alias dockerc=docker-compose
+alias pm="passmenu"
 
 
 HISTFILE=~/.zshhistory
@@ -49,6 +53,10 @@ bindkey -v
 [ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
 
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
+[ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
+[ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
+
+GOPRIVATE=github.com/rocco-gossmann
 
 # if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
 # check the dnf plugins commands here
@@ -73,5 +81,7 @@ bindkey -v
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
+autoload -Uz compinit
+compinit -U
 
-
+if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
