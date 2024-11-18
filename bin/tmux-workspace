@@ -2,6 +2,42 @@
 
 showhelp=0
 
+#===============================================================================
+# help text, if the function is called with any kind of parameter
+#===============================================================================
+function print_help {
+echo "usage: $(basename $0) sessionname [windowname] [-v] [-c command1 command2] ...
+
+                    [-w windowname1] 
+                        [-v] [-c command1 command2]... 
+
+                    [-w windowname2] 
+                        [-v] [-c command1 command2]... 
+
+       Parameters:
+
+            sessionname     if provided, tmux will use this as session identifier
+                            (Default: given by tmux)
+
+            windowname      defines, what the first window in the new session 
+                            is called (Default: given by tmux)
+
+            -w windowname   to start a new window
+
+            -v              to define, that all splits for this window should have
+                            a vertical layout (else horizontal)
+
+            command1, command2, ...
+                            the commands, that should be executed under this 
+                            specific window
+                            0(If no command is given, the current shell will be used)
+
+"
+}
+
+#===============================================================================
+# help text, if the function is called with any kind of parameter
+#===============================================================================
 function isCtlArg {
     local me=`grep -e ^- <<< "$1"`
     local ret=0
@@ -13,9 +49,8 @@ function isCtlArg {
     fi
 }
 
-if [ $# != 0 ]; then 
 
-    # echo " "
+if [ $# != 0 ]; then 
 
     seditor="${SHELL}"
     layout="h"
@@ -29,7 +64,24 @@ if [ $# != 0 ]; then
         command=$command"-s'$1' "
         session_name="$1"
         ((first=2)) 
+    else
+        print_help
+        exit;
     fi
+
+    if [ -n "${TMUX}" ]; then
+        cmd="tmux -u switch-client -t \"${session_name}\""
+    else
+        cmd="tmux -u attach -t \"${session_name}\""
+    fi
+    echo $cmd
+    res=$(eval "$cmd && echo \"success\" || echo \"fail\"")
+
+    if [[ "$res" == "success" ]]; then
+        echo "attach to existing" $cmd
+        exit;
+    fi
+
 
     # create Session
     #--------------------------------------------------------------------------
@@ -130,38 +182,8 @@ if [ $# != 0 ]; then
     else
         tmux -u attach -t "${session_name}"
     fi
- 
-else
-
-#===============================================================================
-# help text, if the function is called with any kind of parameter
-#===============================================================================
-echo "usage: $(basename $0) [sessionname] [windowname] [-v] [-c command1 command2] ...
-
-                    [-w windowname1] 
-                        [-v] [-c command1 command2]... 
-
-                    [-w windowname2] 
-                        [-v] [-c command1 command2]... 
-
-       Parameters:
-
-            sessionname     if provided, tmux will use this as session identifier
-                            (Default: given by tmux)
-
-            windowname      defines, what the first window in the new session 
-                            is called (Default: given by tmux)
-
-            -w windowname   to start a new window
-
-            -v              to define, that all splits for this window should have
-                            a vertical layout (else horizontal)
-
-            command1, command2, ...
-                            the commands, that should be executed under this 
-                            specific window
-                            0(If no command is given, the current shell will be used)
-
-"
+else 
+    print_help
 fi
+exit;
 
