@@ -47,6 +47,8 @@ setopt notify
 unsetopt beep
 bindkey -v
 
+[ -e "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
+
 [ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
