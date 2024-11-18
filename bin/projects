@@ -28,7 +28,7 @@ while [[ "$choice" != "" ]]; do
 	cd $(dirname $choice)
 	./workspace.tmux && tmux attach
 
-	if [[ "$1" != "" ]]; then
+	if [[ "$1" == "" ]]; then
 	    break;
 	fi
     fi
