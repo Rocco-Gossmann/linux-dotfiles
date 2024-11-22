@@ -1,38 +1,36 @@
 #!/bin/bash
 
 baseDir=$(pwd)
+addition=""
+
+qo="\\\\\'"
 
 if [[ -f "$HOME/.projectdirs" ]]; then
-    cmd="cat $HOME/.projectdirs 2>/dev/null"
+    cmd="cat $HOME/.projectdirs"
+    addition=$($cmd | awk '{print "-o -path \\\"'$qo'"$0"'$qo'\\\" "}' | xargs)
 else
     #    read all dirs  in $HOME
     cd $HOME
-    cmd="ls -dm1 */ .*/ 2>/dev/null | awk '{print \"$HOME/\"\$0}'" 
+    cmd="ls -dm1 */ .*/ 2>/dev/null | awk '{print \"$HOME/\"\$0}'"
 fi
 
-
 choice="zsh"
-lst=`eval $cmd | awk '{print "\\\\\""$0"\\\\\""}' | xargs` #<-- surround each line in " to handled dirs with spaces
+lst=$(eval $cmd | awk '{print "\\\""$0"\\\""}' | xargs) #<-- surround each line in " to handled dirs with spaces
 
-while [[ "$choice" != "" ]]; do
-#    echo "make choice"
-#	cmd="parallel -i find {} -iname workspace.tmux -- $lst"
-    cmd="parallel find {} -iname workspace.tmux ::: $lst"
-    choice=`eval $cmd | fzf`
+cmd=" parallel find {} -iname workspace.tmux $addition\\; 2>/dev/null ::: $lst"
+choice=`eval $cmd | fzf -i`
 
-    if [[ "$choice" == "" ]]; then
-#	echo "no choice"
-	break;
+if [[ "$choice" != "" ]]; then
+    if [[ -d "$choice" ]]; then
+        cd $choice
+        choice=$(echo "$choice" | sed -E -e 's/[^a-zA-Z0-9\/]/_/g')
+        tmux-workspace "DIR-$choice"
+
     else
-#	echo "open:" $choice
-	cd $(dirname $choice)
-	./workspace.tmux && tmux attach
+       	cd $(dirname $choice)
+       	./workspace.tmux && tmux attach
 
-	if [[ "$1" == "" ]]; then
-	    break;
-	fi
     fi
-done
+fi
 
 cd $baseDir
-
