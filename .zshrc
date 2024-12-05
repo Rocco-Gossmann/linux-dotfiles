@@ -30,7 +30,7 @@ alias cf='cd "`ff`"'
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
 alias tailf="tf(){ tail -f \$@ | sed -e \"s#\\\\\\\\n#\\n#g\"; unset -f tf }; tf"
-alias ta="tmux -u attach"
+alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"  
 alias vim="nvim"
 alias vi="nvim"
 alias tm="tmux-workspace \"main\""
