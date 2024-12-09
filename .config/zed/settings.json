@@ -7,13 +7,25 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": { "inline_completion_provider": "none",
-                "copilot": false },
+  "features": { "inline_completion_provider": "none", "copilot": false },
   "theme": "Dracula",
   "base_keymap": "VSCode",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "assistant": {
+    "version": "1",
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
   },
   "vim_mode": true,
   "format_on_save": "off",
@@ -23,7 +35,9 @@
   "terminal": {
     "font_family": "FiraCode Nerd Font",
     "line_height": "standard",
-    "copy_on_select": true
+    "copy_on_select": true,
+    "toolbar": null,
+    "button": true
   },
 
   "languages": {
@@ -43,4 +57,5 @@
   "lsp": {
     "clang": {}
   }
+
 }
