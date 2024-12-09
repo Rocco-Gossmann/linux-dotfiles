@@ -15,17 +15,16 @@ plugins=(
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
-# export TERM=xterm-256color
-
+export TERM=xterm-256color
 export VISUAL=nvim
 export EDITOR=nvim
 
 alias ll='ls -Glh'
 alias la='ls -Galh'
 alias dir='ls -Galh'
-
 alias lg=lazygit
 alias cf='cd "`ff`"'
+alias mr='make run'
 
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
@@ -53,20 +52,17 @@ bindkey -v
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
 
+
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
 
-GOPRIVATE=github.com/rocco-gossmann
+export GOPRIVATE=github.com/rocco-gossmann
 
-# if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
+[ -f "$HOME/.deno/env" ] source  "$HOME/.deno/env"
+
 # check the dnf plugins commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnf
-
-
-# Display Pokemon-colorscripts
-# Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
-#pokemon-colorscripts --no-title -s -r
 
 
 ### From this line is for pywal-colors
@@ -82,7 +78,9 @@ GOPRIVATE=github.com/rocco-gossmann
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -Uz compinit
 compinit
 
-if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
+if [ "$TMUX" = "" ] && [ "$NVIM" = "" ] && [ "$ZED_TERM" = "" ] && [ "$VSCODE_INJECTION" = "" ]; then tmux new-session -A -s main; fi
