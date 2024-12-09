@@ -83,4 +83,4 @@ GOPRIVATE=github.com/rocco-gossmann
 autoload -Uz compinit
 compinit
 
-if [ "$TMUX" = "" ] && [ "$NVIM" = "" ]; then tmux new-session -A -s main; fi
+if [ "$TMUX" = "" ] && [ "$NVIM" = "" ] && [ "$ZED_TERM" = "" ] && [ "$VSCODE_INJECTION" = "" ]; then tmux new-session -A -s main; fi
