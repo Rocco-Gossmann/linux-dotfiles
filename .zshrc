@@ -80,6 +80,8 @@ GOPRIVATE=github.com/rocco-gossmann
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -Uz compinit
 compinit
 
