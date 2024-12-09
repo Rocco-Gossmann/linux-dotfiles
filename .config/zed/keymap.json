@@ -1,0 +1,55 @@
+[
+  {
+    "bindings": {
+      "cmd-j": "workspace::ToggleBottomDock",
+      "cmd-l": "pane::ActivateNextItem",
+      "cmd-h": "pane::ActivatePrevItem"
+    }
+  },
+
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-k": "workspace::ToggleZoom",
+      "ctrl-space w": "workspace::NewTerminal",
+    }
+  },
+  {
+    "context": "!Terminal && !VimWaiting && vim_mode==normal",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"]
+    }
+  },
+  {
+    "context": "Editor && !VimWaiting && vim_mode==normal",
+    "bindings": {
+      "ctrl-shift-i": "pane::SplitRight",
+      "ctrl-_": "pane::SplitDown",
+      "ctrl-shift-h": ["workspace::SwapPaneInDirection", "Left"],
+      "ctrl-shift-j": ["workspace::SwapPaneInDirection", "Down"],
+      "ctrl-shift-k": ["workspace::SwapPaneInDirection", "Up"],
+      "ctrl-shift-l": ["workspace::SwapPaneInDirection", "Right"]
+    }
+  },
+
+  {
+    "context": "Editor && !(showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "cmd-l": "pane::ActivateNextItem",
+      "cmd-h": "pane::ActivatePrevItem"
+    }
+  },
+
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  }
+]
