@@ -6,11 +6,11 @@ normal.family = "MesloLGS Nerd Font Mono"
 size = 16
 
 [window]
-opacity=0.6
+opacity=0.85
 blur=true
 option_as_alt = "OnlyLeft"
 padding.x = 4
-padding.y = 4
+padding.y = 2
 
 
 [colors]
