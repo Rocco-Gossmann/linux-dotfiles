@@ -37,6 +37,7 @@ alias no="note"
 alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
 alias dockerc=docker-compose
 alias pm="passmenu"
+alias db="nvim -c DBUI"
 
 
 HISTFILE=~/.zshhistory
