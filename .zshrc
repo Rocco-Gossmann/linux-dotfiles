@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="jonathan"
 
-plugins=( 
+plugins=(
     git
     dnf
     zsh-interactive-cd
@@ -29,7 +29,7 @@ alias mr='make run'
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
 alias tailf="tf(){ tail -f \$@ | sed -e \"s#\\\\\\\\n#\\n#g\"; unset -f tf }; tf"
-alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"  
+alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"
 alias vim="nvim"
 alias vi="nvim"
 alias tm="tmux-workspace \"main\""
@@ -37,6 +37,7 @@ alias no="note"
 alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
 alias dockerc=docker-compose
 alias pm="passmenu"
+alias db="nvim -c DBUI"
 
 
 HISTFILE=~/.zshhistory
@@ -59,7 +60,7 @@ bindkey -v
 
 export GOPRIVATE=github.com/rocco-gossmann
 
-[ -f "$HOME/.deno/env" ] source  "$HOME/.deno/env"
+[ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 
 # check the dnf plugins commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnf

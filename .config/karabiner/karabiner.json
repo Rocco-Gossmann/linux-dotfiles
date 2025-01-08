@@ -1,651 +1,810 @@
 {
-  "global": { "check_for_updates_on_startup": false },
-  "profiles": [
-    {
-      "complex_modifications": {
-        "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 160,
-          "basic.to_if_held_down_threshold_milliseconds": 200
-        },
-        "rules": [
-          {
-            "description": "Tab => Hyper 1",
-            "manipulators": [
-              {
-                "from": { "key_code": "tab" },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_1",
-                      "value": 1
+    "global": { "check_for_updates_on_startup": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 160,
+                    "basic.to_if_held_down_threshold_milliseconds": 200
+                },
+                "rules": [
+                    {
+                        "description": "Tab => Hyper 1",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "tab" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_1",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_1",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + N/M => Terminal / Arc",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Kitty",
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Kitty.app'" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Arc",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Arc.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fix Mac QWERTZ anomalies",
+                        "manipulators": [
+                            {
+                                "description": "SWAP Left Option / Command",
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_command" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "SWAP Left Command / Option",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_option" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change caps_lock to Right-Option / ESC.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_shift" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
-                  },
-                  {
-                    "key_code": "left_shift",
-                    "modifiers": ["any"]
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_1",
-                      "value": 0
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 20565,
+                        "vendor_id": 12815
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "application" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 19550,
+                        "vendor_id": 6700
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "escape" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 749,
+                        "vendor_id": 5215
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "escape" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 73,
+                        "vendor_id": 9610
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 73,
+                        "vendor_id": 9610
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "right_option" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 45929,
+                        "vendor_id": 1133
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 261,
+                        "vendor_id": 12046
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "escape" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 64097,
+                        "vendor_id": 9639
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
+                }
+            ],
+            "name": "Default profile",
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "iso"
+            }
+        },
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 160,
+                    "basic.to_if_held_down_threshold_milliseconds": 200
+                },
+                "rules": [
+                    {
+                        "description": "Feker Alice80 => F13 to F24",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f13",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f14",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f15",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f16",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f17",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f18",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f21",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f22",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": []
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f23",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f24",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "non_us_backslash",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps => Shift/Esc",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab => <Tab-Mod>",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_mod",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "left_shift" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_mod",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": { "key_code": "tab" },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CMD => <CMD-Leader>",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "left_option" },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "cmd_leader",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_leader\":0}'" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_option" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<CMD-Leader> S => <CMD-Snapshot>",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "cmd_leader",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "cmd_snapshot",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_snapshot\":0}'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "cmd_leader",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<CMD-Snapshot> C => Clipboard",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "cmd_snapshot",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": ["left_control"]
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "cmd_snapshot",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<CMD-Snapshot> F => File",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "cmd_snapshot",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "cmd_snapshot",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<Tab-Mod> e => Editor (VSCode)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<Tab-Mod> t => Terminal (Alacritty)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Kitty",
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Alacritty.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<Tab-Mod> z => ZenBrowser (now Arc))",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Arc.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "<Tab-Mod> n => Notes (Logseq))",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'LogSeq.app'" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
-                  }
-                ],
-                "to_if_alone": [{ "key_code": "tab" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Tab + N/M => Terminal / Arc",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_1",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open Kitty",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": { "optional": ["any"] }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "name": "Nulea Trackball",
+                        "product_id": 64097,
+                        "vendor_id": 9639
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 },
-                "to": [{ "shell_command": "open -a 'Kitty.app'" }],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_1",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open Arc",
-                "from": {
-                  "key_code": "m",
-                  "modifiers": { "optional": ["any"] }
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "name": "Dygma Raise Keyboardla,",
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false
                 },
-                "to": [{ "shell_command": "open -a 'Arc.app'" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Fix Mac QWERTZ anomalies",
-            "manipulators": [
-              {
-                "description": "SWAP Left Option / Command",
-                "from": {
-                  "key_code": "left_option",
-                  "modifiers": { "optional": ["any"] }
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "name": "MacBook Air Internal Keyboard",
+                        "product_id": 20565,
+                        "vendor_id": 12815
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "application" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        }
+                    ]
                 },
-                "to": [{ "key_code": "left_command" }],
-                "type": "basic"
-              },
-              {
-                "description": "SWAP Left Command / Option",
-                "from": {
-                  "key_code": "left_command",
-                  "modifiers": { "optional": ["any"] }
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        },
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "MyChanges",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "grave_accent_and_tilde" },
+                    "to": [{ "key_code": "non_us_backslash" }]
                 },
-                "to": [{ "key_code": "left_option" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Change caps_lock to Right-Option / ESC.",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [{ "key_code": "left_shift" }],
-                "to_if_alone": [{ "key_code": "escape" }],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "devices": [
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 20565,
-            "vendor_id": 12815
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "application" },
-              "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 19550,
-            "vendor_id": 6700
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "grave_accent_and_tilde" },
-              "to": [{ "key_code": "escape" }]
-            },
-            {
-              "from": { "key_code": "left_command" },
-              "to": [{ "key_code": "left_option" }]
-            },
-            {
-              "from": { "key_code": "left_option" },
-              "to": [{ "key_code": "left_command" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 749,
-            "vendor_id": 5215
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "caps_lock" },
-              "to": [{ "key_code": "right_option" }]
-            },
-            {
-              "from": { "key_code": "grave_accent_and_tilde" },
-              "to": [{ "key_code": "escape" }]
-            },
-            {
-              "from": { "key_code": "left_command" },
-              "to": [{ "key_code": "left_option" }]
-            },
-            {
-              "from": { "key_code": "left_option" },
-              "to": [{ "key_code": "left_command" }]
-            },
-            {
-              "from": { "key_code": "non_us_backslash" },
-              "to": [{ "key_code": "grave_accent_and_tilde" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "product_id": 73,
-            "vendor_id": 9610
-          },
-          "ignore": false
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 73,
-            "vendor_id": 9610
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "caps_lock" },
-              "to": [{ "key_code": "right_option" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 45929,
-            "vendor_id": 1133
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "grave_accent_and_tilde" },
-              "to": [{ "key_code": "non_us_backslash" }]
-            },
-            {
-              "from": { "key_code": "left_command" },
-              "to": [{ "key_code": "left_option" }]
-            },
-            {
-              "from": { "key_code": "left_option" },
-              "to": [{ "key_code": "left_command" }]
-            },
-            {
-              "from": { "key_code": "non_us_backslash" },
-              "to": [{ "key_code": "grave_accent_and_tilde" }]
-            },
-            {
-              "from": { "key_code": "right_option" },
-              "to": [{ "key_code": "right_command" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 261,
-            "vendor_id": 12046
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "caps_lock" },
-              "to": [{ "key_code": "escape" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "product_id": 8705,
-            "vendor_id": 4617
-          },
-          "ignore": false
-        },
-        {
-          "identifiers": {
-            "is_pointing_device": true,
-            "product_id": 8705,
-            "vendor_id": 4617
-          },
-          "ignore": false
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 641,
-            "vendor_id": 1452
-          },
-          "simple_modifications": [
-            {
-              "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-              "to": [{ "key_code": "left_control" }]
-            },
-            {
-              "from": { "key_code": "left_command" },
-              "to": [{ "key_code": "left_option" }]
-            },
-            {
-              "from": { "key_code": "left_control" },
-              "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-            },
-            {
-              "from": { "key_code": "left_option" },
-              "to": [{ "key_code": "left_command" }]
-            },
-            {
-              "from": { "key_code": "right_command" },
-              "to": [{ "key_code": "right_option" }]
-            },
-            {
-              "from": { "key_code": "right_option" },
-              "to": [{ "key_code": "right_command" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_pointing_device": true,
-            "product_id": 64097,
-            "vendor_id": 9639
-          },
-          "ignore": false,
-          "mouse_flip_vertical_wheel": true
+                {
+                    "from": { "key_code": "non_us_backslash" },
+                    "to": [{ "key_code": "grave_accent_and_tilde" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
-      ],
-      "name": "Default profile",
-      "virtual_hid_keyboard": {
-        "country_code": 0,
-        "keyboard_type_v2": "iso"
-      }
-    },
-    {
-      "complex_modifications": {
-        "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 160,
-          "basic.to_if_held_down_threshold_milliseconds": 200
-        },
-        "rules": [
-          {
-            "description": "Caps => Shift/Esc",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "key_code": "left_shift",
-                    "modifiers": ["any"]
-                  }
-                ],
-                "to_if_alone": [{ "key_code": "escape" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Tab => <Tab-Mod>",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "tab",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "tab_mod",
-                      "value": 1
-                    }
-                  },
-                  { "key_code": "left_shift" }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "tab_mod",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to_if_alone": { "key_code": "tab" }
-              }
-            ]
-          },
-          {
-            "description": "CMD => <CMD-Leader>",
-            "manipulators": [
-              {
-                "from": { "key_code": "left_option" },
-                "to": [
-                  {
-                    "key_code": "left_command",
-                    "modifiers": ["any"]
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "cmd_leader",
-                      "value": 1
-                    }
-                  },
-                  {
-                    "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_leader\":0}'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": { "key_code": "left_command" },
-                "to": [{ "key_code": "left_option" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<CMD-Leader> S => <CMD-Snapshot>",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "cmd_leader",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "s",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "cmd_snapshot",
-                      "value": 1
-                    }
-                  },
-                  {
-                    "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_snapshot\":0}'"
-                  },
-                  {
-                    "set_variable": {
-                      "name": "cmd_leader",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<CMD-Snapshot> C => Clipboard",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "cmd_snapshot",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "c",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "key_code": "f13",
-                    "modifiers": ["left_control"]
-                  },
-                  {
-                    "set_variable": {
-                      "name": "cmd_snapshot",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<CMD-Snapshot> F => File",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "cmd_snapshot",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "f",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "key_code": "f13",
-                    "modifiers": ["left_shift"]
-                  },
-                  {
-                    "set_variable": {
-                      "name": "cmd_snapshot",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<Tab-Mod> e => Editor (Zed)",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "tab_mod",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "e",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [{ "shell_command": "open -a 'Zed.app'" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<Tab-Mod> t => Terminal (Kitty)",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "tab_mod",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open Kitty",
-                "from": {
-                  "key_code": "t",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [{ "shell_command": "open -a 'Kitty.app'" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "<Tab-Mod> z => ZenBrowser (now Arc))",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "tab_mod",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "y",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [{ "shell_command": "open -a 'Arc.app'" }],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "devices": [
-        {
-          "identifiers": {
-            "is_pointing_device": true,
-            "name": "Nulea Trackball",
-            "product_id": 64097,
-            "vendor_id": 9639
-          },
-          "ignore": false,
-          "mouse_flip_vertical_wheel": true
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "name": "Dygma Raise Keyboardla,",
-            "product_id": 8705,
-            "vendor_id": 4617
-          },
-          "ignore": false
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "name": "MacBook Air Internal Keyboard",
-            "product_id": 20565,
-            "vendor_id": 12815
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "application" },
-              "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-            }
-          ]
-        },
-        {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 641,
-            "vendor_id": 1452
-          },
-          "simple_modifications": [
-            {
-              "from": { "key_code": "grave_accent_and_tilde" },
-              "to": [{ "key_code": "grave_accent_and_tilde" }]
-            },
-            {
-              "from": { "key_code": "non_us_backslash" },
-              "to": [{ "key_code": "non_us_backslash" }]
-            },
-            {
-              "from": { "key_code": "left_control" },
-              "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-            },
-            {
-              "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-              "to": [{ "key_code": "left_control" }]
-            },
-            {
-              "from": { "key_code": "left_command" },
-              "to": [{ "key_code": "left_option" }]
-            },
-            {
-              "from": { "key_code": "left_option" },
-              "to": [{ "key_code": "left_command" }]
-            },
-            {
-              "from": { "key_code": "right_command" },
-              "to": [{ "key_code": "right_option" }]
-            },
-            {
-              "from": { "key_code": "right_option" },
-              "to": [{ "key_code": "right_command" }]
-            }
-          ]
-        }
-      ],
-      "name": "MyChanges",
-      "selected": true,
-      "simple_modifications": [
-        {
-          "from": { "key_code": "grave_accent_and_tilde" },
-          "to": [{ "key_code": "non_us_backslash" }]
-        },
-        {
-          "from": { "key_code": "non_us_backslash" },
-          "to": [{ "key_code": "grave_accent_and_tilde" }]
-        }
-      ],
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
-  ]
+    ]
 }
