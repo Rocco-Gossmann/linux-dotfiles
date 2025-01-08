@@ -62,7 +62,9 @@
 	{
 		"context": "!(showing_code_actions || showing_completions)",
 		"bindings": {
-			"ctrl-n": "workspace::ToggleLeftDock"
+			"ctrl-n": "workspace::ToggleLeftDock",
+			"cmd-l": "pane::ActivateNextItem",
+			"cmd-h": "pane::ActivatePrevItem"
 		}
 	},
 
