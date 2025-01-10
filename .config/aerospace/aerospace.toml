@@ -50,9 +50,9 @@ Main3 = 'main'
 Top1 = 'built-in'
 Top2 = 'built-in'
 Top3 = 'built-in'
-Side1 = 3
-Side2 = 3
-Side3 = 3
+Side1 = [ 3, 'secondary' ]
+Side2 = [ 3, 'secondary' ]
+Side3 = [ 3, 'secondary' ]
 
 
 # Possible values: (qwerty|dvorak)
