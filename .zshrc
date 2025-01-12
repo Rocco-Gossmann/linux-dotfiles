@@ -39,6 +39,13 @@ alias dockerc=docker-compose
 alias pm="passmenu"
 alias db="nvim -c DBUI"
 
+# Open vscode from terminal on Mac
+alias code='open -a Visual\ Studio\ Code.app'
+
+# Midnight-commander on MacOS is detected as malware, 
+# until that is fixed this alias keeps my muscle memory happy
+alias mc="ranger"
+
 
 HISTFILE=~/.zshhistory
 HISTSIZE=1000
