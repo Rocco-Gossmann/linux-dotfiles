@@ -91,9 +91,7 @@ outer.right =      0
 # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
 #                   keypadMinus, keypadMultiply, keypadPlus
 # - Arrows.         left, down, up, right
-
 # All possible modifiers: cmd, alt, ctrl, shift
-
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
@@ -124,19 +122,19 @@ alt-shift-l = 'move right'
 alt-shift-rightSquareBracket = 'resize smart +50'
 alt-shift-slash = 'resize smart -50'
 
-
 alt-f = "fullscreen"
 
-cmd-k = 'workspace prev'
-cmd-j = 'workspace next'
 
-cmd-l = 'focus-monitor next'
-cmd-h = 'focus-monitor prev'
+cmd-ctrl-k = 'workspace prev'
+cmd-ctrl-j = 'workspace next'
+
+cmd-ctrl-l = 'focus-monitor next'
+cmd-ctrl-h = 'focus-monitor prev'
 
 cmd-shift-k = ['move-node-to-workspace prev', 'workspace prev']
 cmd-shift-j = ['move-node-to-workspace next', 'workspace next']
 
-alt-comma = 'mode service'
+cmd-ctrl-comma = 'mode service'
 cmd-m = 'mode movewindow'
 cmd-g = 'mode goto'
 
