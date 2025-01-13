@@ -316,6 +316,32 @@
                 },
                 "rules": [
                     {
+                        "description": "Swap ö => +",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "semicolon" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Feker Alice80 => F13 to F24",
                         "manipulators": [
                             {
@@ -491,11 +517,24 @@
                                 "from": { "key_code": "left_option" },
                                 "to": [{ "key_code": "spacebar" }],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "feker_gamemode_enable",
+                                        "type": "variable_if",
+                                        "value": true
+                                    }
+                                ],
+                                "from": { "key_code": "spacebar" },
+                                "to": [{ "key_code": "left_option" }],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "Caps => Shift/Esc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -505,6 +544,25 @@
                                 "to": [
                                     {
                                         "key_code": "left_shift",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps => AltGr/Esc",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_option",
                                         "modifiers": ["any"]
                                     }
                                 ],
