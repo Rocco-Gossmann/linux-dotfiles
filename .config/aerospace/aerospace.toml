@@ -111,31 +111,18 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
-
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-rightSquareBracket = 'resize smart +50'
-alt-shift-slash = 'resize smart -50'
-
 alt-f = "fullscreen"
 
+cmd-shift-k = 'workspace prev'
+cmd-shift-j = 'workspace next'
 
-cmd-ctrl-k = 'workspace prev'
-cmd-ctrl-j = 'workspace next'
+cmd-shift-l = 'focus-monitor next'
+cmd-shift-h = 'focus-monitor prev'
 
-cmd-ctrl-l = 'focus-monitor next'
-cmd-ctrl-h = 'focus-monitor prev'
+alt-comma = 'mode service'
 
-cmd-shift-k = ['move-node-to-workspace prev', 'workspace prev']
-cmd-shift-j = ['move-node-to-workspace next', 'workspace next']
-
-cmd-ctrl-comma = 'mode service'
-cmd-m = 'mode movewindow'
+cmd-m = 'mode move'
 cmd-g = 'mode goto'
 
 
@@ -144,35 +131,7 @@ cmd-g = 'mode goto'
 [mode.service.binding]
 #=======================================================================================================================
 esc = ['reload-config', 'mode main']
-f = ['layout floating tiling', 'mode main']
-
-i = ['layout tiles horizontal vertical', 'mode main']
-j = 'mode join' 
 r = ['flatten-workspace-tree', 'mode main']
-
-equal = ['layout accordion horizontal vertical', 'mode main']
-
-shift-0 = ['balance-sizes', 'mode main']
-
-shift-h = ['join-with left', 'mode main']
-shift-j = ['join-with down', 'mode main']
-shift-k = ['join-with up', 'mode main']
-shift-l = ['join-with right', 'mode main']
-
-[mode.join.binding]
-#=======================================================================================================================
-esc = 'mode main'
-h = ['join-with left', 'mode main']
-j = ['join-with down', 'mode main']
-k = ['join-with up', 'mode main']
-l = ['join-with right', 'mode main']
-
-[mode.movewindow.binding]
-#=======================================================================================================================
-esc = 'mode main'
-m = ['move-node-to-workspace Main1', 'workspace Main1', 'mode main']
-t = ['move-node-to-workspace Top1', 'workspace Top1', 'mode main']
-s = ['move-node-to-workspace Side1', 'workspace Side1', 'mode main']
 
 [mode.goto.binding]
 #=======================================================================================================================
@@ -191,6 +150,53 @@ s = ['workspace Side1', 'mode main']
 8 = ['workspace Side2', 'mode main']
 9 = ['workspace Side3', 'mode main']
 
+[mode.move.binding]
+#=======================================================================================================================
+esc = 'mode main'
+cmd-m = 'mode main'
+
+# Resize
+#-------------------------------------------------------------------------------
+rightSquareBracket = 'resize smart +50' # -
+slash = 'resize smart -50' # +
+shift-0 = 'balance-sizes'
+
+# Move Window in Workspace
+#-------------------------------------------------------------------------------
+h = 'move left'
+j = 'move down'
+k = 'move up'
+l = 'move right'
+
+# Change Layout
+#-------------------------------------------------------------------------------
+f = 'layout floating tiling'
+u = 'layout accordion horizontal vertical'
+i = 'layout tiles horizontal vertical'
+
+# Move Window to Workspace
+#-------------------------------------------------------------------------------
+m = ['move-node-to-workspace Main1', 'workspace Main1']
+t = ['move-node-to-workspace Top1', 'workspace Top1']
+s = ['move-node-to-workspace Side1', 'workspace Side1']
+
+shift-k = ['move-node-to-workspace prev', 'workspace prev']
+shift-j = ['move-node-to-workspace next', 'workspace next']
+
+# Sub-Modes
+#-------------------------------------------------------------------------------
+c = 'mode combine'
+
+
+[mode.combine.binding]
+#=======================================================================================================================
+esc = 'mode main'
+c = 'mode move'
+
+h = ['join-with left', 'mode move']
+j = ['join-with down', 'mode move']
+k = ['join-with up', 'mode move']
+l = ['join-with right', 'mode move']
 
 #r = ['flatten-workspace-tree', 'mode main'] # reset layout
 
