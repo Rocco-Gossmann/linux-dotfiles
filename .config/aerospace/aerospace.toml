@@ -50,9 +50,9 @@ Main3 = 'main'
 Top1 = 'built-in'
 Top2 = 'built-in'
 Top3 = 'built-in'
-Side1 = [ 3, 'secondary' ]
-Side2 = [ 3, 'secondary' ]
-Side3 = [ 3, 'secondary' ]
+Side1 = [ 3, 'Z1-5' ]
+Side2 = [ 3, 'Z1-5' ]
+Side3 = [ 3, 'Z1-5' ]
 
 
 # Possible values: (qwerty|dvorak)
@@ -161,12 +161,25 @@ rightSquareBracket = 'resize smart +50' # -
 slash = 'resize smart -50' # +
 shift-0 = 'balance-sizes'
 
+# Navigate to workspace
+#-------------------------------------------------------------------------------
+cmd-k = 'workspace prev'
+cmd-j = 'workspace next'
+cmd-l = 'focus-monitor next'
+cmd-h = 'focus-monitor prev'
+
+# Select Window in workspace -------------------------------------------------------------------------------
+h = 'focus left'
+j = 'focus down'
+k = 'focus up'
+l = 'focus right'
+
 # Move Window in Workspace
 #-------------------------------------------------------------------------------
-h = 'move left'
-j = 'move down'
-k = 'move up'
-l = 'move right'
+shift-h = 'move left'
+shift-j = 'move down'
+shift-k = 'move up'
+shift-l = 'move right'
 
 # Change Layout
 #-------------------------------------------------------------------------------
@@ -180,8 +193,8 @@ m = ['move-node-to-workspace Main1', 'workspace Main1']
 t = ['move-node-to-workspace Top1', 'workspace Top1']
 s = ['move-node-to-workspace Side1', 'workspace Side1']
 
-shift-k = ['move-node-to-workspace prev', 'workspace prev']
-shift-j = ['move-node-to-workspace next', 'workspace next']
+cmd-shift-k = ['move-node-to-workspace prev', 'workspace prev']
+cmd-shift-j = ['move-node-to-workspace next', 'workspace next']
 
 # Sub-Modes
 #-------------------------------------------------------------------------------
