@@ -114,11 +114,12 @@ alt-l = 'focus right'
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-f = "fullscreen"
 
-cmd-shift-k = 'workspace prev'
-cmd-shift-j = 'workspace next'
-
-cmd-shift-l = 'focus-monitor next'
-cmd-shift-h = 'focus-monitor prev'
+# These have been taken over by Karabiner and the AltGr-Key.
+# Uncomment, if klarabiner is not installed/available
+#cmd-shift-k = 'workspace prev'
+#cmd-shift-j = 'workspace next'
+#cmd-shift-l = 'focus-monitor next'
+#cmd-shift-h = 'focus-monitor prev'
 
 alt-comma = 'mode service'
 
