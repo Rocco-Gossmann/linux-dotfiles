@@ -111,6 +111,11 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
+shift-alt-h = 'move left'
+shift-alt-j = 'move down'
+shift-alt-k = 'move up'
+shift-alt-l = 'move right'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-f = "fullscreen"
 
@@ -122,7 +127,6 @@ alt-f = "fullscreen"
 #cmd-shift-h = 'focus-monitor prev'
 
 alt-comma = 'mode service'
-
 cmd-m = 'mode move'
 cmd-g = 'mode goto'
 
@@ -133,6 +137,8 @@ cmd-g = 'mode goto'
 #=======================================================================================================================
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
+c = 'mode combine'
+
 
 [mode.goto.binding]
 #=======================================================================================================================
@@ -151,61 +157,60 @@ s = ['workspace Side1', 'mode main']
 8 = ['workspace Side2', 'mode main']
 9 = ['workspace Side3', 'mode main']
 
-[mode.move.binding]
+#[mode.move.binding]
 #=======================================================================================================================
-esc = 'mode main'
-cmd-m = 'mode main'
+#esc = 'mode main'
 
 # Resize
 #-------------------------------------------------------------------------------
-rightSquareBracket = 'resize smart +50' # -
-slash = 'resize smart -50' # +
-shift-0 = 'balance-sizes'
+# Depricated: covered via Karabiner AltGr + plus/minus/r
+#rightSquareBracket = 'resize smart +50' # -
+#slash = 'resize smart -50' # +
+#shift-0 = 'balance-sizes'
 
 # Navigate to workspace
 #-------------------------------------------------------------------------------
-cmd-k = 'workspace prev'
-cmd-j = 'workspace next'
-cmd-l = 'focus-monitor next'
-cmd-h = 'focus-monitor prev'
+# Depricated: no need, since the mode is no longer needed
+#cmd-k = 'workspace prev'
+#cmd-j = 'workspace next'
+#cmd-l = 'focus-monitor next'
+#cmd-h = 'focus-monitor prev'
 
 # Select Window in workspace -------------------------------------------------------------------------------
-h = 'focus left'
-j = 'focus down'
-k = 'focus up'
-l = 'focus right'
+# Depricated: no need, since the mode is no longer needed
+#h = 'focus left'
+#j = 'focus down'
+#k = 'focus up'
+#l = 'focus right'
 
 # Move Window in Workspace
 #-------------------------------------------------------------------------------
-shift-h = 'move left'
-shift-j = 'move down'
-shift-k = 'move up'
-shift-l = 'move right'
+# Depricated: no need, since the mode is no longer needed
+#shift-h = 'move left'
+#shift-j = 'move down'
+#shift-k = 'move up'
+#shift-l = 'move right'
 
 # Change Layout
 #-------------------------------------------------------------------------------
-f = 'layout floating tiling'
-u = 'layout accordion horizontal vertical'
-i = 'layout tiles horizontal vertical'
+# Depricated: all covered via Karabiner and AltGR
+#f = 'layout floating tiling'
+#u = 'layout accordion horizontal vertical'
+#i = 'layout tiles horizontal vertical'
 
-# Move Window to Workspace
+
 #-------------------------------------------------------------------------------
-m = ['move-node-to-workspace Main1', 'workspace Main1']
-t = ['move-node-to-workspace Top1', 'workspace Top1']
-s = ['move-node-to-workspace Side1', 'workspace Side1']
-
-cmd-shift-k = ['move-node-to-workspace prev', 'workspace prev']
-cmd-shift-j = ['move-node-to-workspace next', 'workspace next']
-
-# Sub-Modes
-#-------------------------------------------------------------------------------
-c = 'mode combine'
+# Depricated: all covered via Karabiner and AltGR + Shift
+# cmd-shift-h = ['move-node-to-monitor --focus-follows-window prev']
+# cmd-shift-j = ['move-node-to-workspace  --focus-follows-window next']
+# cmd-shift-k = ['move-node-to-workspace  --focus-follows-window prev']
+# cmd-shift-l = ['move-node-to-monitor --focus-follows-window next']
 
 
 [mode.combine.binding]
 #=======================================================================================================================
 esc = 'mode main'
-c = 'mode move'
+c = 'mode service'
 
 h = ['join-with left', 'mode move']
 j = ['join-with down', 'mode move']
