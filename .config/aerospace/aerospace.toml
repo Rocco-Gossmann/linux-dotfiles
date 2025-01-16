@@ -216,10 +216,10 @@ s = ['workspace Side1', 'mode main']
 esc = 'mode main'
 c = 'mode service'
 
-h = ['join-with left', 'mode move']
-j = ['join-with down', 'mode move']
-k = ['join-with up', 'mode move']
-l = ['join-with right', 'mode move']
+h = ['join-with left', 'mode main']
+j = ['join-with down', 'mode main']
+k = ['join-with up', 'mode main']
+l = ['join-with right', 'mode main']
 
 #r = ['flatten-workspace-tree', 'mode main'] # reset layout
 
