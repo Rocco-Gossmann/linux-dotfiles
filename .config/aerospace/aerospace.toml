@@ -54,6 +54,10 @@ Side1 = [ 3, 'Z1-5' ]
 Side2 = [ 3, 'Z1-5' ]
 Side3 = [ 3, 'Z1-5' ]
 
+[[on-window-detected]]
+	# find app-name via `aerospace list-apps --json`
+    if.app-name-regex-substring = 'java'
+    run = [ 'layout floating' ]  # The callback itself
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
