@@ -470,6 +470,7 @@
                     },
                     {
                         "description": "Feker Alice80 => F13 to F24",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -724,131 +725,6 @@
                                     }
                                 ],
                                 "to_if_alone": { "key_code": "tab" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "CMD => <CMD-Leader>",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "left_option" },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "set_variable": {
-                                            "name": "cmd_leader",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_leader\":0}'" }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": { "key_code": "left_command" },
-                                "to": [{ "key_code": "left_option" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<CMD-Leader> S => <CMD-Snapshot>",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "cmd_leader",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "cmd_snapshot",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "shell_command": "sleep 0.25; /opt/homebrew/bin/karabiner_cli --set-variables '{\"cmd_snapshot\":0}'" },
-                                    {
-                                        "set_variable": {
-                                            "name": "cmd_leader",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<CMD-Snapshot> C => Clipboard",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "cmd_snapshot",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13",
-                                        "modifiers": ["left_control"]
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "cmd_snapshot",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<CMD-Snapshot> F => File",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "cmd_snapshot",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13",
-                                        "modifiers": ["left_shift"]
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "cmd_snapshot",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
                                 "type": "basic"
                             }
                         ]
