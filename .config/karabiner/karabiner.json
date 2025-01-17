@@ -418,7 +418,7 @@
                             {
                                 "from": {
                                     "key_code": "close_bracket",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": { "mandatory": ["left_option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart +50" }],
                                 "type": "basic"
@@ -426,7 +426,7 @@
                             {
                                 "from": {
                                     "key_code": "slash",
-                                    "modifiers": { "mandatory": ["right_option"] }
+                                    "modifiers": { "mandatory": ["left_option"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/aerospace resize smart -50" }],
                                 "type": "basic"
@@ -918,6 +918,23 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 647,
+                        "vendor_id": 64562
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
                         }
                     ]
                 }
