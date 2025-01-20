@@ -317,6 +317,7 @@
                 "rules": [
                     {
                         "description": "Aerospace: AltGr - Mappings",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
