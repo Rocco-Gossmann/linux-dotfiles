@@ -15,7 +15,7 @@ plugins=(
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
-export TERM=xterm-256color
+export TERM=screen-256color
 export VISUAL=nvim
 export EDITOR=nvim
 
