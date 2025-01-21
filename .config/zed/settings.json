@@ -1,0 +1,47 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	"features": { "inline_completion_provider": "none" },
+	"tab_bar": {
+		"show": true
+	},
+	"ui_font_size": 16,
+
+	"buffer_font_size": 16,
+	"buffer_font_family": "JetBrainsMono Nerd Font",
+
+	"current_line_highlight": "line",
+	"vim_mode": true,
+	"theme": {
+		"mode": "system",
+		"light": "Catppuccin Latte",
+		"dark": "Rosé Pine"
+	},
+
+	"remove_trailing_whitespace_on_save": true,
+	"hard_tabs": true,
+	"tab_size": 4,
+
+	"terminal": {
+		"font_family": "JetBrainsMono Nerd Font Mono",
+		"font_size": 14
+	},
+
+	"file_types": {
+		"HTML": ["tpl"]
+	},
+
+	"languages": {
+		"TypeScript": { "language_servers": ["!vtsls"] },
+		"JSON": { "language_servers": ["!vtsls"] },
+		"JavaScript": { "language_servers": ["!vtsls"] },
+		"JSX": { "language_servers": ["!vtsls"] },
+		"HTML": { "language_servers": ["!vtsls"] }
+	}
+}
