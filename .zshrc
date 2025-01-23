@@ -55,10 +55,10 @@ bindkey -v
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
 
-
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
+[ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh)
 
 export GOPRIVATE=github.com/rocco-gossmann
 
