@@ -1,0 +1,67 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+	{
+		"bindings": {
+			"cmd-o": "projects::OpenRecent",
+
+			"cmd-l": "pane::ActivateNextItem",
+			"cmd-h": "pane::ActivatePrevItem",
+
+			"cmd-n": "project_panel::ToggleFocus"
+		}
+	},
+
+	{
+		"context": "!Terminal",
+		"bindings": {
+			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+		}
+	},
+
+	{
+		"context": "Editor && vim_mode==visual",
+		"bindings": {
+			"J": "editor::MoveLineDown",
+			"K": "editor::MoveLineUp"
+		}
+	},
+
+	{
+		"context": "Editor && vim_mode==normal",
+		"bindings": {
+			"Z Z": ["workspace::SendKeystrokes", "ihello"]
+		}
+	},
+
+	{
+		"context": "ProjectPanel",
+		"bindings": {
+			"cmd-n": "workspace::ToggleLeftDock",
+
+			"m a": "project_panel::NewFile",
+			"m m": "project_panel::Rename",
+			"m d a": "project_panel::NewDirectory",
+			"m d d": "project_panel::Trash"
+		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {
+			"cmd-k": "workspace::ToggleZoom",
+
+			"ctrl-h": ["terminal::SendKeystroke", "ctrl-h"],
+			"ctrl-j": ["terminal::SendKeystroke", "ctrl-j"],
+			"ctrl-k": ["terminal::SendKeystroke", "ctrl-k"],
+			"ctrl-l": ["terminal::SendKeystroke", "ctrl-l"]
+		}
+	}
+]
