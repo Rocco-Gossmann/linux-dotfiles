@@ -8,10 +8,12 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"features": { "inline_completion_provider": "none" },
-	"ui_font_size": 16,
 
-	"buffer_font_size": 16,
 	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"buffer_font_size": 16,
+	"ui_font_size": 16,
+	"show_wrap_guides": true,
+	"wrap_guides": [80, 120],
 
 	"current_line_highlight": "all",
 	"vim_mode": true,
@@ -19,10 +21,11 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Rosé Pine"
+		"dark": "Summercamp"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
+	"format_on_save": "off",
 	"hard_tabs": true,
 	"tab_size": 4,
 
