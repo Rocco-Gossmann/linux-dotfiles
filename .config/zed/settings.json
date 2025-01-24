@@ -15,6 +15,7 @@
 
 	"current_line_highlight": "all",
 	"vim_mode": true,
+	"relative_line_numbers": true,
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
@@ -32,8 +33,9 @@
 
 	"file_types": {
 		"HTML": ["tpl"]
-	},
+	}
 
+	/* Version 0.170.2 fixed the bag, that required these workarounds
 	"languages": {
 		"TypeScript": { "language_servers": ["!vtsls"] },
 		"JSON": { "language_servers": ["!vtsls"] },
@@ -41,4 +43,5 @@
 		"JSX": { "language_servers": ["!vtsls"] },
 		"HTML": { "language_servers": ["!vtsls"] }
 	}
+	*/
 }
