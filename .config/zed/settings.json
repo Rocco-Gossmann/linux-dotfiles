@@ -11,8 +11,11 @@
 
 	"ui_font_size": 16,
 
-	"buffer_font_size": 16,
 	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"buffer_font_size": 16,
+	"ui_font_size": 16,
+	"show_wrap_guides": true,
+	"wrap_guides": [80, 120],
 
 	"current_line_highlight": "all",
 	"vim_mode": true,
@@ -21,7 +24,7 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Rosé Pine"
+		"dark": "Summercamp"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
@@ -36,8 +39,9 @@
 
 	"file_types": {
 		"HTML": ["tpl"]
-	},
+	}
 
+	/* Version 0.170.2 fixed the bag, that required these workarounds
 	"languages": {
 		"TypeScript": { "language_servers": ["!vtsls"] },
 		"JSON": { "language_servers": ["!vtsls"] },
@@ -45,4 +49,5 @@
 		"JSX": { "language_servers": ["!vtsls"] },
 		"HTML": { "language_servers": ["!vtsls"] }
 	}
+	*/
 }
