@@ -24,7 +24,7 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Summercamp"
+		"dark": "Rosé Pine"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
@@ -39,9 +39,15 @@
 
 	"file_types": {
 		"HTML": ["tpl"]
+	},
+
+	"languages": {
+		"Go": {
+			"format_on_save": "on"
+		}
 	}
 
-	/* Version 0.170.2 fixed the bag, that required these workarounds
+	/* Version 0.170.2 fixed the bug, that required these workarounds
 	"languages": {
 		"TypeScript": { "language_servers": ["!vtsls"] },
 		"JSON": { "language_servers": ["!vtsls"] },
