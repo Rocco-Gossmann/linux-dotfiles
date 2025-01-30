@@ -7,8 +7,7 @@ normal.family = "JetBrainsMono Nerd Font"
 size = 15
 
 [window]
-opacity=0.8
-blur=true
+opacity=1
 option_as_alt = "OnlyLeft"
 padding.x = 0
 padding.y = 0
