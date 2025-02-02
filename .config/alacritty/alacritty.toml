@@ -4,7 +4,7 @@ TERM = "xterm-256color"
 [font]
 #normal.family = "MesloLGS Nerd Font Mono"
 normal.family = "JetBrainsMono Nerd Font"
-size = 15
+size = 16
 
 [window]
 opacity=1
