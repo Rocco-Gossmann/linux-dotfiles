@@ -9,6 +9,43 @@
                 },
                 "rules": [
                     {
+                        "description": "CMD H/M => PageDown / PageUp",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_down",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Rectangle Tiling Controls",
                         "manipulators": [
                             {
@@ -272,6 +309,7 @@
                     },
                     {
                         "description": "Swap ö => +",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -298,6 +336,7 @@
                     },
                     {
                         "description": "Feker Alice80 => F13 to F24",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -546,7 +585,6 @@
                     },
                     {
                         "description": "<Tab-Mod> e => Editor (VSCode)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
