@@ -126,7 +126,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "u",
                                     "modifiers": { "mandatory": ["fn"] }
                                 },
                                 "to": [
@@ -139,7 +139,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "i",
                                     "modifiers": { "mandatory": ["fn"] }
                                 },
                                 "to": [
@@ -152,7 +152,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "o",
                                     "modifiers": { "mandatory": ["fn"] }
                                 },
                                 "to": [
@@ -204,6 +204,7 @@
                     },
                     {
                         "description": "Rectangle Tiling Controls",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -733,7 +734,7 @@
                         ]
                     },
                     {
-                        "description": "Tab => <Tab-Mod>",
+                        "description": "Tab/Right Shift => <Tab-Mod>",
                         "manipulators": [
                             {
                                 "from": {
@@ -759,12 +760,35 @@
                                 ],
                                 "to_if_alone": { "key_code": "tab" },
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_mod",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "right_shift" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_mod",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "<Tab-Mod> e => Editor (VSCode)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -785,6 +809,7 @@
                     },
                     {
                         "description": "<Tab-Mod> e => Alacritty",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
