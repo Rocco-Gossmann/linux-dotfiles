@@ -25,8 +25,9 @@ C-j = ["jump_view_down"]
 C-k = ["jump_view_up"]
 C-l = ["jump_view_right"]
 
-[keys.normal.B]
+[keys.normal.space.b]
 # E ZQWA - makes quitting a lot less painfull
+b = "buffer_picker"
 z = ":quit"           # quit buffer, warn if unsaved
 q = ":quit!"          # quit buffer, ignore unsaved
 w = ":write-quit-all" # save all and quit all
