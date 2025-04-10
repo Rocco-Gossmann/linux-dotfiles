@@ -10,8 +10,8 @@ size = 16
 opacity=0.75
 blur=true
 option_as_alt = "OnlyLeft"
-padding.x = 0
-padding.y = 0
+padding.x = 4
+padding.y = 4
 decorations = "Buttonless"
 
 [colors]
