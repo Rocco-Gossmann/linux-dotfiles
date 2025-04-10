@@ -19,6 +19,12 @@ u = "undo"
 # these are different keystrokes, having them both on one key saves time 
 esc = ["collapse_selection", "keep_primary_selection"]
 
+# Split navi via ctrl-hjkl
+C-h = ["jump_view_left"]
+C-j = ["jump_view_down"]
+C-k = ["jump_view_up"]
+C-l = ["jump_view_right"]
+
 [keys.normal.B]
 # E ZQWA - makes quitting a lot less painfull
 z = ":quit"           # quit buffer, warn if unsaved
@@ -30,7 +36,7 @@ S-d = ":buffer-close!"   # vim => delete buffer
 
 [keys.normal.E]
 # E E => external Explorer
-"E"  =  [
+"e"  =  [
   ":new",
   ":insert-output lf-pick",
   "select_all",
@@ -41,18 +47,11 @@ S-d = ":buffer-close!"   # vim => delete buffer
   ":redraw"
 ]
 
-# E G => LazyGit
-"G" = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw" ]
+# E g => LazyGit
+"g" = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw" ]
 
- # E D => LazyDocker
-"D" = [ ":new", ":insert-output lazydocker", ":buffer-close!", ":redraw" ]
-
-
-# Split navi via ctrl-hjkl
-C-h = ["jump_view_left"]
-C-j = ["jump_view_down"]
-C-k = ["jump_view_up"]
-C-l = ["jump_view_right"]
+ # E d => LazyDocker
+"d" = [ ":new", ":insert-output lazydocker", ":buffer-close!", ":redraw" ]
 
 [keys.select]
 # Original Upper / Lower conversions are awefull on german QWERTZ
