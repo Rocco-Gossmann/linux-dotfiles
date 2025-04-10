@@ -19,6 +19,15 @@ u = "undo"
 # these are different keystrokes, having them both on one key saves time 
 esc = ["collapse_selection", "keep_primary_selection"]
 
+[keys.normal.B]
+# E ZQWA - makes quitting a lot less painfull
+z = ":quit"           # quit buffer, warn if unsaved
+q = ":quit!"          # quit buffer, ignore unsaved
+w = ":write-quit-all" # save all and quit all
+a = ":quit-all"       # quit all, warn if unsaved
+d = ":buffer-close"   # vim => delete buffer
+S-d = ":buffer-close!"   # vim => delete buffer
+
 [keys.normal.E]
 # E E => external Explorer
 "E"  =  [
@@ -38,11 +47,6 @@ esc = ["collapse_selection", "keep_primary_selection"]
  # E D => LazyDocker
 "D" = [ ":new", ":insert-output lazydocker", ":buffer-close!", ":redraw" ]
 
-# E ZQWA - makes quitting a lot less painfull
-S-z = ":quit"           # quit buffer, warn if unsaved
-S-q = ":quit!"          # quit buffer, ignore unsaved
-S-w = ":write-quit-all" # save all and quit all
-S-a = ":quit-all"       # quit all, warn if unsaved
 
 # Split navi via ctrl-hjkl
 C-h = ["jump_view_left"]
