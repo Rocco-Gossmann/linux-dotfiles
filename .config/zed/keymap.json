@@ -14,7 +14,7 @@
 			// My own VIM bindings
 			"cmd-o": "projects::OpenRecent",
 			"cmd-l": "pane::ActivateNextItem",
-			"cmd-h": "pane::ActivatePrevItem",
+			"pagedown": "pane::ActivatePreviousItem",
 			"cmd-n": "project_panel::ToggleFocus"
 		}
 	},
@@ -22,10 +22,10 @@
 	{
 		"context": "!Terminal",
 		"bindings": {
-			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-j": "workspace::ActivatePaneDown",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-l": "workspace::ActivatePaneRight"
 		}
 	},
 
@@ -55,10 +55,10 @@
 			"space c r": "editor::Rename",
 
 			//close commands (Z)
-			"shift-z shift-z": [ "pane::CloseActiveItem", { "saveIntent": "close" } ],
-			"shift-z shift-q": [ "pane::CloseActiveItem", { "saveIntent": "skip" } ],
-			"shift-z shift-w": [ "pane::CloseActiveItem", { "saveIntent": "save" } ],
-			"shift-z shift-a": [ "workspace::CloseAllItemsAndPanes", { "saveIntent": "close" } ]
+			"shift-z shift-z": ["pane::CloseActiveItem", { "save_intent": "close" }],
+			"shift-z shift-q": ["pane::CloseActiveItem", { "save_intent": "skip" }],
+			"shift-z shift-w": ["pane::CloseActiveItem", { "save_intent": "save" }],
+			"shift-z shift-a": [ "workspace::CloseAllItemsAndPanes", { "save_intent": "close" } ]
 		}
 	},
 
