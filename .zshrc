@@ -1,30 +1,30 @@
-if [[ ":$FPATH:" != *":/Users/st/completions:"* ]]; then export FPATH="/Users/st/completions:$FPATH"; fi
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ZSH / Terminal config
+#============================================================================== 
+HISTFILE=~/.zshhistory
+HISTSIZE=1000
+SAVEHIST=1000
+setopt notify
+unsetopt beep
+bindkey -v
 
-export ZSH="$HOME/.oh-my-zsh"
+export TERM=xterm-256color
+export VISUAL=hx
+export EDITOR=hx
 
-ZSH_THEME="jonathan"
+# Own env-Vars
+#============================================================================== 
+export GOPRIVATE=github.com/rocco-gossmann
 
-plugins=(
-    git
-    dnf
-    zsh-interactive-cd
-)
-
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-source $ZSH/oh-my-zsh.sh
-
-export TERM=screen-256color
-export VISUAL=nvim
-export EDITOR=nvim
-
+# Usefull Aliasses
+#============================================================================== 
+alias ls='ls -G'
 alias ll='ls -Glh'
 alias la='ls -Galh'
 alias dir='ls -Galh'
+
 alias lg=lazygit
-alias cf='cd "`ff`"'
-alias mr='make run'
+alias ldoc=lazydocker
+alias dockerc=docker-compose
 
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
@@ -35,56 +35,44 @@ alias vi="nvim"
 alias tm="tmux-workspace \"main\""
 alias no="note"
 alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
-alias dockerc=docker-compose
-alias ldoc=lazydocker
 alias pm="passmenu"
 alias db="nvim -c DBUI"
+alias mr="make run"
 
-# Open vscode from terminal on Mac
-alias code='open -a Visual\ Studio\ Code.app'
-
-HISTFILE=~/.zshhistory
-HISTSIZE=1000
-SAVEHIST=1000
-setopt notify
-unsetopt beep
-bindkey -v
-
+# extend $PATH
+#============================================================================== 
+[ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
 [ -e "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
-
+[ -e "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.bun/bin" ] && export PATH="$HOME/.bun/bin:$PATH"
 
+
+# source a bunch of stuff for auto completion
+#============================================================================== 
+[ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
-[ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh)
-
-export GOPRIVATE=github.com/rocco-gossmann
-
-[ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
-
-# check the dnf plugins commands here
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dnf
+[ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh) && eval "$(zoxide init --cmd cd zsh)"
 
 
-### From this line is for pywal-colors
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
-#(cat ~/.cache/wal/sequences &)
 
-# Alternative (blocks terminal for 0-3ms)
-#cat ~/.cache/wal/sequences
 
-# To add support for TTYs this line can be optionally added.
-#source ~/.cache/wal/colors-tty.sh
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-autoload -Uz compinit
-compinit
 
-if [ "$TMUX" = "" ] && [ "$NVIM" = "" ] && [ "$ZED_TERM" = "" ] && [ "$VSCODE_INJECTION" = "" ]; then tmux new-session -A -s main; fi
+# Tweaks for different terminal emulators
+#============================================================================== 
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  # [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/multiverse-neon.omp.json)
+  [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.toml)
+fi
+
+
+if [ "$TMUX" = "" ] && [ "$NVIM" = "" ] && [ "$TERM_PROGRAM" = "" ]; then tmux new-session -A -s main; fi
