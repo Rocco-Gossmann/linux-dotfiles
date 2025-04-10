@@ -1,2 +1,2 @@
-inherits = "tokyonight_moon"
+inherits = "base16_transparent"
 "ui.background" = {}
