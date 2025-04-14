@@ -2,12 +2,11 @@
 TERM = "xterm-256color"
 
 [font]
-#normal.family = "MesloLGS Nerd Font Mono"
 normal.family = "JetBrainsMono Nerd Font"
 size = 16
 
 [window]
-opacity=0.75
+opacity=0.95
 blur=true
 option_as_alt = "OnlyLeft"
 padding.x = 4
@@ -16,13 +15,6 @@ decorations = "Buttonless"
 
 [colors]
 transparent_background_colors = false
-
-[keyboard]
-bindings = [
-  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
-  { key = "C", mods = "Control|Shift", action = "Copy" },
-  { key = "V", mods = "Control|Shift", action = "Paste" },
-]
 
 # TokyoNight Alacritty Colors
 # Default colors
