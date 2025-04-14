@@ -13,9 +13,9 @@
 
 			// My own VIM bindings
 			"cmd-o": "projects::OpenRecent",
+			"cmd-n": "project_panel::ToggleFocus",
 			"cmd-l": "pane::ActivateNextItem",
-			"pagedown": "pane::ActivatePreviousItem",
-			"cmd-n": "project_panel::ToggleFocus"
+			"pagedown": "pane::ActivatePreviousItem"
 		}
 	},
 
