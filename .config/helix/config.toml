@@ -36,6 +36,14 @@ d = ":buffer-close"   # vim => delete buffer
 S-d = ":buffer-close!"   # vim => delete buffer
 
 [keys.normal.E]
+# E r => make run
+"r" = [
+  ":new",
+  ":insert-output tmux split zsh",
+  ":buffer-close!",
+  ":redraw"
+]
+
 # E E => external Explorer
 "e"  =  [
   ":new",
