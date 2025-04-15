@@ -494,6 +494,7 @@
                     },
                     {
                         "description": "Feker Alice80 => F13 to F24",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -790,6 +791,7 @@
                     },
                     {
                         "description": "<Tab-Mod> e => Editor (VSCode)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -832,6 +834,7 @@
                     },
                     {
                         "description": "<Tab-Mod> t => Terminal (Alacritty)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -853,6 +856,7 @@
                     },
                     {
                         "description": "<Tab-Mod> z => ZenBrowser",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -873,6 +877,7 @@
                     },
                     {
                         "description": "<Tab-Mod> a => Arc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -893,6 +898,7 @@
                     },
                     {
                         "description": "<Tab-Mod> n => Notes (Logseq))",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -932,7 +938,29 @@
                         "product_id": 8705,
                         "vendor_id": 4617
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_command" }]
+                        },
+                        {
+                            "from": { "consumer_key_code": "eject" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        },
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        }
+                    ]
                 },
                 {
                     "identifiers": {
@@ -978,14 +1006,6 @@
                         {
                             "from": { "key_code": "non_us_backslash" },
                             "to": [{ "key_code": "non_us_backslash" }]
-                        },
-                        {
-                            "from": { "key_code": "right_command" },
-                            "to": [{ "key_code": "right_option" }]
-                        },
-                        {
-                            "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_command" }]
                         }
                     ]
                 },
@@ -1141,46 +1161,12 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "right_command" },
-                            "to": [{ "key_code": "right_option" }]
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
                         },
                         {
-                            "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_command" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 261,
-                        "vendor_id": 12046
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 64112,
-                        "vendor_id": 9639
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "non_us_backslash" }]
                         }
                     ]
                 }
@@ -1209,9 +1195,16 @@
                 {
                     "from": { "key_code": "non_us_backslash" },
                     "to": [{ "key_code": "grave_accent_and_tilde" }]
+                },
+                {
+                    "from": { "key_code": "right_command" },
+                    "to": [{ "key_code": "right_option" }]
+                },
+                {
+                    "from": { "key_code": "right_option" },
+                    "to": [{ "key_code": "right_command" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
-}

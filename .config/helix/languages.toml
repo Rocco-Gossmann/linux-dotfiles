@@ -1,3 +1,8 @@
 [[language]]
 name = "bash"
-file-types = ["conf", "sh", "bash",  ".bash_login", ".bash_logout", ".bash_profile", ".bashrc", ".profile", ".zshenv", ".zlogin", ".zlogout", ".zprofile", ".zshrc", "APKBUILD", "PKGBUILD", "eclass", "ebuild", "bazelrc", "buildfile", "zsh"]
+file-types = ["conf", "sh", "bash", "zsh", ".bash_login", ".bash_logout", ".bash_profile", ".bashrc", ".profile", ".zshenv", ".zlogin", ".zlogout", ".zprofile", ".zshrc", "APKBUILD", "PKGBUILD", "eclass", "ebuild", "bazelrc", "buildfile"]
+
+[[language]]
+name = "html"
+file-types = ["html", "htm", "tpl", "tmpl"]
+auto-format = false
