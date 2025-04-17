@@ -9,3 +9,28 @@ background-opacity=0.9
 background-blur=true
 
 background=#03030a
+
+# Super + HJKL => change focused split
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:down
+keybind = super+k=goto_split:up
+keybind = super+l=goto_split:right
+
+# Alt/Opt + HJKL => resized focused split
+keybind = alt+h=resize_split:left,10
+keybind = alt+j=resize_split:down,10
+keybind = alt+k=resize_split:up,10
+keybind = alt+l=resize_split:right,10
+
+# Super + i / -  => create new vertical or horizontal Split
+keybind = super+i=new_split:right
+keybind = super+minus=new_split:down
+
+# Super + Shift + +/-  => changes current splits font size
+keybind = super+plus=unbind
+keybind = super+shift+minus=decrease_font_size:1
+keybind = super+shift+plus=increase_font_size:1
+
+# Super + n / p = Next / Prevous Tab
+keybind = super+n=next_tab
+keybind = super+p=previous_tab
