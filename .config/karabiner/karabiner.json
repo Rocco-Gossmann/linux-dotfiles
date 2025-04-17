@@ -169,6 +169,14 @@
                         "description": "CMD H/M => PageDown / PageUp",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -494,7 +502,6 @@
                     },
                     {
                         "description": "Feker Alice80 => F13 to F24",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -941,14 +948,6 @@
                     "ignore": false,
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_option" }]
-                        },
-                        {
-                            "from": { "key_code": "right_command" },
-                            "to": [{ "key_code": "right_command" }]
-                        },
-                        {
                             "from": { "consumer_key_code": "eject" },
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                         },
@@ -959,6 +958,14 @@
                         {
                             "from": { "key_code": "non_us_backslash" },
                             "to": [{ "key_code": "non_us_backslash" }]
+                        },
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_command" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_option" }]
                         }
                     ]
                 },
