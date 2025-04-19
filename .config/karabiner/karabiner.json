@@ -187,7 +187,7 @@
                                 "to": [
                                     {
                                         "key_code": "page_down",
-                                        "modifiers": []
+                                        "modifiers": ["any"]
                                     }
                                 ],
                                 "type": "basic"
@@ -683,6 +683,39 @@
                         ]
                     },
                     {
+                        "description": "Java: Mouse4 => 2f - macro",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": [".*java_versions/zulu17\\.50\\.19-ca-jre17\\.0\\.11-macosx_aarch64/zulu-17\\.jre/Contents/Home/bin/java$"],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": { "pointing_button": "button4" },
+                                "to": [{ "key_code": "2" }],
+                                "to_after_key_up": [{ "key_code": "f" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps => FN/Esc",
                         "manipulators": [
                             {
@@ -988,6 +1021,10 @@
                         {
                             "from": { "key_code": "left_option" },
                             "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_option" }]
                         }
                     ]
                 },
@@ -1176,6 +1213,15 @@
                             "to": [{ "key_code": "non_us_backslash" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 33018,
+                        "vendor_id": 1149
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [
