@@ -7,13 +7,26 @@
 // from the command palette.
 [
 	{
+		"context": "!ProjectPanel",
+		"bindings": {
+			"cmd-n": "project_panel::ToggleFocus"
+		}
+	},
+
+	{
+		"context": "!GitPanel",
+		"bindings": {
+			"cmd-g": "git_panel::ToggleFocus"
+		}
+	},
+
+	{
 		"bindings": {
 			// Remove default bindings
 			"cmd-shift-i": null, // Format
 
 			// My own VIM bindings
 			"cmd-o": "projects::OpenRecent",
-			"cmd-n": "project_panel::ToggleFocus",
 			"cmd-l": "pane::ActivateNextItem",
 			"pagedown": "pane::ActivatePreviousItem"
 		}
@@ -32,6 +45,7 @@
 	{
 		"context": "ProjectPanel",
 		"bindings": {
+			"cmd-n": "workspace::ToggleLeftDock",
 			"m a d": "project_panel::NewDirectory",
 			"m a f": "project_panel::NewFile",
 			"m m": "project_panel::Rename",
@@ -40,12 +54,11 @@
 	},
 
 	{
-		"context": "!Workspace",
+		"context": "GitPanel",
 		"bindings": {
-			"cmd-n": "workspace::ToggleLeftDock"
+			"cmd-g": "workspace::ToggleLeftDock"
 		}
 	},
-
 
 	{
 		"context": "Editor && vim_mode==normal",
@@ -55,10 +68,22 @@
 			"space c r": "editor::Rename",
 
 			//close commands (Z)
-			"shift-z shift-z": ["pane::CloseActiveItem", { "save_intent": "close" }],
-			"shift-z shift-q": ["pane::CloseActiveItem", { "save_intent": "skip" }],
-			"shift-z shift-w": ["pane::CloseActiveItem", { "save_intent": "save" }],
-			"shift-z shift-a": [ "workspace::CloseAllItemsAndPanes", { "save_intent": "close" } ]
+			"shift-z shift-z": [
+				"pane::CloseActiveItem",
+				{ "save_intent": "close" }
+			],
+			"shift-z shift-q": [
+				"pane::CloseActiveItem",
+				{ "save_intent": "skip" }
+			],
+			"shift-z shift-w": [
+				"pane::CloseActiveItem",
+				{ "save_intent": "save" }
+			],
+			"shift-z shift-a": [
+				"workspace::CloseAllItemsAndPanes",
+				{ "save_intent": "close" }
+			]
 		}
 	},
 
