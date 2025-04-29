@@ -9,8 +9,6 @@
 {
 	"features": { "inline_completion_provider": "none" },
 
-	"ui_font_size": 16,
-
 	"buffer_font_family": "JetBrainsMono Nerd Font",
 	"buffer_font_size": 16,
 	"ui_font_size": 16,
@@ -44,16 +42,18 @@
 	"languages": {
 		"Go": {
 			"format_on_save": "on"
-		}
-	}
+		},
 
-	/* Version 0.170.2 fixed the bug, that required these workarounds
-	"languages": {
+		"PHP": {
+			"language_servers": ["intelephense", "!phpactor", "..."]
+		}
+
+		/* Version 0.170.2 fixed the bug, that required these workarounds
 		"TypeScript": { "language_servers": ["!vtsls"] },
 		"JSON": { "language_servers": ["!vtsls"] },
 		"JavaScript": { "language_servers": ["!vtsls"] },
 		"JSX": { "language_servers": ["!vtsls"] },
 		"HTML": { "language_servers": ["!vtsls"] }
+		*/
 	}
-	*/
 }
