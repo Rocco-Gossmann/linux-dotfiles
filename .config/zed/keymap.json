@@ -24,6 +24,7 @@
 		"bindings": {
 			// Remove default bindings
 			"cmd-shift-i": null, // Format
+			"cmd-r": null, // AI-Panel
 
 			// My own VIM bindings
 			"cmd-o": "projects::OpenRecent",
