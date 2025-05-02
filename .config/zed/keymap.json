@@ -7,39 +7,25 @@
 // from the command palette.
 [
 	{
-		"context": "!ProjectPanel",
 		"bindings": {
-			"cmd-n": "project_panel::ToggleFocus"
-		}
-	},
-
-	{
-		"context": "!GitPanel",
-		"bindings": {
-			"cmd-g": "git_panel::ToggleFocus"
-		}
-	},
-
-	{
-		"bindings": {
-			// Remove default bindings
+			// Remove useless default bindings
 			"cmd-shift-i": null, // Format
 			"cmd-r": null, // AI-Panel
 
-			// My own VIM bindings
+			// quick open last Projects
 			"cmd-o": "projects::OpenRecent",
-			"cmd-l": "pane::ActivateNextItem",
-			"pagedown": "pane::ActivatePreviousItem"
+
+			// actually cmd+h (but MacOS default shortcut for cmd+h can't be overwritten by Zed.
+			// So I overwrote it via Karabiner and then mapped it in Zed
+			"pagedown": "pane::ActivatePreviousItem",
+			"cmd-l": "pane::ActivateNextItem"
 		}
 	},
 
 	{
-		"context": "!Terminal",
+		"context": "!ProjectPanel",
 		"bindings": {
-			"ctrl-h": "workspace::ActivatePaneLeft",
-			"ctrl-j": "workspace::ActivatePaneDown",
-			"ctrl-k": "workspace::ActivatePaneUp",
-			"ctrl-l": "workspace::ActivatePaneRight"
+			"cmd-n": "project_panel::ToggleFocus"
 		}
 	},
 
@@ -51,6 +37,13 @@
 			"m a f": "project_panel::NewFile",
 			"m m": "project_panel::Rename",
 			"m d d": "project_panel::Trash"
+		}
+	},
+
+	{
+		"context": "!GitPanel",
+		"bindings": {
+			"cmd-g": "git_panel::ToggleFocus"
 		}
 	},
 
@@ -94,7 +87,32 @@
 			"J": "editor::MoveLineDown",
 			"K": "editor::MoveLineUp",
 
-			"space c c": ["workspace::SendKeystrokes", "m z g c escape ` z"]
+			"space c c": ["workspace::SendKeystrokes", "m z g c escape ` z"],
+
+			"ctrl-r": [
+				"workspace::SendKeystrokes",
+			 	"cmd-f cmd-shift-p search: toggle selection enter cmd-shift-p search: focus search enter"
+			]
+		}
+	},
+
+	{
+		"context": "BufferSearchBar",
+		"bindings": {
+			"ctrl-r": [
+				"workspace::SendKeystrokes",
+				"cmd-shift-p search: toggle replace enter"
+			]
+		}
+	},
+
+	{
+		"context": "!Terminal",
+		"bindings": {
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-j": "workspace::ActivatePaneDown",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-l": "workspace::ActivatePaneRight"
 		}
 	},
 

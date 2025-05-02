@@ -24,13 +24,23 @@
 	"wrap_guides": [80, 120],
 
 	"current_line_highlight": "all",
+
 	"vim_mode": true,
+	"vim": {
+		"cursor_shape": {
+			"normal": "block",
+			"insert": "bar",
+			"replace": "hollow",
+			"visual": "block"
+		}
+	},
+
 	"relative_line_numbers": true,
 
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "One Dark"
+		"dark": "Rosé Pine"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
