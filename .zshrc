@@ -44,6 +44,8 @@ alias pm="passmenu"
 alias db="nvim -c DBUI"
 alias mr="make run"
 
+alias brew-fix-rights="sudo chown \`whoami\` /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions"
+
 # extend $PATH
 #==============================================================================
 [ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
