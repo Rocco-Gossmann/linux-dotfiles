@@ -9,181 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "FN + Tab => Hyper-Tab",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": ["left_option", "left_command", "left_shift", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "FN - Qwertz tweaks",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "slash",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "7",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "8",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "9",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "CMD H/M => PageDown / PageUp",
                         "manipulators": [
                             {
@@ -492,33 +317,6 @@
                         ]
                     },
                     {
-                        "description": "Swap ö => +",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "semicolon" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Feker Alice80 => F13 to F24",
                         "manipulators": [
                             {
@@ -748,6 +546,7 @@
                     },
                     {
                         "description": "Caps => FN/Esc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -806,184 +605,260 @@
                         ]
                     },
                     {
-                        "description": "Tab/Right Shift => <Tab-Mod>",
-                        "enabled": false,
+                        "description": "Caps => Hyper/Esc",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "tab",
+                                    "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "tab_mod",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "left_shift" }
+                                        "key_code": "right_shift",
+                                        "modifiers": ["right_option", "right_command", "right_control"]
+                                    }
                                 ],
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "tab_mod",
-                                            "value": 0
+                                            "name": "hyper-arrows-off",
+                                            "value": false
                                         }
                                     }
                                 ],
-                                "to_if_alone": { "key_code": "tab" },
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper HJKL => Arrows",
+                        "manipulators": [
+                            {
+                                "description": "disbles HJKL to arrows until hyper is released",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["right_shift", "right_option", "right_control", "right_command"]
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper-arrows-off",
+                                            "value": true
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper-arrows-off",
+                                        "type": "variable_if",
+                                        "value": false
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper-arrows-off",
+                                        "type": "variable_if",
+                                        "value": false
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper-arrows-off",
+                                        "type": "variable_if",
+                                        "value": false
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper-arrows-off",
+                                        "type": "variable_if",
+                                        "value": false
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper - Qwertz tweaks",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "grave_accent_and_tilde" }],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "tab_mod",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "right_shift" }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab_mod",
-                                            "value": 0
-                                        }
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<Tab-Mod> e => Editor (VSCode)",
-                        "enabled": false,
-                        "manipulators": [
+                            },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
-                                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<Tab-Mod> e => Alacritty",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
+                                "to": [
                                     {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["right_option"]
                                     }
                                 ],
-                                "description": "Open Kitty",
+                                "type": "basic"
+                            },
+                            {
                                 "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "slash",
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Alacritty.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<Tab-Mod> t => Terminal (Alacritty)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
+                                "to": [
                                     {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
+                                        "key_code": "hyphen",
+                                        "modifiers": ["right_option"]
                                     }
                                 ],
-                                "description": "Open Kitty",
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Alacritty.app'" }],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<Tab-Mod> z => ZenBrowser",
-                        "enabled": false,
-                        "manipulators": [
+                            },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "y",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Zen Browser.app'" }],
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "<Tab-Mod> a => Arc",
-                        "enabled": false,
+                        "description": "Disable Hyper+Period ( triggers sysdiagnosis)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Arc.app'" }],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "<Tab-Mod> n => Notes (Logseq))",
-                        "enabled": false,
-                        "manipulators": [
+                            },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mod",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "n",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "comma",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'LogSeq.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -1014,14 +889,6 @@
                         {
                             "from": { "consumer_key_code": "eject" },
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-                        },
-                        {
-                            "from": { "key_code": "grave_accent_and_tilde" },
-                            "to": [{ "key_code": "grave_accent_and_tilde" }]
-                        },
-                        {
-                            "from": { "key_code": "non_us_backslash" },
-                            "to": [{ "key_code": "non_us_backslash" }]
                         },
                         {
                             "from": { "key_code": "right_command" },
@@ -1102,14 +969,6 @@
                         {
                             "from": { "key_code": "grave_accent_and_tilde" },
                             "to": [{ "key_code": "grave_accent_and_tilde" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
                         },
                         {
                             "from": { "key_code": "non_us_backslash" },
