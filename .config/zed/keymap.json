@@ -15,9 +15,8 @@
 			// quick open last Projects
 			"cmd-o": "projects::OpenRecent",
 
-			// actually cmd+h (but MacOS default shortcut for cmd+h can't be overwritten by Zed.
-			// So I overwrote it via Karabiner and then mapped it in Zed
-			"pagedown": "pane::ActivatePreviousItem",
+			// item navigation
+			"cmd-h": "pane::ActivatePreviousItem",
 			"cmd-l": "pane::ActivateNextItem"
 		}
 	},
