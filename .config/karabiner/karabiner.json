@@ -9,13 +9,13 @@
                 },
                 "rules": [
                     {
-                        "description": "CMD + H => PageDown (disable system override for apps, that can't handle `cmd+h by themselfs)`",
+                        "description": "Ghostty+TMUX: CMD + H/L => PageDown/PageUP",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.application\\.identifier$"
+                                            "^com\\.mitchellh\\.ghostty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -30,6 +30,30 @@
                                 "to": [
                                     {
                                         "key_code": "page_down",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
                                         "modifiers": ["any"]
                                     }
                                 ],
