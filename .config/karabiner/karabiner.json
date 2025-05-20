@@ -1192,17 +1192,7 @@
                         "vendor_id": 1149
                     },
                     "ignore": false,
-                    "mouse_flip_vertical_wheel": true,
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "pointing_button": "button4" }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "key_code": "vk_mission_control" }]
-                        }
-                    ]
+                    "mouse_flip_vertical_wheel": true
                 },
                 {
                     "identifiers": {
@@ -1250,6 +1240,15 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 96,
+                        "vendor_id": 1204
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [
