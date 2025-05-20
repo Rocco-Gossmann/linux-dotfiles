@@ -854,7 +854,10 @@
                             {
                                 "from": {
                                     "key_code": "y",
-                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -867,7 +870,10 @@
                             {
                                 "from": {
                                     "key_code": "u",
-                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -880,7 +886,10 @@
                             {
                                 "from": {
                                     "key_code": "i",
-                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -893,7 +902,10 @@
                             {
                                 "from": {
                                     "key_code": "o",
-                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
+                                    "modifiers": {
+                                        "mandatory": ["right_shift", "right_option", "right_control", "right_command"],
+                                        "optional": ["any"]
+                                    }
                                 },
                                 "to": [
                                     {
