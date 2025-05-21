@@ -986,6 +986,14 @@
                     },
                     "ignore": false,
                     "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 647,
+                        "vendor_id": 64562
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": [
