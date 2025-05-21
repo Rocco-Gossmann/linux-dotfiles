@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"assistant": {
+	"agent": {
 		"version": "2",
 		"button": false
 	},
@@ -15,7 +15,7 @@
 		"button": false
 	},
 
-	"features": { "inline_completion_provider": "none" },
+	"features": { "edit_prediction_provider": "none" },
 
 	"buffer_font_family": "JetBrainsMono Nerd Font",
 	"buffer_font_size": 16,
@@ -63,7 +63,7 @@
 		},
 
 		"PHP": {
-			"language_servers": ["intelephense", "!phpactor", "..."]
+			"language_servers": ["!intelephense", "phpactor", "..."]
 		}
 
 		/* Version 0.170.2 fixed the bug, that required these workarounds
