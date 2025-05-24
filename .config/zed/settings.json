@@ -7,7 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"agent": {
+	"base_keymap": "VSCode",
+ "telemetry": {
+  "metrics": false,
+  "diagnostics": true
+ },
+ "agent": {
 		"version": "2",
 		"button": false
 	},
@@ -18,8 +23,8 @@
 	"features": { "edit_prediction_provider": "none" },
 
 	"buffer_font_family": "JetBrainsMono Nerd Font",
-	"buffer_font_size": 16,
-	"ui_font_size": 16,
+	"buffer_font_size": 15,
+	"ui_font_size": 15,
 	"show_wrap_guides": true,
 	"wrap_guides": [80, 120],
 
@@ -63,15 +68,7 @@
 		},
 
 		"PHP": {
-			"language_servers": ["!intelephense", "phpactor", "..."]
+			"language_servers": ["intelephense", "!phpactor", "..."]
 		}
-
-		/* Version 0.170.2 fixed the bug, that required these workarounds
-		"TypeScript": { "language_servers": ["!vtsls"] },
-		"JSON": { "language_servers": ["!vtsls"] },
-		"JavaScript": { "language_servers": ["!vtsls"] },
-		"JSX": { "language_servers": ["!vtsls"] },
-		"HTML": { "language_servers": ["!vtsls"] }
-		*/
 	}
 }

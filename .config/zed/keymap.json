@@ -11,6 +11,7 @@
 			// Remove useless default bindings
 			"cmd-shift-i": null, // Format
 			"cmd-r": null, // AI-Panel
+			"cmd-m": null, // Mac Minimize
 
 			// quick open last Projects
 			"cmd-o": "projects::OpenRecent",
@@ -59,6 +60,14 @@
 			//Code Actions (c)
 			"space c c": "editor::ToggleComments",
 			"space c r": "editor::Rename",
+
+			//Git Actions (g)
+			"space g b": "git::Blame",
+			"space g s": "git::StageAndNext",
+			"space g u": "git::UnstageAndNext",
+			"space g d": "git::Diff",
+			"space g c": "git::Commit",
+			"space g r": "git::Restore",
 
 			//close commands (Z)
 			"shift-z shift-z": [
