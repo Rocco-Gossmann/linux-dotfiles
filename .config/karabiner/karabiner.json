@@ -1054,6 +1054,14 @@
                 },
                 {
                     "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 102,
+                        "vendor_id": 7847
+                    },
+                    "ignore": true
+                },
+                {
+                    "identifiers": {
                         "is_pointing_device": true,
                         "product_id": 102,
                         "vendor_id": 7847
