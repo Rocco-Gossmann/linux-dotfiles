@@ -45,7 +45,7 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Rosé Pine"
+		"dark": "Ayu Dark"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
