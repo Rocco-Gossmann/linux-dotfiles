@@ -29,7 +29,7 @@ alias l="f(){ cd \`ls -1A -d \$@*/|fzf\`; unset -f f; }; f"
 
 alias lg=lazygit
 alias ldoc=lazydocker
-alias dockerc=docker-compose
+alias doc="docker compose"
 
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
@@ -44,7 +44,7 @@ alias pm="passmenu"
 alias db="nvim -c DBUI"
 alias mr="make run"
 
-alias brew-fix-rights="sudo chown \`whoami\` /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions"
+alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
 
 # extend $PATH
 #==============================================================================
