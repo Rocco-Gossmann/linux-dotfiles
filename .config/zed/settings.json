@@ -7,10 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"base_keymap": "VSCode",
+	"debugger": {
+  "dock": "left"
+ },
+ "base_keymap": "VSCode",
  "telemetry": {
   "metrics": false,
-  "diagnostics": true
+  "diagnostics": false
  },
  "agent": {
 		"version": "2",
