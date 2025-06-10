@@ -8,9 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"debugger": {
-  "dock": "left"
- },
- "base_keymap": "VSCode",
+	  "dock": "bottom"
+	 },
+ "base_keymap": "None",
  "telemetry": {
   "metrics": false,
   "diagnostics": false
@@ -22,6 +22,8 @@
 	"collaboration_panel": {
 		"button": false
 	},
+
+	"auto_update": false,
 
 	"features": { "edit_prediction_provider": "none" },
 
@@ -48,7 +50,7 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Ayu Dark"
+		"dark": "Ayu Mirage"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
