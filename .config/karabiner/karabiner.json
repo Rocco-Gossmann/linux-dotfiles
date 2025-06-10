@@ -57,6 +57,7 @@
                     },
                     {
                         "description": "Ghostty+TMUX: CMD + H/L => PageDown/PageUP",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -131,6 +132,7 @@
                     },
                     {
                         "description": "Feker Alice80 => F13 to F24",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -1191,17 +1193,15 @@
                         "product_id": 58566,
                         "vendor_id": 13357
                     },
-                    "ignore": false,
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "device_address": "c0-06-6c-19-9e-23",
+                        "is_keyboard": true,
+                        "is_pointing_device": true
+                    },
+                    "ignore": false
                 }
             ],
             "fn_function_keys": [
