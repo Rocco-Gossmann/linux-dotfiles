@@ -46,6 +46,8 @@ alias mr="make run"
 
 alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
 
+alias du="du -chd1 2>/dev/null | sort -h -k 1,1"
+
 # extend $PATH
 #==============================================================================
 [ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
