@@ -48,6 +48,7 @@ automatically-unhide-macos-hidden-apps = true
 	Main1 = 'main'
 	Main2 = 'main'
 	Main3 = 'main'
+	Terminal = 'main'
 	Side1 = [ 3, 'Z1-5','built-in' ]
 	Side2 = [ 3, 'Z1-5','built-in' ]
 	Side3 = [ 3, 'Z1-5','built-in' ]
