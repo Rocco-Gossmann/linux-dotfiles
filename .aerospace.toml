@@ -82,6 +82,8 @@ automatically-unhide-macos-hidden-apps = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
+# BM: Normal Mode mode
+#===============================================================================
 [mode.main.binding]
 
     # All possible keys:
@@ -152,22 +154,14 @@ automatically-unhide-macos-hidden-apps = true
     # alt-shift-tab = 'move-workspace-to-monitor --swrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-    alt-s = 'mode service'
     alt-w = 'mode window'
 
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.service.binding]
+
+# BM: Window Edit Mode
+#===============================================================================
+[mode.window.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
-	#backspace = ['close-all-windows-but-current', 'mode main']
-
-    # down = 'volume down'
-    # up = 'volume up'
-    # shift-down = ['volume set 0', 'mode main']
-
-[mode.window.binding]
-	esc = ['mode main']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     f = ['layout floating tiling', 'mode main']					# Toggle between floating and tiling layout
@@ -196,6 +190,7 @@ automatically-unhide-macos-hidden-apps = true
 	4 = ['move-node-to-workspace Side1', 'workspace Side1', 'mode main']
 	5 = ['move-node-to-workspace Side2', 'workspace Side2', 'mode main']
 	6 = ['move-node-to-workspace Side3', 'workspace Side3', 'mode main']
+
 # BM: App specific settings
 #===============================================================================
 # BM: Floating Apps
