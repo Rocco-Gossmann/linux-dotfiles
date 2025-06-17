@@ -82,6 +82,7 @@ automatically-unhide-macos-hidden-apps = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
+
 # BM: Normal Mode mode
 #===============================================================================
 [mode.main.binding]
@@ -138,6 +139,10 @@ automatically-unhide-macos-hidden-apps = true
     alt-4 = 'workspace Side1'
     alt-5 = 'workspace Side2'
     alt-6 = 'workspace Side3'
+
+    alt-f = 'layout floating tiling'				# Toggle between floating and tiling layout
+	alt-t = 'layout tiles horizontal vertical'
+	alt-s = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = ['move-node-to-workspace Main1', 'workspace Main1']
