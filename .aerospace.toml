@@ -48,15 +48,17 @@ automatically-unhide-macos-hidden-apps = true
 	Main1 = 'main'
 	Main2 = 'main'
 	Main3 = 'main'
-	Terminal = 'main'
-	Side1 = [ 3, 'Z1-5','built-in' ]
-	Side2 = [ 3, 'Z1-5','built-in' ]
-	Side3 = [ 3, 'Z1-5','built-in' ]
+	Term = 'main'
+	Coms = 'main'
+	Plans = 'secondary'
 
 [[on-window-detected]]
 	# find app-name via `aerospace list-apps --json`
     if.app-name-regex-substring = 'java'
     run = [ 'layout floating' ]  # The callback itself
+	Side1 = [ 3, 'built-in', 'secondary' ]
+	Side2 = [ 3, 'built-in', 'secondary' ]
+	Side3 = [ 3, 'built-in', 'secondary' ]
 
 [[on-window-detected]]
 	if.app-id = 'com.mitchellh.ghostty'
