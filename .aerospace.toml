@@ -52,17 +52,10 @@ automatically-unhide-macos-hidden-apps = true
 	Coms = 'main'
 	Plans = 'secondary'
 
-[[on-window-detected]]
-	# find app-name via `aerospace list-apps --json`
-    if.app-name-regex-substring = 'java'
-    run = [ 'layout floating' ]  # The callback itself
 	Side1 = [ 3, 'built-in', 'secondary' ]
 	Side2 = [ 3, 'built-in', 'secondary' ]
 	Side3 = [ 3, 'built-in', 'secondary' ]
 
-[[on-window-detected]]
-	if.app-id = 'com.mitchellh.ghostty'
-	run = ['move-node-to-workspace Terminal']
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -203,3 +196,39 @@ automatically-unhide-macos-hidden-apps = true
 	4 = ['move-node-to-workspace Side1', 'workspace Side1', 'mode main']
 	5 = ['move-node-to-workspace Side2', 'workspace Side2', 'mode main']
 	6 = ['move-node-to-workspace Side3', 'workspace Side3', 'mode main']
+# BM: App specific settings
+#===============================================================================
+# BM: Floating Apps
+#-------------------------------------------------------------------------------
+[[on-window-detected]]
+	# find app-name via `aerospace list-apps --json`
+    if.app-name-regex-substring = 'java'
+    run = [ 'layout floating' ]
+
+[[on-window-detected]]
+	if.app-id = 'com.apple.QuickTimePlayerX'
+    run = [ 'layout floating' ]
+
+# BM: Set Workspaces
+#-------------------------------------------------------------------------------
+[[on-window-detected]]
+	if.app-id = 'com.mitchellh.ghostty'
+	run = ['move-node-to-workspace Term']
+
+[[on-window-detected]]
+	if.app-id = 'com.apple.iCal'
+	run = ['move-node-to-workspace Plans']
+
+[[on-window-detected]]
+	if.app-id = 'com.apple.mail'
+	run = ['move-node-to-workspace Plans']
+
+[[on-window-detected]]
+	if.app-id = 'com.tinyspeck.slackmacgap'
+	run = ['move-node-to-workspace Coms']
+
+[[on-window-detected]]
+	if.app-id = 'com.microsoft.teams2'
+	run = ['move-node-to-workspace Coms']
+
+
