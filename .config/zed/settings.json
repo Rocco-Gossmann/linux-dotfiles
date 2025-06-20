@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"debugger": {
-	  "dock": "bottom"
+	  "dock": "left"
 	 },
  "base_keymap": "None",
  "telemetry": {
@@ -50,7 +50,7 @@
 	"theme": {
 		"mode": "system",
 		"light": "Rosé Pine Dawn",
-		"dark": "Ayu Mirage"
+		"dark": "Rosé Pine"
 	},
 
 	"remove_trailing_whitespace_on_save": true,

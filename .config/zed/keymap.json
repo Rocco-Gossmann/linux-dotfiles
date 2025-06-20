@@ -79,9 +79,6 @@
 			//Code Actions (c)
 			"space c c": ["workspace::SendKeystrokes", "m z g c escape ` z"],
 
-			//Debugger (d)
-			"space d e": "editor::DebuggerEvaluateSelectedText",
-
 			"ctrl-r": [
 				"workspace::SendKeystrokes",
 				"cmd-f cmd-shift-p search: toggle selection enter cmd-shift-p search: focus search enter"
