@@ -44,18 +44,19 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 
+# find monitors via `aerospace list-monitors --json`
 [workspace-to-monitor-force-assignment]
 	Main1 = 'main'
 	Main2 = 'main'
 	Main3 = 'main'
 	Term = 'main'
 	Coms = 'main'
-	Plans = 'secondary'
 
-	Side1 = [ 3, 'built-in', 'secondary' ]
-	Side2 = [ 3, 'built-in', 'secondary' ]
-	Side3 = [ 3, 'built-in', 'secondary' ]
+	Plans = [ 'Yam Display', 'build-in', 'secondary']
 
+	Side1 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
+	Side2 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
+	Side3 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -144,6 +145,11 @@ automatically-unhide-macos-hidden-apps = true
 	alt-t = 'layout tiles horizontal vertical'
 	alt-s = 'layout accordion horizontal vertical'
 
+	alt-up = ['workspace prev']
+	alt-down = ['workspace next' ]
+	alt-left = ['focus-monitor prev' ]
+	alt-right = ['focus-monitor next']
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = ['move-node-to-workspace Main1', 'workspace Main1']
     alt-shift-2 = ['move-node-to-workspace Main2', 'workspace Main2']
@@ -180,6 +186,12 @@ automatically-unhide-macos-hidden-apps = true
     k = 'move up'
     l = 'move right'
 
+
+	up = ['move-node-to-workspace prev',  'workspace prev']
+	down = ['move-node-to-workspace next',  'workspace next']
+	left = ['move-node-to-monitor prev',  'focus-monitor prev']
+	right = ['move-node-to-monitor next',  'focus-monitor next']
+
     shift-h = ['join-with left']
     shift-j = ['join-with down']
     shift-k = ['join-with up']
@@ -200,13 +212,17 @@ automatically-unhide-macos-hidden-apps = true
 #===============================================================================
 # BM: Floating Apps
 #-------------------------------------------------------------------------------
+# find app-name via `aerospace list-apps --json`
 [[on-window-detected]]
-	# find app-name via `aerospace list-apps --json`
     if.app-name-regex-substring = 'java'
     run = [ 'layout floating' ]
 
 [[on-window-detected]]
 	if.app-id = 'com.apple.QuickTimePlayerX'
+    run = [ 'layout floating' ]
+
+[[on-window-detected]]
+	if.app-id = 'com.itaysoft.CameraController'
     run = [ 'layout floating' ]
 
 # BM: Set Workspaces
