@@ -27,26 +27,29 @@ alias dir='ls -Galh'
 
 alias l="f(){ cd \`ls -1A -d \$@*/|fzf\`; unset -f f; }; f"
 
-alias lg=lazygit
-alias ldoc=lazydocker
-alias doc="docker compose"
 
+alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
 alias tailf="tf(){ tail -f \$@ | sed -e \"s#\\\\\\\\n#\\n#g\"; unset -f tf }; tf"
 alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"
-alias vim="nvim"
-alias vi="nvim"
-alias tm="tmux-workspace \"main\""
-alias no="note"
-alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
-alias pm="passmenu"
-alias db="nvim -c DBUI"
-alias mr="make run"
-
-alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
 
 alias du="du -chd1 2>/dev/null | sort -h -k 1,1"
+
+alias lg=lazygit
+alias ldoc=lazydocker
+alias vim=nvim
+alias vi=nvim
+alias pm=passmenu
+alias tm="tmux-workspace \"main\""
+alias db="nvim -c DBUI"
+alias mr="make run"
+alias doc="docker compose"
+
+alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
+alias fix-homebrew="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
+alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
+
 
 # extend $PATH
 #==============================================================================
