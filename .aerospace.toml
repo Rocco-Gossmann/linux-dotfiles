@@ -129,8 +129,8 @@ automatically-unhide-macos-hidden-apps = true
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 	# need to find a better tool for this, as Opt+Min (Opt + ß on QWERTZ is also backlsash )
-    alt-slash              = 'resize smart -50' # slash = minus on qwertz
-    alt-rightSquareBracket = 'resize smart +50' # ] = plus on qwertz
+    alt-shift-slash              = 'resize smart -50' # slash = minus on qwertz
+    alt-shift-rightSquareBracket = 'resize smart +50' # ] = plus on qwertz
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-1 = 'workspace Main1'
