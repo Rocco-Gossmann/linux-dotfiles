@@ -10,7 +10,7 @@ setopt notify
 unsetopt beep
 bindkey -v
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -88,5 +88,10 @@ compinit -u
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   # [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/multiverse-neon.omp.json)
   [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.toml)
+fi
+
+if [ "$ZSH_AUTOLAUNCH" != "" ]; then
+	$ZSH_AUTOLAUNCH
+	exit;
 fi
 
