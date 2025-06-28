@@ -1202,6 +1202,14 @@
                         "is_pointing_device": true
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "device_address": "c0-02-75-01-b6-23",
+                        "is_keyboard": true,
+                        "is_pointing_device": true
+                    },
+                    "ignore": false
                 }
             ],
             "fn_function_keys": [
