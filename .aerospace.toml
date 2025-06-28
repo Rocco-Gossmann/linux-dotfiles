@@ -225,6 +225,11 @@ automatically-unhide-macos-hidden-apps = true
 	if.app-id = 'com.itaysoft.CameraController'
     run = [ 'layout floating' ]
 
+[[on-window-detected]]
+	if.app-name-regex-substring = 'Zen'
+	if.window-title-regex-substring = 'Picture-in-Picture'
+    run = [ 'layout floating' ]
+
 # BM: Set Workspaces
 #-------------------------------------------------------------------------------
 [[on-window-detected]]
