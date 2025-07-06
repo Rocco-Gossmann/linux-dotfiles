@@ -19,18 +19,18 @@ accordion-padding = 30
 # BM: Assigned Monitors find monitors via `aerospace list-monitors`
 #==============================================================================
 [workspace-to-monitor-force-assignment]
-	Main1 = 'main'
-	Main2 = 'main'
-	Main3 = 'main'
-	Term = 'main'
-	Coms = 'main'
+	Main1    = ['main']
+	Main2    = ['main']
+	Main3    = ['main']
+	Term     = ['main']
+	Coms     = ['main']
+	Browsers = ['main']
 
-	Plans = [ 'Yam Display', 'build-in', 'secondary']
+	Side1    = [ 'secondary' ]
+	Side2    = [ 'secondary' ]
+	Side3    = [ 'secondary' ]
 
-	Side1 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-	Side2 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-	Side3 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-
+	Plans    = [ 'Sidecar Display (AirPlay)', 'Yam Display', 'build-in', 'secondary' ]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -211,6 +211,17 @@ accordion-padding = 30
 	if.app-id = 'com.microsoft.teams2'
 	run = ['move-node-to-workspace Coms']
 
+[[on-window-detected]]
+	if.app-id = 'app.zen-browser.zen'
+	run = ['move-node-to-workspace Browsers']
+
+[[on-window-detected]]
+	if.app-id = 'org.chromium.Chromium'
+	run = ['move-node-to-workspace Browsers']
+
+[[on-window-detected]]
+	if.app-id = 'com.brave.Browser'
+	run = ['move-node-to-workspace Browsers']
 
 
 
