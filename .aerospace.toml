@@ -1,83 +1,36 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
-# You can use it to add commands that run after login to macOS user session.
-# 'start-at-login' needs to be 'true' for 'after-login-command' to work
+# BM: Initial Settings
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
+# =============================================================================
 after-login-command = []
-
-# You can use it to add commands that run after AeroSpace startup.
-# 'after-startup-command' is run after 'after-login-command'
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
-
-# Start AeroSpace at login
 start-at-login = true
-
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
-
-# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-# The 'accordion-padding' specifies the size of accordion padding
-# You can set 0 to disable the padding feature
-accordion-padding = 30
-
-# Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
-
-# Possible values: horizontal|vertical|auto
-# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-#               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'auto'
-
-# Mouse follows focus when focused monitor changes
-# Drop it from your config, if you don't like this behavior
-# See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-# See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-# Fallback value (if you omit the key): on-focused-monitor-changed = []
+default-root-container-layout = 'tiles'     # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
+default-root-container-orientation = 'auto' # Possible values: horizontal|vertical|auto
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-
-# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
-# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
-# Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = true
 
+accordion-padding = 30
 
-# find monitors via `aerospace list-monitors --json`
+# BM: Assigned Monitors find monitors via `aerospace list-monitors`
+#==============================================================================
 [workspace-to-monitor-force-assignment]
-	Main1 = 'main'
-	Main2 = 'main'
-	Main3 = 'main'
-	Term = 'main'
-	Coms = 'main'
+	Main1    = ['main']
+	Main2    = ['main']
+	Main3    = ['main']
+	Term     = ['main']
+	Coms     = ['main']
+	Browsers = ['main']
 
-	Plans = [ 'Yam Display', 'build-in', 'secondary']
+	Side1    = [ 'secondary' ]
+	Side2    = [ 'secondary' ]
+	Side3    = [ 'secondary' ]
 
-	Side1 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-	Side2 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-	Side3 = [ "Z1-5", 'Yam Display', 3, 'built-in', 'secondary' ]
-
-# Possible values: (qwerty|dvorak|colemak)
-# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-[key-mapping]
-    preset = 'qwerty'
-
-# Gaps between windows (inner-*) and between monitor edges (outer-*).
-# Possible values:
-# - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
-#                 In this example, 24 is a default value when there is no match.
-#                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
-#                 See:
-#                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
-[gaps]
-    inner.horizontal = 0
-    inner.vertical =   0
-    outer.left =       0
-    outer.bottom =     0
-    outer.top =        0
-    outer.right =      0
+	Plans    = [ 'Sidecar Display (AirPlay)', 'Yam Display', 'build-in', 'secondary' ]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -86,6 +39,12 @@ automatically-unhide-macos-hidden-apps = true
 
 # BM: Normal Mode mode
 #===============================================================================
+
+# Possible values: (qwerty|dvorak|colemak)
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+    preset = 'qwerty'
+
 [mode.main.binding]
 
     # All possible keys:
@@ -128,27 +87,32 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-l = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-	# need to find a better tool for this, as Opt+Min (Opt + ß on QWERTZ is also backlsash )
     alt-shift-slash              = 'resize smart -50' # slash = minus on qwertz
     alt-shift-rightSquareBracket = 'resize smart +50' # ] = plus on qwertz
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace Main1'
-    alt-2 = 'workspace Main2'
-    alt-3 = 'workspace Main3'
-
-    alt-4 = 'workspace Side1'
-    alt-5 = 'workspace Side2'
-    alt-6 = 'workspace Side3'
+    # alt-1 = 'workspace Main1'
+    # alt-2 = 'workspace Main2'
+    # alt-3 = 'workspace Main3'
+    #
+    # alt-4 = 'workspace Side1'
+    # alt-5 = 'workspace Side2'
+    # alt-6 = 'workspace Side3'
 
     alt-f = 'layout floating tiling'				# Toggle between floating and tiling layout
 	alt-t = 'layout tiles horizontal vertical'
 	alt-s = 'layout accordion horizontal vertical'
 
-	alt-up = ['workspace prev']
-	alt-down = ['workspace next' ]
-	alt-left = ['focus-monitor prev' ]
-	alt-right = ['focus-monitor next']
+	alt-ctrl-k = ['workspace prev']
+	alt-ctrl-j = ['workspace next' ]
+	alt-ctrl-h = ['focus-monitor prev' ]
+	alt-ctrl-l = ['focus-monitor next']
+
+    alt-ctrl-shift-h = ['join-with left']
+    alt-ctrl-shift-j = ['join-with down']
+    alt-ctrl-shift-k = ['join-with up']
+    alt-ctrl-shift-l = ['join-with right']
+
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = ['move-node-to-workspace Main1', 'workspace Main1']
@@ -186,16 +150,11 @@ automatically-unhide-macos-hidden-apps = true
     k = 'move up'
     l = 'move right'
 
-
 	up = ['move-node-to-workspace prev',  'workspace prev']
 	down = ['move-node-to-workspace next',  'workspace next']
 	left = ['move-node-to-monitor prev',  'focus-monitor prev']
 	right = ['move-node-to-monitor next',  'focus-monitor next']
 
-    shift-h = ['join-with left']
-    shift-j = ['join-with down']
-    shift-k = ['join-with up']
-    shift-l = ['join-with right']
 
 	n = ['move-node-to-workspace next',  'workspace next']
 	p = ['move-node-to-workspace prev',  'workspace prev']
@@ -225,7 +184,12 @@ automatically-unhide-macos-hidden-apps = true
 	if.app-id = 'com.itaysoft.CameraController'
     run = [ 'layout floating' ]
 
-# BM: Set Workspaces
+[[on-window-detected]]
+	if.app-name-regex-substring = 'Zen'
+	if.window-title-regex-substring = 'Picture-in-Picture'
+    run = [ 'layout floating' ]
+
+# BM: Window workspaces
 #-------------------------------------------------------------------------------
 [[on-window-detected]]
 	if.app-id = 'com.mitchellh.ghostty'
@@ -247,4 +211,34 @@ automatically-unhide-macos-hidden-apps = true
 	if.app-id = 'com.microsoft.teams2'
 	run = ['move-node-to-workspace Coms']
 
+[[on-window-detected]]
+	if.app-id = 'app.zen-browser.zen'
+	run = ['move-node-to-workspace Browsers']
 
+[[on-window-detected]]
+	if.app-id = 'org.chromium.Chromium'
+	run = ['move-node-to-workspace Browsers']
+
+[[on-window-detected]]
+	if.app-id = 'com.brave.Browser'
+	run = ['move-node-to-workspace Browsers']
+
+
+
+# Stuff you should never have to touch
+#==============================================================================
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+# Possible values:
+# - Constant:     gaps.outer.top = 8
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+#                 In this example, 24 is a default value when there is no match.
+#                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
+#                 See:
+#                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[gaps]
+    inner.horizontal = 0
+    inner.vertical =   0
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
