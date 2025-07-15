@@ -188,6 +188,11 @@ accordion-padding = 30
 	if.window-title-regex-substring = 'Picture-in-Picture'
     run = [ 'layout floating' ]
 
+[[on-window-detected]]
+	if.app-name-regex-substring = 'Slack'
+	if.window-title-regex-substring = 'Huddle'
+	run = [ 'layout floating', 'move-node-to-workspace Coms' ]
+
 # BM: Window workspaces
 #-------------------------------------------------------------------------------
 [[on-window-detected]]
