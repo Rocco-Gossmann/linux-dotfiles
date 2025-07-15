@@ -26,11 +26,10 @@ accordion-padding = 30
 	Coms     = ['main']
 	Browsers = ['main']
 
-	Side1    = [ 'secondary' ]
-	Side2    = [ 'secondary' ]
-	Side3    = [ 'secondary' ]
-
-	Plans    = [ 'Sidecar Display (AirPlay)', 'Yam Display', 'build-in', 'secondary' ]
+	Side1    = [ 'Yam Display', 'secondary' ]
+	Side2    = [ 'Yam Display', 'secondary' ]
+	Side3    = [ 'Yam Display', 'secondary' ]
+	Plans    = [ 'Yam Display', 'secondary' ]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
