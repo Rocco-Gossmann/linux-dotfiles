@@ -9,407 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "Mouse Backbutton in safari",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.apple.Safari.*"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": { "optional": ["any"] },
-                                    "pointing_button": "button4"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.apple.Safari.*"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "modifiers": { "optional": ["any"] },
-                                    "pointing_button": "button5"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Ghostty+TMUX: CMD + H/L => PageDown/PageUP",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "page_down",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "page_up",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "CMD M => PageUp",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "page_up",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Feker Alice80 => F13 to F24",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "help",
-                                    "modifiers": {}
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": ["left_option", "left_command", "left_shift", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f13",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "7",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f14",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "8",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f15",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "9",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f16",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f17",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f18",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f19",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "grave_accent_and_tilde",
-                                    "modifiers": ["right_option"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f21",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["right_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f22",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "slash",
-                                        "modifiers": []
-                                    },
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f23",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": ["left_shift"]
-                                    },
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "feker_gamemode_enable",
-                                        "type": "variable_if",
-                                        "value": true
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f24",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "set_variable": {
-                                            "name": "feker_gamemode_enable",
-                                            "value": false
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f24",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "set_variable": {
-                                            "name": "feker_gamemode_enable",
-                                            "value": true
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "feker_gamemode_enable",
-                                        "type": "variable_if",
-                                        "value": true
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "spacebar" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Java: Mouse4 => 2f - macro",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "file_paths": [".*java_versions/zulu17\\.50\\.19-ca-jre17\\.0\\.11-macosx_aarch64/zulu-17\\.jre/Contents/Home/bin/java$"],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": { "pointing_button": "button4" },
-                                "to": [{ "key_code": "2" }],
-                                "to_after_key_up": [{ "key_code": "f" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps => FN/Esc",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps => Shift/Esc",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps => AltGr/Esc",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_option",
-                                        "modifiers": ["any"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Caps => Hyper/Esc",
                         "manipulators": [
                             {
@@ -737,6 +336,408 @@
                                     "key_code": "comma",
                                     "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
                                 },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse Backbutton in safari",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.Safari.*"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "semicolon",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.Safari.*"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ghostty+TMUX: CMD + H/L => PageDown/PageUP",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_down",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CMD M => PageUp",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "page_up",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Feker Alice80 => F13 to F24",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "help",
+                                    "modifiers": {}
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": ["left_option", "left_command", "left_shift", "left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f13",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f14",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f15",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f16",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f17",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "grave_accent_and_tilde" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f18",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f19",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": ["right_option"]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f21",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["right_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f22",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": []
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f23",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "feker_gamemode_enable",
+                                        "type": "variable_if",
+                                        "value": true
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f24",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "set_variable": {
+                                            "name": "feker_gamemode_enable",
+                                            "value": false
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f24",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "set_variable": {
+                                            "name": "feker_gamemode_enable",
+                                            "value": true
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "feker_gamemode_enable",
+                                        "type": "variable_if",
+                                        "value": true
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "spacebar" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Java: Mouse4 => 2f - macro",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": [".*java_versions/zulu17\\.50\\.19-ca-jre17\\.0\\.11-macosx_aarch64/zulu-17\\.jre/Contents/Home/bin/java$"],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": { "pointing_button": "button4" },
+                                "to": [{ "key_code": "2" }],
+                                "to_after_key_up": [{ "key_code": "f" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps => FN/Esc",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps => Shift/Esc",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps => AltGr/Esc",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_option",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -1069,7 +1070,6 @@
                         "product_id": 26145,
                         "vendor_id": 12994
                     },
-                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 },
                 {

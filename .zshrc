@@ -46,7 +46,7 @@ alias db="nvim -c DBUI"
 alias mr="make run"
 alias doc="docker compose"
 
-alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
+alias brew-fix-rights="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh /opt/homebrew/share/man"
 alias fix-homebrew="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh"
 alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
 
