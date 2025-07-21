@@ -1,4 +1,5 @@
-theme = dark:"rose-pine",light:"rose-pine-dawn"
+theme = dark:"Monokai Vivid",light:"rose-pine-dawn"
+
 font-family="JetBrainsMono Nerd Font Mono"
 font-size=15
 macos-option-as-alt="left"
@@ -7,9 +8,6 @@ window-padding-x=4
 window-padding-y=4
 background-opacity=0.85
 background-blur=true
-
-background = #000000
-minimum-contrast=0
 
 # Super + HJKL => change focused split
 keybind = super+h=goto_split:left
