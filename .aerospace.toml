@@ -5,7 +5,11 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 # =============================================================================
 after-login-command = []
-after-startup-command = []
+after-startup-command = [
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
 start-at-login = true
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -36,14 +40,13 @@ accordion-padding = 30
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 
-# BM: Normal Mode mode
-#===============================================================================
-
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
     preset = 'qwerty'
 
+# BM: Normal Mode
+#===============================================================================
 [mode.main.binding]
 
     # All possible keys:
