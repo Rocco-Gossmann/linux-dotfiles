@@ -203,7 +203,7 @@ accordion-padding = 30
 
 [[on-window-detected]]
 	if.app-id = 'net.kovidgoyal.kitty'
-t	run = [ 'layout floating' ]
+	run = [ 'layout floating' ]
 
 [[on-window-detected]]
 	if.app-name-regex-substring = 'Slack'
