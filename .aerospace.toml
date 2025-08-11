@@ -202,6 +202,10 @@ accordion-padding = 30
     run = [ 'layout floating' ]
 
 [[on-window-detected]]
+	if.app-id = 'net.kovidgoyal.kitty'
+t	run = [ 'layout floating' ]
+
+[[on-window-detected]]
 	if.app-name-regex-substring = 'Slack'
 	if.window-title-regex-substring = 'Huddle'
 	run = [ 'layout floating', 'move-node-to-workspace Coms' ]
