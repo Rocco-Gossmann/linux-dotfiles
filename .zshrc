@@ -76,6 +76,8 @@ alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh) && eval "$(zoxide init --cmd cd zsh)"
 
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 # Tweaks
 #==============================================================================
 # The following lines were added by compinstall
