@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
-cmd="find \"$prefix\" -type f -name '*.gpg' | sed -e \"s#${prefix}/##g\" | sed -e \"s/\\.gpg\$//g\" | fzf"
+
+which choice 1> /dev/null && export fuzzy="choice" || export fuzzy="fzf"
+
+cmd="find \"$prefix\" -type f -name '*.gpg' | sed -e \"s#${prefix}/##g\" | sed -e \"s/\\.gpg\$//g\" | $fuzzy"
 password_file=`eval $cmd`
 pass show -c $password_file;

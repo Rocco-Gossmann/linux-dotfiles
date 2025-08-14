@@ -15,6 +15,7 @@
 
 export PATH=$PATH:$HOME/.local/bin
 export ZSH_AUTOLAUNCH="passmenu";
+
 kitty -1 # --start-as=maximized
 
 exit;
