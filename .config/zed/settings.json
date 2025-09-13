@@ -8,15 +8,14 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"debugger": {
-	  "dock": "left"
-	 },
- "base_keymap": "None",
- "telemetry": {
-  "metrics": false,
-  "diagnostics": false
- },
- "agent": {
-		"version": "2",
+		"dock": "left"
+	},
+	"base_keymap": "VSCode",
+	"telemetry": {
+		"metrics": false,
+		"diagnostics": true
+	},
+	"agent": {
 		"button": false
 	},
 	"collaboration_panel": {
@@ -49,8 +48,8 @@
 
 	"theme": {
 		"mode": "system",
-		"light": "Rosé Pine Dawn",
-		"dark": "Rosé Pine"
+		"light": "Ayu Light",
+		"dark": "Ayu Dark"
 	},
 
 	"remove_trailing_whitespace_on_save": true,
