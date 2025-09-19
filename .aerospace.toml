@@ -206,7 +206,7 @@ accordion-padding = 30
 
 [[on-window-detected]]
 	if.app-id = 'net.kovidgoyal.kitty'
-	run = [ 'layout floating', 'move-node-to-workspace Term' ]
+	run = [ 'move-node-to-workspace Term' ]
 
 [[on-window-detected]]
 	if.app-name-regex-substring = 'Slack'
