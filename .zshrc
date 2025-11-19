@@ -64,7 +64,7 @@ alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificati
 
 # source a bunch of stuff for auto completion
 #==============================================================================
-[ "$HOMEBREW_PREFIX" = "" ] && export HOMEBREW_PREFIX=$(brew --prefix)
+[ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
 [ -f $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
