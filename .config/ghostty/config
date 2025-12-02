@@ -1,5 +1,5 @@
 # theme = dark:"Monokai Vivid",light:"rose-pine-dawn"
-theme = "Rose Pine DarkBG"
+theme = dark: "Rose Pine DarkBG",light:"Rose Pine Dawn"
 
 font-family="JetBrainsMono Nerd Font Mono"
 font-size=15
@@ -7,7 +7,7 @@ macos-option-as-alt="left"
 macos-titlebar-style="hidden"
 window-padding-x=4
 window-padding-y=4
-background-opacity=0.85
+background-opacity=0.90
 background-blur=true
 
 # Super + HJKL => change focused split
