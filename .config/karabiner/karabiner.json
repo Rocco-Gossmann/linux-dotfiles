@@ -9,6 +9,79 @@
                 },
                 "rules": [
                     {
+                        "description": "RightShift => LeaderKey",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "leader-key",
+                                            "value": "f13"
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    { "key_code": "escape" },
+                                    {
+                                        "set_variable": {
+                                            "name": "leader-key",
+                                            "value": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+									{ "shell_command": "open /Applications/Ghostty.app" },
+                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+									{ "shell_command": "open /Applications/Zen.app" },
+                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+									{ "shell_command": "open /Applications/Slack.app" },
+                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                ],
+                                "type": "basic"
+                            }
+
+                        ]
+                    },
+                    {
                         "description": "Caps => Hyper/Esc",
                         "manipulators": [
                             {
