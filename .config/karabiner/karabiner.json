@@ -43,42 +43,74 @@
                                 "type": "basic"
                             },
                             {
-								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "conditions": [
+                                    {
+                                        "name": "leader-key",
+                                        "type": "variable_if",
+                                        "value": "f13"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
-									{ "shell_command": "open /Applications/Ghostty.app" },
-                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                    { "shell_command": "open /Applications/Ghostty.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "leader-key",
+                                            "value": ""
+                                        }
+                                    }
                                 ],
                                 "type": "basic"
                             },
                             {
-								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "conditions": [
+                                    {
+                                        "name": "leader-key",
+                                        "type": "variable_if",
+                                        "value": "f13"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
-									{ "shell_command": "open /Applications/Zen.app" },
-                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                    { "shell_command": "open /Applications/Zen.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "leader-key",
+                                            "value": ""
+                                        }
+                                    }
                                 ],
                                 "type": "basic"
                             },
                             {
-								"conditions": [ { "type": "variable_if", "name": "leader-key", "value": "f13" } ],
+                                "conditions": [
+                                    {
+                                        "name": "leader-key",
+                                        "type": "variable_if",
+                                        "value": "f13"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
-									{ "shell_command": "open /Applications/Slack.app" },
-                                    { "set_variable": { "name": "leader-key", "value": "" } }
+                                    { "shell_command": "open /Applications/Slack.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "leader-key",
+                                            "value": ""
+                                        }
+                                    }
                                 ],
                                 "type": "basic"
                             }
-
                         ]
                     },
                     {
@@ -1367,6 +1399,23 @@
                         "vendor_id": 13357
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 58501,
+                        "vendor_id": 13357
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
+                            "from": { "key_code": "non_us_backslash" },
+                            "to": [{ "key_code": "non_us_backslash" }]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
