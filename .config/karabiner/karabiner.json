@@ -1173,6 +1173,7 @@
                         "product_id": 33018,
                         "vendor_id": 1149
                     },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 },
                 {
