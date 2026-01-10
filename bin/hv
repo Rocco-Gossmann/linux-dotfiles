@@ -1,0 +1,29 @@
+#!/bin/bash
+
+
+choice=$(cat ~/.zshhistory | fzf)
+
+if [ -n "$choice" ]; then
+
+	temp_file=$(mktemp)
+	echo "$choice" > "$temp_file"
+
+	# Open the file in vi/vim (you can change 'vi' to 'vim' if preferred)
+	echo "Opening in vi. Press :wq to save and exit, or :q! to discard changes."
+	vi "$temp_file"
+
+	choice=`cat "$temp_file"`
+	rm "$temp_file"
+
+	if [ -n "$choice" ]; then
+
+		echo "calling: $choice"
+
+		escaped=$(printf '%s' "$choice" | sed 's/"/\\"/g')
+		bash -c "$escaped"
+
+	fi
+
+else
+	exit 1
+fi
