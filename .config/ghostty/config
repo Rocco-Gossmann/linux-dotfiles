@@ -1,6 +1,8 @@
 # theme = dark:"Monokai Vivid",light:"rose-pine-dawn"
 theme = dark: "Rose Pine DarkBG",light:"Rose Pine Dawn"
 
+shell-integration = zsh
+
 font-family="JetBrainsMono Nerd Font Mono"
 font-size=15
 macos-option-as-alt="left"
