@@ -8,7 +8,7 @@ if [ -n "$choice" ]; then
 
 	escaped=$(printf '%s' "$choice" | sed 's/"/\\"/g')
 
-	bash -c "$escaped"
+	zsh -i -c "$escaped"
 
 
 else

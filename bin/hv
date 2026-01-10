@@ -20,7 +20,7 @@ if [ -n "$choice" ]; then
 		echo "calling: $choice"
 
 		escaped=$(printf '%s' "$choice" | sed 's/"/\\"/g')
-		bash -c "$escaped"
+		zsh -i -c "$escaped"
 
 	fi
 
