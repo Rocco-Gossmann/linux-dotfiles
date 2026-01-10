@@ -1,0 +1,16 @@
+#!/bin/bash
+
+choice=$(cat ~/.zshhistory | fzf)
+
+if [ -n "$choice" ]; then
+
+	echo "calling: $choice"
+
+	escaped=$(printf '%s' "$choice" | sed 's/"/\\"/g')
+
+	bash -c "$escaped"
+
+
+else
+	exit 1
+fi
