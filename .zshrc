@@ -42,6 +42,7 @@ alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"
 
 alias du="du -chd1 2>/dev/null | sort -h -k 1,1"
 
+alias oc="RIPGREP_CONFIG_PATH=~/.rgrc opencode"
 alias lg=lazygit
 alias ldoc=lazydocker
 alias vim=nvim
