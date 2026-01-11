@@ -11,8 +11,9 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
-    template = '{{ .HostName }} '
+    template = ' {{ .HostName }} '
     foreground = '#FFB54C'
+    background = '#29315A'
     type = 'path'
     style = 'diamond'
 
