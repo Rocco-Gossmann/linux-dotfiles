@@ -11,6 +11,15 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
+    template = '{{ .HostName }} '
+    foreground = '#FFB54C'
+    type = 'path'
+    style = 'diamond'
+
+    [blocks.segments.properties]
+      style = 'mixed'
+
+  [[blocks.segments]]
     leading_diamond = ''
     trailing_diamond = ''
     template = ' {{ .Path }}'
