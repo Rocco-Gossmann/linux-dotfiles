@@ -1,0 +1,55 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"provider": {
+		"ollama": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Ollama (local)",
+			"options": {
+			    "baseURL": "http://localhost:11434/v1"
+			},
+			"models": {}
+		},
+		"homeai": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Ollama (Home AI)",
+			"options": {
+				"baseURL": "http://RGROGX13:11434/v1"
+			},
+			"models": {
+				"gemma3:4b": {
+					"name": "Gemma3 4B"
+				},
+				"qwen3:8b": {
+					"name": "Qwen3 8B"
+				},
+				"ministral-3:3b": {
+					"name": "Ministral 3 3B"
+				},
+				"ministral-3:8b": {
+					"name": "Ministral 3 8B"
+				},
+				"ministral-3:14b": {
+					"name": "Ministral 3 14B"
+				},
+				"orieg/gemma3-tools:12b": {
+					"name": "Gemma-Tools 12B"
+				},
+				"llama3.2:3b": {
+					"name": "Llama3.2 3B"
+				},
+				"cogito:8b": {
+					"name": "Cogito 8B"
+				}
+			}
+
+		}
+	},
+
+	"keybinds": {
+		"input_newline": "return",
+		"input_submit": "alt+return"
+	},
+
+	"model": "homeai/qwen3:8b"
+
+}
