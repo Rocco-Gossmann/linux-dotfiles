@@ -84,10 +84,12 @@ alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificati
 
 # activate autocompletion for apps, that don't activate by default
 #==============================================================================
-[ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
+[ "`hascmd opencode`" = "yep" ] && source <(opencode completion zsh)
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
+[ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh) && eval "$(zoxide init --cmd cd zsh)"
+
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
