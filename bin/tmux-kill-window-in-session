@@ -1,0 +1,17 @@
+#!/bin/bash
+
+window=`tmux list-windows | grep "$1"`
+
+# NOTE: we want to kill all windows, that match the name, not just the first found.
+while [[ -n "$window" ]]; do
+
+	windowid=$(echo $window | grep -oE '^[0-9]+')
+
+	echo "closing: $windowid";
+	tmux kill-window -t $windowid
+
+	window=`tmux list-windows | grep "$1"`
+
+done
+
+exit
