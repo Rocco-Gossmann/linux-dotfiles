@@ -43,6 +43,7 @@ alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"
 alias du="du -chd1 2>/dev/null | sort -h -k 1,1"
 
 alias oc="RIPGREP_CONFIG_PATH=~/.rgrc opencode"
+alias qwen="llama-cli -m /opt/share/LlamaCppModels/Qwen3-4B-Q4_K_M.gguf"
 alias lg=lazygit
 alias ldoc=lazydocker
 alias vim=nvim
@@ -53,7 +54,7 @@ alias db="nvim -c DBUI"
 alias mr="make run"
 alias doc="docker compose"
 
-# inject envwars
+# inject envvars
 #==============================================================================
 alias orig_ssh=`which ssh`
 alias ssh="TERM=xterm-256color orig_ssh"
