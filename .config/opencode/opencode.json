@@ -13,6 +13,20 @@
 				}
 			}
 		},
+
+		"homellama": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Home Llama CPP",
+			"options": {
+				"baseURL": "http://RGROGX13:8080/v1"
+			},
+			"models": {
+				"HomeLlama.Cpp": {
+					"name": "Llama.cpp"
+				}
+			}
+		},
+
 		"homeai": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (Home AI)",
@@ -23,20 +37,17 @@
 				"gemma3:4b": {
 					"name": "Gemma3 4B"
 				},
+				"qwen3:4b": {
+					"name": "Qwen3 4B",
+				},
 				"qwen3:8b": {
-					"name": "Qwen3 8B"
+					"name": "Qwen3 8B",
 				},
 				"ministral-3:3b": {
 					"name": "Ministral 3 3B"
 				},
 				"ministral-3:8b": {
 					"name": "Ministral 3 8B"
-				},
-				"ministral-3:14b": {
-					"name": "Ministral 3 14B"
-				},
-				"orieg/gemma3-tools:12b": {
-					"name": "Gemma-Tools 12B"
 				},
 				"llama3.2:3b": {
 					"name": "Llama3.2 3B"
