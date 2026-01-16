@@ -81,6 +81,6 @@
 		"input_submit": "alt+return"
 	},
 
-	"model": "homeai/qwen3:8b"
+	"model": "homeai/gwen3:1.7b"
 
 }
