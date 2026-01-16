@@ -37,6 +37,9 @@
 				"gemma3:4b": {
 					"name": "Gemma3 4B"
 				},
+				"qwen3:1.7b": {
+					"name": "Qwen3 1.7B",
+				},
 				"qwen3:4b": {
 					"name": "Qwen3 4B",
 				},
