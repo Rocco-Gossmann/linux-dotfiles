@@ -14,22 +14,29 @@
 			}
 		},
 
-		"homellama": {
+		"homeserver": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Home Llama CPP",
+			"name": "Ollama (HomeAI)",
 			"options": {
-				"baseURL": "http://RGROGX13:8080/v1"
+				"baseURL": "http://homeai:11434/v1"
 			},
 			"models": {
-				"HomeLlama.Cpp": {
-					"name": "Llama.cpp"
-				}
+
+				"qwen3:1.7b-q8_0": {
+					"name": "Qwen3 1.7B Q8"
+				},
+
+				"qwen3:8b": {
+					"name": "Qwen3 8B",
+				},
+
 			}
+
 		},
 
 		"homeai": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (Home AI)",
+			"name": "Ollama (ROGX13)",
 			"options": {
 				"baseURL": "http://RGROGX13:11434/v1"
 			},
@@ -37,14 +44,14 @@
 				"gemma3:4b": {
 					"name": "Gemma3 4B"
 				},
+				"qwen3:1.7b-q8_0": {
+					"name": "Qwen3 1.7B Q8"
+				},
 				"qwen3:1.7b": {
 					"name": "Qwen3 1.7B",
 				},
 				"qwen3:4b": {
 					"name": "Qwen3 4B",
-				},
-				"qwen3:8b": {
-					"name": "Qwen3 8B",
 				},
 				"ministral-3:3b": {
 					"name": "Ministral 3 3B"
@@ -59,19 +66,6 @@
 					"name": "Cogito 8B"
 				}
 			}
-		},
-
-		"llama.cpp": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "llama-server (local)",
-			"options": {
-				"baseURL": "http://127.0.0.1:8080/v1"
-			},
-			"models": {
-				"llama-server": {
-					"name": "Llama.cpp"
-				}
-			}
 		}
 
 	},
@@ -81,6 +75,6 @@
 		"input_submit": "alt+return"
 	},
 
-	"model": "homeai/gwen3:1.7b"
+	"model": "homeai/qwen3:1.7b-q8_0"
 
 }
