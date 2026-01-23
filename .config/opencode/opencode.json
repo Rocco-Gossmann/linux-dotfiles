@@ -30,6 +30,10 @@
 					"name": "Qwen3 8B",
 				},
 
+				"qwen3:4b": {
+					"name": "Qwen3 4B",
+				},
+
 			}
 
 		},
