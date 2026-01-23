@@ -90,6 +90,7 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh) && eval "$(zoxide init --cmd cd zsh)"
+[ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh)
 
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
