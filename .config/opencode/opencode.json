@@ -30,6 +30,10 @@
 					"name": "Qwen3 8B",
 				},
 
+				"qwen3:4b": {
+					"name": "Qwen3 4B",
+				},
+
 			}
 
 		},
@@ -75,6 +79,6 @@
 		"input_submit": "alt+return"
 	},
 
-	"model": "homeai/qwen3:1.7b-q8_0"
+	"model": "homeserver/qwen3:1.7b-q8_0"
 
 }
