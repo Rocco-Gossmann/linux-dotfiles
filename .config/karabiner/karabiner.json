@@ -9,6 +9,21 @@
                 },
                 "rules": [
                     {
+                        "description": "Right Ctrl => shortcat",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "power" },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "RightShift => LeaderKey",
                         "manipulators": [
                             {
@@ -1102,6 +1117,10 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "right_command" }]
+                        },
+                        {
+                            "from": { "key_code": "power" },
+                            "to": [{ "key_code": "right_control" }]
                         }
                     ]
                 },
