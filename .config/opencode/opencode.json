@@ -58,6 +58,6 @@
 		"input_submit": "alt+return"
 	},
 
-	"model": "homeai/qwen3:1.7b-q8_0"
+	"model": "homeserver/qwen3:1.7b-q8_0"
 
 }
