@@ -9,6 +9,24 @@
                 },
                 "rules": [
                     {
+                        "description": "KeyPad - Macros)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "keypad_enter",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": ["left_shift", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Right Ctrl => shortcat",
                         "manipulators": [
                             {
@@ -1137,16 +1155,16 @@
                             "to": [{ "key_code": "non_us_backslash" }]
                         },
                         {
+                            "from": { "key_code": "power" },
+                            "to": [{ "key_code": "right_control" }]
+                        },
+                        {
                             "from": { "key_code": "right_command" },
                             "to": [{ "key_code": "right_option" }]
                         },
                         {
                             "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_command" }]
-                        },
-                        {
-                            "from": { "key_code": "power" },
-                            "to": [{ "key_code": "right_control" }]
+                            "to": [{ "key_code": "power" }]
                         }
                     ]
                 },
@@ -1494,6 +1512,19 @@
                         {
                             "from": { "key_code": "non_us_backslash" },
                             "to": [{ "key_code": "non_us_backslash" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 28705,
+                        "vendor_id": 1256
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "delete_or_backspace" },
+                            "to": [{ "key_code": "power" }]
                         }
                     ]
                 }
