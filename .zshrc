@@ -1,4 +1,6 @@
 # ZSH_DISABLE_COMPFIX=
+autoload -Uz compinit
+compinit
 
 # WARN: this Init-file allows ZSH to automatically start any command by
 # by writing it into the ZSH_AUTOLAUNCH Env-Var.
