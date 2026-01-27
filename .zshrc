@@ -44,8 +44,7 @@ alias ta="[[ \"$TMUX\" = \"\" ]] && tmux -u attach || tmux choose-tree"
 
 alias du="du -chd1 2>/dev/null | sort -h -k 1,1"
 
-alias oc="RIPGREP_CONFIG_PATH=~/.rgrc opencode"
-alias qwen="llama-cli -m /opt/share/LlamaCppModels/Qwen3-4B-Q4_K_M.gguf"
+alias oc="RIPGREP_CONFIG_PATH=~/.rgrc opencode 2>/dev/null"
 alias lg=lazygit
 alias ldoc=lazydocker
 alias vim=nvim
@@ -78,7 +77,6 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 [ -e "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -e "$HOME/.deno/bin" ] && export PATH="$HOME/.deno/bin:$PATH"
-[ -e "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
 # source a bunch of zsh-extensions from Homebrew
@@ -90,12 +88,12 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 
 # activate autocompletion for apps, that don't activate by default
 #==============================================================================
-[ "`hascmd opencode`" = "yep" ] && source <(opencode completion zsh)
-[ "`hascmd docker`" = "yep" ] && source <(docker completion zsh)
-[ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh)
-[ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh)
-[ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh) && eval "$(zoxide init --cmd cd zsh)"
-[ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh)
+# [ "`hascmd opencode`" = "yep" ] && source <(opencode completion zsh 2>/dev/null)
+[ "`hascmd docker`" = "yep" ] && source <(docker completion zsh 2>/dev/null)
+[ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh 2>/dev/null)
+[ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh 2>/dev/null)
+[ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
+[ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh 2>/dev/null)
 
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
