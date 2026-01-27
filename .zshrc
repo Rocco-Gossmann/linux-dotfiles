@@ -56,6 +56,12 @@ alias mr="make run"
 alias doc="docker compose"
 alias nv="neovide"
 
+# Deno as Node
+#========================================================================
+alias npm='deno'
+alias npx='deno'
+alias node='deno'
+
 # inject envvars
 #==============================================================================
 alias orig_ssh=`which ssh`
