@@ -1,6 +1,8 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	"model": "homeai/glm-4.7-flash",
 	"provider": {
+
 		"ollama": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (local)",
@@ -14,35 +16,11 @@
 			}
 		},
 
-		"homeserver": {
+		"homeai": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (HomeAI)",
 			"options": {
 				"baseURL": "http://homeai:11434/v1"
-			},
-			"models": {
-
-				"qwen3:1.7b-q8_0": {
-					"name": "Qwen3 1.7B Q8"
-				},
-
-				"qwen3:8b": {
-					"name": "Qwen3 8B",
-				},
-
-				"qwen3:4b": {
-					"name": "Qwen3 4B",
-				},
-
-			}
-
-		},
-
-		"homeai": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (ROGX13)",
-			"options": {
-				"baseURL": "http://RGROGX13:11434/v1"
 			},
 			"models": {
 				"gemma3:4b": {
@@ -57,6 +35,9 @@
 				"qwen3:4b": {
 					"name": "Qwen3 4B",
 				},
+				"qwen3:8b": {
+					"name": "Qwen3 8B",
+				},
 				"ministral-3:3b": {
 					"name": "Ministral 3 3B"
 				},
@@ -68,6 +49,9 @@
 				},
 				"cogito:8b": {
 					"name": "Cogito 8B"
+				},
+				"glm-4.7-flash": {
+					"name": "GLM 4.7 Flash"
 				}
 			}
 		}
@@ -77,8 +61,7 @@
 	"keybinds": {
 		"input_newline": "return",
 		"input_submit": "alt+return"
-	},
+	}
 
-	"model": "homeserver/qwen3:1.7b-q8_0"
 
 }
