@@ -74,6 +74,8 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 [ -e "/opt/homebrew/sbin" ] && export PATH="/opt/homebrew/sbin:$PATH"
 [ -e "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+[ -e "$HOME/.deno/bin" ] && export PATH="$HOME/.deno/bin:$PATH"
+[ -e "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
 # source a bunch of zsh-extensions from Homebrew
