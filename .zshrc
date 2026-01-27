@@ -1,11 +1,15 @@
-# ZSH_DISABLE_COMPFIX=
-autoload -Uz compinit
-compinit
-
 # WARN: this Init-file allows ZSH to automatically start any command by
 # by writing it into the ZSH_AUTOLAUNCH Env-Var.
 # If you are concerend about this, go to the end of this file and remove
 # the last IF block
+
+# ZSH_DISABLE_COMPFIX=
+if [[ "$OSTYPE" != darwin* ]]; then
+
+	autoload -Uz compinit
+	compinit
+
+fi
 
 
 # ZSH / Terminal config
