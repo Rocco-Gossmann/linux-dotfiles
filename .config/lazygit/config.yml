@@ -416,7 +416,7 @@ update:
 #quitOnTopLevelReturn: false
 #
 ## Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
-#os:
+os:
 #  # Command for editing a file. Should contain "{{filename}}".
 #  edit: ""
 #
@@ -432,11 +432,12 @@ update:
 #  editInTerminal: false
 #
 #  # For opening a directory in an editor
-#  openDirInEditor: ""
+#  openDirInEditor: "vscode"
 #
 #  # A built-in preset that sets all of the above settings. Supported presets
 #  # are defined in the getPreset function in editor_presets.go.
-#  editPreset: ""
+#  editPreset: "nvim"
+  editPreset: "vscode"
 #
 #  # Command for opening a file, as if the file is double-clicked. Should
 #  # contain "{{filename}}", but doesn't support "{{line}}".
