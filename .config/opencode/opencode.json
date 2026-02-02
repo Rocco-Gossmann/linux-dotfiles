@@ -20,7 +20,7 @@
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (HomeAI)",
 			"options": {
-				"baseURL": "http://homeai:11434/v1"
+				"baseURL": "http://homenet:11434/v1"
 			},
 			"models": {
 				"gemma3:4b": {
