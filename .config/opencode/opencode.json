@@ -3,6 +3,19 @@
 	"model": "homeai/glm-4.7-flash",
 	"provider": {
 
+		"ollama": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Ollama (Local)",
+			"options": {
+				"baseURL": "http://localhost:11434/v1"
+			},
+			"models": {
+				"qwen3:1.7b-q8_0": {
+					"name": "Qwen3 1.7B",
+				}
+			}
+		},
+
 		"homeai": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (HomeAI)",
@@ -28,7 +41,6 @@
 				"bjoernb/qwen3-coder-30b:latest": {
 					"name": "Qwen3-Coder 30b"
 				},
-
 				"ministral-3:3b": {
 					"name": "Ministral 3 3B"
 				},
