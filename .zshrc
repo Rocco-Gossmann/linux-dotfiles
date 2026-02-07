@@ -106,10 +106,6 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 
-# Tweaks
-#==============================================================================
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-
 # The following lines were added by compinstall
 zstyle ':completion:*' format '%d'
 zstyle :compinstall filename "$HOME/.zshrc"
