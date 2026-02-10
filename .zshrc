@@ -72,6 +72,7 @@ alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
 alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificationDate -date \"2090-02-07 23:22:47 +0000\"; defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date \"2090-02-07 23:22:47 +0000\""
 alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client.plist"
+alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 
 # extend $PATH
 #==============================================================================
