@@ -9,8 +9,8 @@ macos-option-as-alt="left"
 macos-titlebar-style="hidden"
 window-padding-x=0
 window-padding-y=0
-background-opacity=0.90
-background-blur=true
+background-image="./ghosttybg-symlink"
+background-image-fit = cover
 clipboard-paste-protection=false
 
 # Super + HJKL => change focused split
