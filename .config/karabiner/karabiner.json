@@ -10,6 +10,7 @@
                 "rules": [
                     {
                         "description": "KeyPad - Macros)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -445,11 +446,6 @@
                                     "key_code": "quote",
                                     "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
                                 },
-                                "to": [{ "key_code": "delete_or_backspace" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": { "key_code": "right_shift" },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             }
