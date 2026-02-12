@@ -9,6 +9,25 @@
                 },
                 "rules": [
                     {
+                        "description": "Hyper N (now) => Print Date/Time Test String",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_command", "right_control"] }
+                                },
+                                "to": [
+                                    { "shell_command": "echo \"test - \"$(date +\"%Y-%m-%d %H:%M:%S\" | awk '{$1=$1;print}')\" - Rocco\" | pbcopy && sleep 1" },
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "KeyPad - Macros)",
                         "enabled": false,
                         "manipulators": [
