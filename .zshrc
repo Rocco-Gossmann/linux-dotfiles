@@ -100,7 +100,7 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh 2>/dev/null)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh 2>/dev/null)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
-[ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh 2>/dev/null)
+# [ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh 2>/dev/null)
 
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
