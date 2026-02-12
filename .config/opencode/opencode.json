@@ -55,6 +55,9 @@
 				},
 				"glm-4.7-flash": {
 					"name": "GLM 4.7 Flash"
+				},
+				"NeuroEquality/neuralquantum-coder:latest": {
+					"name": "Neuralquantum-Coder"
 				}
 			}
 		}
