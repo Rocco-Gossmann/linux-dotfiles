@@ -9,6 +9,34 @@
                 },
                 "rules": [
                     {
+                        "description": "NamelessTouchKeyboard-Touchpad-Gestures",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            { "vendor_id": 3141 },
+                                            { "product_id": 33025 }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "KeyPad - Macros)",
                         "enabled": false,
                         "manipulators": [
@@ -1489,6 +1517,36 @@
                             "to": [{ "key_code": "right_control" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 33025,
+                        "vendor_id": 3141
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "vk_none" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 33025,
+                        "vendor_id": 3141
+                    },
+                    "ignore": false,
+                    "pointing_motion_xy_multiplier": 2.0
                 }
             ],
             "fn_function_keys": [
