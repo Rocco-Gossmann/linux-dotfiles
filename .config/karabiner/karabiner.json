@@ -9,54 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "NamelessTouchKeyboard-Touchpad-Gestures",
-                        "enabled": true,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            { "vendor_id": 3141 },
-                                            { "product_id": 33025 }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "tab", "modifiers": { "mandatory": [ "left_shift", "left_command" ], "optional": [] } },
-                                "to": [ { "key_code": "tab", "modifiers": ["left_command"] } ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            { "vendor_id": 3141 },
-                                            { "product_id": 33025 }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "tab", "modifiers": { "mandatory": ["left_command"], "optional": [] } },
-                                "to": [ { "key_code": "tab", "modifiers": [ "left_shift", "left_command" ] } ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            { "vendor_id": 3141 },
-                                            { "product_id": 33025 }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "d", "modifiers": { "mandatory": ["left_option"], "optional": [] } },
-                                "to": [ { "key_code": "n", "modifiers": [ "left_shift", "left_control" ] } ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "KeyPad - Macros)",
                         "enabled": false,
                         "manipulators": [
@@ -92,7 +44,6 @@
                     },
                     {
                         "description": "RightShift => LeaderKey",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -197,31 +148,100 @@
                         ]
                     },
                     {
-                        "description": "Hyper N (now) => Print Date/Time Test String",
+                        "description": "Caps => Hyper/Esc",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "period",
-                                    "modifiers": { "mandatory": ["right_shift", "right_option", "right_command", "right_control"] }
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
-                                    { "shell_command": "echo \"test - \"$(date +\"%Y-%m-%d %H:%M:%S\" | awk '{$1=$1;print}')\" - Rocco\" | pbcopy && sleep 1" },
                                     {
-                                        "key_code": "v",
-                                        "modifiers": ["left_command"]
+                                        "key_code": "right_shift",
+                                        "modifiers": ["right_option", "right_command", "right_control"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper-arrows-off",
+                                            "value": false
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "RK R75 Macros",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "japanese_pc_nfer",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": []
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "from": { "key_code": "f19" },
+                                "from": {
+                                    "key_code": "japanese_eisuu",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [
-                                    { "shell_command": "echo \"test - \"$(date +\"%Y-%m-%d %H:%M:%S\" | awk '{$1=$1;print}')\" - Rocco\" | pbcopy && sleep 1" },
                                     {
-                                        "key_code": "v",
-                                        "modifiers": ["left_command"]
+                                        "key_code": "0",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable MacOS Diagnostics Shortcuts (that use HyperKeys)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["right_command", "right_control", "right_option", "right_shift"] }
+                                },
+                                "to": { "key_code": "f19" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "mandatory": ["right_command", "right_control", "right_option", "right_shift"] }
+                                },
+                                "to": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": ["right_option"]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "mandatory": ["right_command", "right_control", "right_option", "right_shift"] }
+                                },
+                                "to": { "key_code": "f17" },
                                 "type": "basic"
                             }
                         ]
@@ -478,8 +498,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "slash",
-                                        "modifiers": []
+                                        "key_code": "0",
+                                        "modifiers": ["left_shift"]
                                     },
                                     {
                                         "key_code": "grave_accent_and_tilde",
@@ -524,6 +544,17 @@
                                     "key_code": "quote",
                                     "modifiers": { "mandatory": ["right_shift", "right_option", "right_control", "right_command"] }
                                 },
+                                "to": [
+                                    { "key_code": "slash" },
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "right_shift" },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             }
@@ -898,7 +929,8 @@
                         ]
                     },
                     {
-                        "description": "Caps => Hyper/Esc",
+                        "description": "Caps => FN/Esc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -907,16 +939,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_shift",
-                                        "modifiers": ["right_option", "right_command", "right_control"]
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "hyper-arrows-off",
-                                            "value": false
-                                        }
+                                        "key_code": "fn",
+                                        "modifiers": ["any"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
@@ -925,25 +949,18 @@
                         ]
                     },
                     {
-                        "description": "Right Shift => Hyper/Esc",
+                        "description": "Caps => Shift/Esc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_shift",
+                                    "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_shift",
-                                        "modifiers": ["right_option", "right_command", "right_control"]
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "hyper-arrows-off",
-                                            "value": false
-                                        }
+                                        "key_code": "left_shift",
+                                        "modifiers": ["any"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
@@ -952,36 +969,21 @@
                         ]
                     },
                     {
-                        "description": "Disable MacOS Diagnostics Shortcuts (that use HyperKeys)",
+                        "description": "Caps => AltGr/Esc",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "period",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
-                                    { "shell_command": "echo \"test - \"$(date +\"%Y-%m-%d %H:%M:%S\" | awk '{$1=$1;print}')\" - Rocco\" | pbcopy && sleep 1" },
                                     {
-                                        "key_code": "v",
-                                        "modifiers": ["left_command"]
+                                        "key_code": "right_option",
+                                        "modifiers": ["any"]
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
-                                },
-                                "to": { "key_code": "f19" },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
-                                },
-                                "to": { "key_code": "f13" },
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -1531,44 +1533,8 @@
                         {
                             "from": { "key_code": "right_command" },
                             "to": [{ "key_code": "right_option" }]
-                        },
-                        {
-                            "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_control" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 33025,
-                        "vendor_id": 3141
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_control" },
-                            "to": [{ "key_code": "vk_none" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 33025,
-                        "vendor_id": 3141
-                    },
-                    "ignore": false,
-                    "mouse_flip_x": true,
-                    "mouse_flip_y": true,
-                    "pointing_motion_xy_multiplier": 2.0
                 }
             ],
             "fn_function_keys": [
