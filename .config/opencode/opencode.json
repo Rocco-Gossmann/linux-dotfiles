@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "lmstudio.homenet/loaded",
+	"model": "ollama.homenet/qwen3:4b",
 	"provider": {
 
 		"lmstudio.homenet": {
@@ -44,13 +44,13 @@
 					"name": "Qwen3 1.7B Q8"
 				},
 				"qwen3:1.7b": {
-					"name": "Qwen3 1.7B",
+					"name": "Qwen3 1.7B"
 				},
 				"qwen3:4b": {
-					"name": "Qwen3 4B",
+					"name": "Qwen3 4B"
 				},
 				"qwen3:8b": {
-					"name": "Qwen3 8B",
+					"name": "Qwen3 8B"
 				},
 				"bjoernb/qwen3-coder-30b:latest": {
 					"name": "Qwen3-Coder 30b"
