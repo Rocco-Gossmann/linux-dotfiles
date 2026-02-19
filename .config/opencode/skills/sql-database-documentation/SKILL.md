@@ -1,6 +1,6 @@
 ---
-name: sql-database-documentor
-description: the ability to take in a MySQL-Dump and create a Markdown-Notebook for each found table
+name: sql-database-documentation
+description: the ability to take in a SQL-Dump and create a Markdown-Notebook for each found table
 ---
 
 I want you to:
