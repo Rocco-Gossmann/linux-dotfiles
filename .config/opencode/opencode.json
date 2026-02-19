@@ -1,9 +1,23 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "homeai/glm-4.7-flash",
+	"model": "lmstudio.homenet/loaded",
 	"provider": {
 
-		"ollama": {
+		"lmstudio.homenet": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "LMStudio (HomeNet)",
+			"options": {
+				"baseURL": "http://homenet:1234/v1"
+			},
+			"models": {
+				"loaded": {
+					"name": "What ever LMStudio has currently loaded"
+				}
+			}
+
+		},
+
+		"ollama.local": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (Local)",
 			"options": {
@@ -11,14 +25,14 @@
 			},
 			"models": {
 				"qwen3:1.7b-q8_0": {
-					"name": "Qwen3 1.7B",
+					"name": "Qwen3 1.7B"
 				}
 			}
 		},
 
-		"homeai": {
+		"ollama.homenet": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (HomeAI)",
+			"name": "Ollama (HomeNet)",
 			"options": {
 				"baseURL": "http://homenet:11434/v1"
 			},
