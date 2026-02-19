@@ -1535,6 +1535,34 @@
                             "to": [{ "key_code": "right_option" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 33025,
+                        "vendor_id": 3141
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 33025,
+                        "vendor_id": 3141
+                    },
+                    "ignore": false,
+                    "mouse_flip_x": true,
+                    "mouse_flip_y": true,
+                    "pointing_motion_xy_multiplier": 2.0
                 }
             ],
             "fn_function_keys": [
