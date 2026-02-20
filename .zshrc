@@ -37,9 +37,6 @@ alias ll='ls -Glh'
 alias la='ls -Galh'
 alias dir='ls -Galh'
 
-alias l="f(){ cd \`ls -1A -d \$@*/|fzf\`; unset -f f; }; f"
-
-
 alias hascmd="f(){ which \$@ 1> /dev/null && echo \"yep\" || echo \"nope\"}; f"
 alias myfg="f(){ jobs | grep -e \$@ | xargs | sed -r 's/^\[([0-9]+)\].*$/\1/' ; unset -f f; }; f"
 alias fg="ju(){ fg %\`myfg \$@\`; unset -f ju; }; ju"
@@ -60,7 +57,7 @@ alias mr="make run"
 alias doc="docker compose"
 alias nv="neovide"
 
-# inject envvars
+# inject envvars to ssh
 #==============================================================================
 alias orig_ssh=`which ssh`
 alias ssh="TERM=xterm-256color orig_ssh"
@@ -89,9 +86,13 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 # source a bunch of zsh-extensions from Homebrew
 #==============================================================================
 [ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
+export HBP=$HOMEBREW_PREFIX
+
 [ -f $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+bindkey '^I' menu-complete
 
 # activate autocompletion for apps, that don't activate by default
 #==============================================================================
@@ -102,10 +103,8 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
 # [ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh 2>/dev/null)
 
-
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
 
 # Tweaks
 #==============================================================================
