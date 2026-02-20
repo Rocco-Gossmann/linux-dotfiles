@@ -13,10 +13,16 @@ ln -s "${CWD}/.tmux.conf"
 mkdir -p $HOME/.config
 cd $HOME/.config
 echo "enter: `pwd`"
+rm -rf ghostty
+ln -s $CWD/.config/ghostty
 ln -s $CWD/.config/ranger
 ln -s $CWD/.config/opencode
 ln -s $CWD/.config/oh-my-posh
 ln -s $CWD/.config/ranger
+
+cd $HOME/.config/ghostty
+echo "enter: `pwd`"
+ln -s $CWD/Bilder/wallpapers/bsp_3x2_conv_16x9_terminal.png ghosttybg-symlink
 
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
