@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "ollama.homenet/qwen3:4b",
+	"model": "ollama.homenet/glm-4.7-flash",
 	"provider": {
 
 		"lmstudio.homenet": {
@@ -37,42 +37,20 @@
 				"baseURL": "http://homenet:11434/v1"
 			},
 			"models": {
-				"gemma3:4b": {
-					"name": "Gemma3 4B"
-				},
-				"qwen3:1.7b-q8_0": {
-					"name": "Qwen3 1.7B Q8"
-				},
-				"qwen3:1.7b": {
-					"name": "Qwen3 1.7B"
-				},
-				"qwen3:4b": {
-					"name": "Qwen3 4B"
-				},
-				"qwen3:8b": {
-					"name": "Qwen3 8B"
-				},
-				"bjoernb/qwen3-coder-30b:latest": {
-					"name": "Qwen3-Coder 30b"
-				},
-				"ministral-3:3b": {
-					"name": "Ministral 3 3B"
-				},
-				"ministral-3:14b": {
-					"name": "Ministral 3 14B"
-				},
-				"llama3.2:3b": {
-					"name": "Llama3.2 3B"
-				},
-				"cogito:8b": {
-					"name": "Cogito 8B"
-				},
-				"glm-4.7-flash": {
-					"name": "GLM 4.7 Flash"
-				},
-				"NeuroEquality/neuralquantum-coder:latest": {
-					"name": "Neuralquantum-Coder"
-				}
+
+				"NeuroEquality/neuralquantum-coder:latest": { "name": "Neuralquantum-Coder" },
+				"qwen3-coder:30b-a3b-q4_K_M": { "name": "Qwen3-Coder 30b" },
+				"glm-4.7-flash": { "name": "GLM 4.7 Flash" },
+
+				"gemma3:4b": { "name": "Gemma3 4B (no tools, don't use)" },
+
+				"qwen3:1.7b-q8_0": { "name": "Qwen3 1.7B Q8" },
+				"qwen3:1.7b": { "name": "Qwen3 1.7B" },
+				"qwen3:4b": { "name": "Qwen3 4B" },
+				"qwen3:8b-q4_K_M": { "name": "Qwen3 8B Q4 K M" },
+				"ministral-3:3b": { "name": "Ministral 3 3B" },
+				"llama3.2:3b": { "name": "Llama3.2 3B" },
+
 			}
 		}
 

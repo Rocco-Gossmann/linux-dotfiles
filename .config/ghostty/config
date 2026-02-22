@@ -4,14 +4,13 @@ theme = dark: "Rose Pine DarkBG",light:"Rose Pine Dawn"
 shell-integration = zsh
 
 font-family="JetBrainsMono Nerd Font Mono"
-font-size=16
+font-size=15
 macos-option-as-alt="left"
 macos-titlebar-style="hidden"
-window-padding-x=0
-window-padding-y=0
-background-image="./ghosttybg-symlink"
-background-image-fit = cover
-clipboard-paste-protection=false
+window-padding-x=4
+window-padding-y=4
+background-opacity=0.90
+background-blur=true
 
 # Super + HJKL => change focused split
 keybind = ctrl+shift+h=goto_split:left
