@@ -40,7 +40,7 @@
 
 				"NeuroEquality/neuralquantum-coder:latest": { "name": "Neuralquantum-Coder" },
 				"qwen3-coder:30b-a3b-q4_K_M": { "name": "Qwen3-Coder 30b" },
-				"glm-4.7-flash": { "name": "GLM 4.7 Flash" },
+				"glm-4.7-flash:5th_32kc": { "name": "GLM 4.7 Flash" },
 
 				"gemma3:4b": { "name": "Gemma3 4B (no tools, don't use)" },
 
