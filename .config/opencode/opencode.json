@@ -45,13 +45,16 @@
 					"name": "Qwen3-Coder 30b Q4 (5 Threads 32K Context)"
 				},
 				"qwen3:4b_5th_32kc": {
-					"name": "Qwen3 4B (5Thread 32K Context)",
+					"name": "Qwen3 4B (5 Threads 32K Context)",
 					"extra_body": {
 						"enable_thinking": false
 					}
 				},
 				"qwen3:8b_q4_K_M_5th_32kc": {
-					"name": "Qwen3 8B Q4 K M (5Thread 32K Context)"
+					"name": "Qwen3 8B Q4 K M (5 Threads 32K Context)"
+				},
+				"qwen3:8b-q4_K_M_4000th_20kc": {
+					"name": "Qwen3 8B Q4 K M (4000 Threads 20K Context)"
 				},
 
 				"qwen3:1.7b": { "name": "Qwen3 1.7B" },
