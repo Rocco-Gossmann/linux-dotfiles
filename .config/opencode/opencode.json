@@ -2,12 +2,21 @@
 	"$schema": "https://opencode.ai/config.json",
 	"model": "ollama.local/granite4:3b",
 
+	"agent": {
+
+		"research": {
+			"model": "ollama.homenet/gpt-oss:20b",
+			"prompt": "{file:./prompts/research.md}"
+		}
+
+	},
+
 	"provider": {
 		"lmstudio.homenet": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "LMStudio (HomeNet)",
 			"options": {
-				"baseURL": "http://homenet:1234/v1"
+				"baseURL": "http://homemac:1234/v1"
 			},
 			"models": {
 				"loaded": {
@@ -32,14 +41,20 @@
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (HomeNet)",
 			"options": {
-				"baseURL": "http://homenet:11434/v1"
+				"baseURL": "http://homemac:11434/v1"
 			},
 			"models": {
 				"nqc:5th_32kc": {
 					"name": "Neuralquantum-Coder (5 Threads 32K Context)"
 				},
+				"nqc:6th_32kc": {
+					"name": "Neuralquantum-Coder (6 Threads 32K Context)"
+				},
 				"glm-4.7-flash:5th_32kc": {
 					"name": "GLM 4.7 Flash (5 Threads 32K Context)"
+				},
+				"glm-4.7-flash:latest": {
+					"name": "GLM 4.7 Flash (latest)"
 				},
 				"qwen3-coder:30b_q4_5th_32kc": {
 					"name": "Qwen3-Coder 30b Q4 (5 Threads 32K Context)"
@@ -60,7 +75,9 @@
 				"qwen3:1.7b": { "name": "Qwen3 1.7B" },
 
 				"ministral-3:3b": { "name": "Ministral 3 3B" },
-				"llama3.2:3b": { "name": "Llama3.2 3B" }
+				"ministral-3:8b_16kc": { "name": "Ministral 3 8B (16K Context)" },
+				"llama3.2:3b": { "name": "Llama3.2 3B" },
+				"gpt-oss:20b": { "name": "gpt-oss:20b" }
 			}
 		}
 	},
