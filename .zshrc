@@ -64,7 +64,7 @@ alias ssh="TERM=xterm-256color orig_ssh"
 
 # small commands to fix varous things, that break on Mac sometimes
 #==============================================================================
-alias fix-homebrew="sudo chown -R \`whoami\` /opt/homebrew/Cellar/zsh-autocomplete/ /opt/homebrew/Cellar/zsh-autosuggestions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /usr/local/Homebrew/completions/zsh /opt/homebrew/share/man"
+alias fix-homebrew="sudo chown -R \`whoami\` /opt/homebrew /usr/local/Homebrew"
 alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
 alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificationDate -date \"2090-02-07 23:22:47 +0000\"; defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date \"2090-02-07 23:22:47 +0000\""
