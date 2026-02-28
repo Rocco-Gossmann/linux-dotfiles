@@ -1,11 +1,10 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "ollama.local/granite4:3b",
+	"model": "ollama.homenet/glm-4.7-flash:5th_32kc",
 
 	"agent": {
 
 		"research": {
-			"model": "ollama.homenet/gpt-oss:20b",
 			"prompt": "{file:./prompts/research.md}"
 		}
 
