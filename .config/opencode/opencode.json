@@ -12,18 +12,6 @@
 	},
 
 	"provider": {
-		"lmstudio.homenet": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "LMStudio (HomeNet)",
-			"options": {
-				"baseURL": "http://homemac:1234/v1"
-			},
-			"models": {
-				"loaded": {
-					"name": "What ever LMStudio has currently loaded"
-				}
-			}
-		},
 
 		"ollama.local": {
 			"npm": "@ai-sdk/openai-compatible",
