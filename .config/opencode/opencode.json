@@ -31,40 +31,42 @@
 				"baseURL": "http://homemac:11434/v1"
 			},
 			"models": {
-				"nqc:5th_32kc": {
-					"name": "Neuralquantum-Coder (5 Threads 32K Context)"
+				"glm-4.7-flash:8th_30kc": {
+					"name": "GLM 4.7 Flash (8 Threads 30K Context)"
 				},
-				"nqc:6th_32kc": {
-					"name": "Neuralquantum-Coder (6 Threads 32K Context)"
+				"glm-4.7-flash:latest": {
+					"name": "GLM 4.7 Flash Latest"
 				},
-				"glm-4.7-flash:5th_32kc": {
-					"name": "GLM 4.7 Flash (5 Threads 32K Context)"
+				"lfm2:24b": {
+					"name": "LFM 2 24B"
+				},
+				"ministral-3:8b_16kc": {
+					"name": "Ministral 3 8B (16K Context)"
+				},
+				"ministral-3:8b_20kc": {
+					"name": "Ministral 3 8B (20K Context)"
+				},
+				"ministral-3:8b": {
+					"name": "Ministral 3 8B"
+				},
+				"devstral:latest": {
+					"name": "Devstral Latest"
 				},
 				"glm-4.7-flash:latest": {
 					"name": "GLM 4.7 Flash (latest)"
 				},
 				"qwen3-coder:30b_q4_5th_32kc": {
-					"name": "Qwen3-Coder 30b Q4 (5 Threads 32K Context)"
+					"name": "Qwen3-Coder 30B Q4 (5 Threads 32K Context)"
 				},
-				"qwen3:4b_5th_32kc": {
-					"name": "Qwen3 4B (5 Threads 32K Context)",
-					"extra_body": {
-						"enable_thinking": false
-					}
+				"qwen3-coder:30b-a3b-q4_K_M": {
+					"name": "Qwen3-Coder 30B A3B Q4 K M"
 				},
-				"qwen3:8b_q4_K_M_5th_32kc": {
-					"name": "Qwen3 8B Q4 K M (5 Threads 32K Context)"
+				"gpt-oss:20b": {
+					"name": "GPT-OSS 20B"
 				},
-				"qwen3:8b-q4_K_M_4000th_20kc": {
-					"name": "Qwen3 8B Q4 K M (4000 Threads 20K Context)"
-				},
-
-				"qwen3:1.7b": { "name": "Qwen3 1.7B" },
-
-				"ministral-3:3b": { "name": "Ministral 3 3B" },
-				"ministral-3:8b_16kc": { "name": "Ministral 3 8B (16K Context)" },
-				"llama3.2:3b": { "name": "Llama3.2 3B" },
-				"gpt-oss:20b": { "name": "gpt-oss:20b" }
+				"NeuroEquality/neuralquantum-coder:latest": {
+					"name": "Neuralquantum Coder Latest"
+				}
 			}
 		}
 	},
