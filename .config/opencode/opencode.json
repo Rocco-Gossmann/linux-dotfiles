@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "ollama.homenet/glm-4.7-flash:5th_32kc",
+	"model": "ollama.homenet/glm-4.7-flash:8th_30kc",
 
 	"agent": {
 

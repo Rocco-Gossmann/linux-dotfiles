@@ -1,7 +1,7 @@
 ---
 description: Manages more complex tasks by using subagents for fullfillment
 mode: primary
-model: ollama.homenet/glm-4.7-flash:5th_32kc
+model: ollama.homenet/gpt-oss:20b
 temperature: 0.1
 
 tools:
