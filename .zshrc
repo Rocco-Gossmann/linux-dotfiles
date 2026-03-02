@@ -3,13 +3,13 @@
 # If you are concerend about this, go to the end of this file and remove
 # the last IF block
 
-# ZSH_DISABLE_COMPFIX=
-if [[ "$OSTYPE" != darwin* ]]; then
+ZSH_DISABLE_COMPFIX=
+#if [[ "$OSTYPE" != darwin* ]]; then
 
 	autoload -Uz compinit
 	compinit
 
-fi
+#fi
 
 
 # ZSH / Terminal config
@@ -109,14 +109,6 @@ bindkey '^I' menu-complete
 # Tweaks
 #==============================================================================
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-
-# The following lines were added by compinstall
-zstyle ':completion:*' format '%d'
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit -u
-# End of lines added by compinstall
-
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   # [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/multiverse-neon.omp.json)
