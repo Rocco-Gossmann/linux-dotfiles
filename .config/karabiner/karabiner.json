@@ -21,7 +21,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "h",
+                                    "key_code": "j",
                                     "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
@@ -42,7 +42,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "k",
                                     "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
@@ -50,6 +50,53 @@
                                         "key_code": "page_up",
                                         "modifiers": []
                                     }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^com.googlecode.iterm2*" ] } ],
+                                "from": { "key_code": "h", "modifiers": { "mandatory": ["command"] } },
+                                "to": [
+                                    { "key_code": "spacebar", "modifiers": ["left_control"] },
+                                    { "key_code": "n", "modifiers": [] }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^com.googlecode.iterm2*" ] } ],
+                                "from": { "key_code": "l", "modifiers": { "mandatory": ["command"] } },
+                                "to": [
+                                    { "key_code": "spacebar", "modifiers": ["left_control"] },
+                                    { "key_code": "p", "modifiers": [] }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^com.googlecode.iterm2*" ] } ],
+                                "from": { "key_code": "p", "modifiers": { "mandatory": ["command"] } },
+                                "to": [
+                                    { "key_code": "spacebar", "modifiers": [] },
+                                    { "key_code": "p", "modifiers": [] },
+                                    { "key_code": "f", "modifiers": [] }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^com.googlecode.iterm2*" ] } ],
+                                "from": { "key_code": "p", "modifiers": { "mandatory": ["shift", "command"] } },
+                                "to": [
+                                    { "key_code": "spacebar", "modifiers": [] },
+                                    { "key_code": "f", "modifiers": [] },
+                                    { "key_code": "m", "modifiers": [] }
+                                ],
+                                "type": "basic"
+                            },
+							{
+                                "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": [ "^com.googlecode.iterm2*" ] } ],
+                                "from": { "key_code": "o", "modifiers": { "mandatory": ["shift", "command"] } },
+                                "to": [
+                                    { "key_code": "g", "modifiers": [] },
+                                    { "key_code": "o", "modifiers": ["left_shift"] }
                                 ],
                                 "type": "basic"
                             }
