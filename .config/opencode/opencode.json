@@ -20,7 +20,8 @@
 			},
 			"models": {
 				"qwen3:1.7b-q8_0": { "name": "Qwen3 1.7B" },
-				"granite4:3b": { "name": "Granite4 3B" }
+				"qwen3:1.7b_4th_8kc": { "name": "Qwen3 1.7B (4 Threads 8K Context)" },
+				"granite4:3b": { "name": "Granite4 3B" },
 			}
 		},
 
