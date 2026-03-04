@@ -83,10 +83,12 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.local/share/nvim/mason/bin" ] && export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
-# source a bunch of zsh-extensions from Homebrew
+# source a bunch of stuff from homebrew and fixing homebrew permission
 #==============================================================================
 [ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
+
 export HBP=$HOMEBREW_PREFIX
+[[ `hascmd brew` == "yep" ]] && [[ `stat $HBP | awk '{print $5}'` == `whoami` ]] || sudo chown -R `whoami` $HBP
 
 [ -f $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
