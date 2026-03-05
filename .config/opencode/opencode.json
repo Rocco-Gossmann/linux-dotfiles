@@ -37,6 +37,9 @@
 				"lfm2:24b": {
 					"name": "LFM 2 24B"
 				},
+				"lfm2:24b_8th_30kc": {
+					"name": "LFM 2 24B (8 Threads, 30K Context)"
+				},
 				"ministral-3:8b_16kc": {
 					"name": "Ministral 3 8B (16K Context)"
 				},
