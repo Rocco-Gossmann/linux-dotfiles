@@ -19,9 +19,8 @@
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
-				"qwen3:1.7b-q8_0": { "name": "Qwen3 1.7B" },
-				"qwen3:1.7b_4th_8kc": { "name": "Qwen3 1.7B (4 Threads 8K Context)" },
-				"granite4:3b": { "name": "Granite4 3B" },
+				"qwen3:1.7b-q8_0": { "name": "Qwen3 1.7B (Q8) " },
+				"granite4:3b": { "name": "Granite4 3B" }
 			}
 		},
 
@@ -34,9 +33,6 @@
 			"models": {
 				"glm-4.7-flash:8th_30kc": {
 					"name": "GLM 4.7 Flash (8 Threads 30K Context)"
-				},
-				"glm-4.7-flash:latest": {
-					"name": "GLM 4.7 Flash Latest"
 				},
 				"lfm2:24b": {
 					"name": "LFM 2 24B"
@@ -53,14 +49,8 @@
 				"devstral:latest": {
 					"name": "Devstral Latest"
 				},
-				"glm-4.7-flash:latest": {
-					"name": "GLM 4.7 Flash (latest)"
-				},
 				"qwen3-coder:30b_q4_5th_32kc": {
 					"name": "Qwen3-Coder 30B Q4 (5 Threads 32K Context)"
-				},
-				"qwen3-coder:30b-a3b-q4_K_M": {
-					"name": "Qwen3-Coder 30B A3B Q4 K M"
 				},
 				"gpt-oss:20b": {
 					"name": "GPT-OSS 20B"
