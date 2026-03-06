@@ -64,7 +64,6 @@ alias ssh="TERM=xterm-256color orig_ssh"
 
 # small commands to fix varous things, that break on Mac sometimes
 #==============================================================================
-alias fix-homebrew="sudo chown -R \`whoami\` /opt/homebrew /usr/local/Homebrew"
 alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
 alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificationDate -date \"2090-02-07 23:22:47 +0000\"; defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date \"2090-02-07 23:22:47 +0000\""
@@ -88,7 +87,7 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
 
 export HBP=$HOMEBREW_PREFIX
-[[ `hascmd brew` == "yep" ]] && [[ `stat $HBP | awk '{print $5}'` == `whoami` ]] || sudo chown -R `whoami` $HBP
+[[ `hascmd brew` == "yep" ]] && ( [[ `stat $HBP | awk '{print $5}'` == `whoami` ]] || sudo chown -R `whoami` /opt/homebrew /usr/local/Homebrew )
 
 [ -f $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
