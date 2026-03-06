@@ -31,31 +31,19 @@
 				"baseURL": "http://homemac:11434/v1"
 			},
 			"models": {
-				"glm-4.7-flash:8th_30kc": {
-					"name": "GLM 4.7 Flash (8 Threads 30K Context)"
+				"glm-4.7-flash:local": {
+					"name": "GLM-4.7-Flash"
 				},
-				"lfm2:24b": {
+				"lfm2:24b:local": {
 					"name": "LFM 2 24B"
 				},
-				"ministral-3:8b_16kc": {
-					"name": "Ministral 3 8B (16K Context)"
+				"qwen3-coder:30b:local": {
+					"name": "Qwen3-Coder 30B"
 				},
-				"ministral-3:8b_20kc": {
-					"name": "Ministral 3 8B (20K Context)"
-				},
-				"ministral-3:8b": {
-					"name": "Ministral 3 8B"
-				},
-				"devstral:latest": {
-					"name": "Devstral Latest"
-				},
-				"qwen3-coder:30b_q4_5th_32kc": {
-					"name": "Qwen3-Coder 30B Q4 (5 Threads 32K Context)"
-				},
-				"gpt-oss:20b": {
+				"gpt-oss:20b:local": {
 					"name": "GPT-OSS 20B"
 				},
-				"NeuroEquality/neuralquantum-coder:latest": {
+				"nqc:local": {
 					"name": "Neuralquantum Coder Latest"
 				}
 			}
