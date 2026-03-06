@@ -80,7 +80,7 @@
                                         "modifiers": ["left_control"]
                                     },
                                     {
-                                        "key_code": "p",
+                                        "key_code": "n",
                                         "modifiers": []
                                     }
                                 ],
@@ -105,7 +105,7 @@
                                         "modifiers": ["left_control"]
                                     },
                                     {
-                                        "key_code": "n",
+                                        "key_code": "p",
                                         "modifiers": []
                                     }
                                 ],
