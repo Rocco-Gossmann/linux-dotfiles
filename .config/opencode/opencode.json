@@ -19,8 +19,7 @@
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
-				"qwen3:1.7b-q8_0": { "name": "Qwen3 1.7B (Q8) " },
-				"granite4:3b": { "name": "Granite4 3B" }
+				"lfm2.5_1.2b:local" : { "name": "lfm 2.5 12B" }
 			}
 		},
 
