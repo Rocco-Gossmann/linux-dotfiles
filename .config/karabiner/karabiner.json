@@ -469,81 +469,33 @@
                         "description": "RightCtrl HJKL => Arrows",
                         "manipulators": [
                             {
-                                "description": "disbles HJKL to arrows until hyper is released",
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": { "mandatory": ["right_control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["right_shift", "right_option", "right_control", "right_command"]
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "hyper-arrows-off",
-                                            "value": true
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper-arrows-off",
-                                        "type": "variable_if",
-                                        "value": false
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": { "mandatory": [ "right_control" ] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper-arrows-off",
-                                        "type": "variable_if",
-                                        "value": false
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": { "mandatory": [ "right_control" ] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper-arrows-off",
-                                        "type": "variable_if",
-                                        "value": false
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": [ "right_control" ] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "hyper-arrows-off",
-                                        "type": "variable_if",
-                                        "value": false
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": { "mandatory": [ "right_control" ] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
@@ -1775,6 +1727,23 @@
                     "mouse_flip_x": true,
                     "mouse_flip_y": true,
                     "pointing_motion_xy_multiplier": 2.0
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 58501,
+                        "vendor_id": 13357
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
