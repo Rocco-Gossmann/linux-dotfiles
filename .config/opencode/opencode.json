@@ -33,13 +33,13 @@
 				"glm-4.7-flash:local": {
 					"name": "GLM-4.7-Flash"
 				},
-				"lfm2:24b:local": {
+				"lfm2_24b:local": {
 					"name": "LFM 2 24B"
 				},
-				"qwen3-coder:30b:local": {
+				"qwen3-coder_30b:local": {
 					"name": "Qwen3-Coder 30B"
 				},
-				"gpt-oss:20b:local": {
+				"gpt-oss_20b:local": {
 					"name": "GPT-OSS 20B"
 				},
 				"nqc:local": {
