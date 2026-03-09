@@ -19,7 +19,7 @@
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
-				"lfm2.5_1.2b:local" : { "name": "lfm 2.5 12B" }
+				"qwen3.5_0.8b:local" : { "name": "Qwen 3.5 0.8B" }
 			}
 		},
 
