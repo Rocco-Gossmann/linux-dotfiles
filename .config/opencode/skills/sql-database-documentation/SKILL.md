@@ -5,7 +5,8 @@ description: the ability to take in a SQL-Dump and create a Markdown-Notebook fo
 
 I want you to:
 - Extract all the table creation statements in the `*.sql` file you are given.
-  - if you are not given an sql file, ask the user for one.
+     - if you are not given an sql file, ask the user for one.
+     - if you are given an sqlite database extract the .schema from it and use that instead of the `*.sql` file.
 
 - all files you will create, need to be put into a specific folder, that you get by the user
   - if the user did not give you a folder, ask for one.
