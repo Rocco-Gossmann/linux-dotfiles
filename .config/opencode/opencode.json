@@ -19,7 +19,13 @@
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
-				"qwen3.5_0.8b:local" : { "name": "Qwen 3.5 0.8B" }
+				"qwen3.5:rg.local": {
+					"name": "Qwen 3.5",
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
 			}
 		},
 
@@ -35,6 +41,13 @@
 				},
 				"lfm2_24b:local": {
 					"name": "LFM 2 24B"
+				},
+				"qwen3.5:local": {
+					"name": "Qwen3.5",
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
 				},
 				"qwen3-coder_30b:local": {
 					"name": "Qwen3-Coder 30B"
