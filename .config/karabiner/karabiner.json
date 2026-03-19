@@ -1872,6 +1872,14 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "power" }]
+                        },
+                        {
+                            "from": { "key_code": "f7" },
+                            "to": [{ "key_code": "vk_consumer_brightness_down" }]
+                        },
+                        {
+                            "from": { "key_code": "f8" },
+                            "to": [{ "key_code": "vk_consumer_brightness_up" }]
                         }
                     ],
                     "treat_as_built_in_keyboard": true
