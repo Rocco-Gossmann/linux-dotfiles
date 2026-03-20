@@ -1777,7 +1777,17 @@
                         "product_id": 58566,
                         "vendor_id": 13357
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
                 },
                 {
                     "identifiers": {
@@ -1844,6 +1854,14 @@
                         {
                             "from": { "key_code": "f6" },
                             "to": [{ "consumer_key_code": "volume_increment" }]
+                        },
+                        {
+                            "from": { "key_code": "f7" },
+                            "to": [{ "key_code": "vk_consumer_brightness_down" }]
+                        },
+                        {
+                            "from": { "key_code": "f8" },
+                            "to": [{ "key_code": "vk_consumer_brightness_up" }]
                         },
                         {
                             "from": { "key_code": "grave_accent_and_tilde" },
