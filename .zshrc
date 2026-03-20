@@ -55,7 +55,6 @@ alias tm="tmux-workspace \"main\""
 alias db="nvim -c DBUI"
 alias mr="make run"
 alias doc="docker compose"
-alias nv="neovide"
 
 # inject envvars to ssh
 #==============================================================================
