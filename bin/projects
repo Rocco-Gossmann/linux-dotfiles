@@ -9,7 +9,7 @@ fi
 
 choice="zsh"
 cmd="cat $HOME/.projectdirs"
-addition=$($cmd | awk '{print "-o -path \\\"'$qo'"$0"'$qo'\\\" "}' | xargs)
+addition="" # $($cmd | awk '{print "-o -path \\\"'$qo'"$0"'$qo'\\\" "}' | xargs)
 lst=$(eval $cmd | awk '{print "\\\""$0"\\\""}' | xargs) #<-- surround each line in " to handled dirs with spaces
 
 cmd=" parallel find {} -iname workspace.tmux $addition\\; 2>/dev/null ::: $lst"
