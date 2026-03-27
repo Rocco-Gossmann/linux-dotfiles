@@ -11,6 +11,12 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
+    template = '{{ if .Env.RANGER_LEVEL }}- Ranger - {{ end }}'
+    foreground = '#3EC669'
+    type = 'text'
+    style = 'plain'
+
+  [[blocks.segments]]
     template = ' {{ .HostName }} '
     foreground = '#FFB54C'
     background = '#29315A'
@@ -57,6 +63,7 @@ version = 3
 [[blocks]]
   type = 'prompt'
   alignment = 'right'
+
 
   [[blocks.segments]]
     template = '{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }} {{ .Full }}'
