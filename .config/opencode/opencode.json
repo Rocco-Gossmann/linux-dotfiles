@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/config.json",
-	"model": "ollama.homenet/glm-4.7-flash:8th_30kc",
+	"model": "ollama.homeai_large/glm-4.7-flash:local",
 
 	"agent": {
 
@@ -12,28 +12,11 @@
 
 	"provider": {
 
-		"ollama.local": {
+		"ollama.homeai_large": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (Local)",
+			"name": "Ollama (Home - Large)",
 			"options": {
-				"baseURL": "http://localhost:11434/v1"
-			},
-			"models": {
-				"qwen3.5:rg.local": {
-					"name": "Qwen 3.5",
-					"modalities": {
-						"input": ["text", "image"],
-						"output": ["text"]
-					}
-				}
-			}
-		},
-
-		"ollama.homenet": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (HomeNet)",
-			"options": {
-				"baseURL": "http://homemac:11434/v1"
+				"baseURL": "http://homeai_large:11434/v1"
 			},
 			"models": {
 				"glm-4.7-flash:local": {
