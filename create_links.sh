@@ -29,6 +29,7 @@ cd $HOME/.local/bin
 echo "enter: `pwd`"
 ln -s $CWD/bin/h1
 ln -s $CWD/bin/hv
+ln -s $CWD/bin/notes
 ln -s $CWD/bin/tmux-workspace
 ln -s $CWD/bin/projects
 ln -s $CWD/bin/projects loc

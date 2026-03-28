@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+notesdirfile=$HOME/.local/share/.notesdir
+
+if ! which tmux-workspace > /dev/null 2>&1 ; then
+	echo "'tmux-workspace' is not installed: visit https://github.com/Rocco-Gossmann/tmux-workspace to grab it ";
+	exit 1;
+fi
+
+if [[ ! -f "$notesdirfile" ]]; then
+
+	if [[ -e "$notesdirfile" ]]; then
+		echo "'$notesdirfile' exists, but is not a file";
+		exit 1;
+	fi
+
+	touch $notesdirfile 
+
+	if [[ ! -f "$notesdirfile" ]]; then
+		echo "failed to create '$notesdirfile'";
+		exit 1;
+	fi
+
+	echo "please tell me, what Directoory should hold your notes:"
+	read "notesdir"
+	echo "Read: $notesdir"
+	eval notesdir="$notesdir"
+	echo "resolved path: $notesdir"
+
+	if [[ ! -d "$notesdir" ]]; then
+
+		if [[ -e "$notesdir" ]]; then
+			echo "the given path exists already, but is not a directory"
+			rm $notesdirfile 
+			exit 1;
+		fi
+
+		# echo "[Debug] creating '$notesdir' "
+
+		mkdir -p -m 775 "$notesdir"
+
+		if [[ ! -d "$notesdir" ]]; then
+			echo "failed to create '$notesdir' "
+			rm $notesdirfile
+			exit 1;
+		fi
+
+	fi
+
+	if [[ ! -f "$notesdir/workspace.tmux" ]]; then
+
+		if [[ -e "$notesdir/workspace.tmux" ]]; then
+			echo "the given directory already contains a 'workspace.tmux' that is not a file";
+			rm $HOME/.notesdir
+			exit 1;
+		fi
+		
+		cat << EOF > $notesdir/workspace.tmux
+#!/usr/bin/env bash
+
+umask u=rwx,g=rwx,o=
+tmux-workspace "Notes" "NeoVim" -c "nvim 000_home.md \; zsh"
+
+EOF
+
+		chmod +x $notesdir/workspace.tmux
+
+	fi
+
+	if [[ ! -f "$notesdir/000_home.md" ]]; then
+
+		cat << EOF > "$notesdir/000_home.md"
+# Notes - Homepage
+
+EOF
+
+	fi
+
+	echo "$notesdir" > $notesdirfile
+
+fi
+
+notesdir=`head -n1 $notesdirfile`
+
+cd $notesdir
+if [[ -z "$TMUX" ]]; then
+
+	./workspace.tmux
+
+else
+
+	[[ -z "$TMUX_POPUP" ]] \
+		&& tmux display-popup -w 90% -h 90% -e "TMUX_POPUP=1" -d "$notesdir" -E "nvim 000_home.md"\
+		|| nvim ./000_home.md
+
+fi
+
+
