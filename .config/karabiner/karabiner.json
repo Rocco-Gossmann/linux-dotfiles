@@ -834,6 +834,17 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "mandatory": ["right_control"] }
+                                },
+                                "to": [
+                                    { "key_code": "non_us_backslash" },
+                                    { "key_code": "spacebar" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "n",
                                     "modifiers": {
                                         "mandatory": ["right_control"],
@@ -2142,6 +2153,10 @@
                 {
                     "from": { "key_code": "non_us_backslash" },
                     "to": [{ "key_code": "grave_accent_and_tilde" }]
+                },
+                {
+                    "from": { "key_code": "right_command" },
+                    "to": [{ "key_code": "right_option" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
