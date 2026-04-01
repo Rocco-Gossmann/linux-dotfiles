@@ -43,10 +43,6 @@
 				}
 			}
 		}
-	},
-
-	"keybinds": {
-		"input_newline": "return",
-		"input_submit": "alt+return"
 	}
+
 }
