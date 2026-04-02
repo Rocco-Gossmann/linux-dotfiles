@@ -11,7 +11,13 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
-    template = '{{ if .Env.RANGER_LEVEL }}- Ranger - {{ end }}'
+    template = '{{ if .Env.RANGER_LEVEL }}- Ranger ({{ .Env.RANGER_LEVEL }}) - {{ end }}'
+    foreground = '#3EC669'
+    type = 'text'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ if .Env.YAZI_LEVEL }}- Yazi ({{ .Env.YAZI_LEVEL }}) - {{ end }}'
     foreground = '#3EC669'
     type = 'text'
     style = 'plain'
