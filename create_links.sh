@@ -33,6 +33,7 @@ ln -s $CWD/bin/notes
 ln -s $CWD/bin/tmux-workspace
 ln -s $CWD/bin/projects
 ln -s $CWD/bin/projects loc
+ln -s $CWD/bin/update-opencode
 
 echo "All done. Some of these need extra depencies. Concider installing:"
 echo

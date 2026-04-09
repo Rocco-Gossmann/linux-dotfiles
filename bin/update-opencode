@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+cd /tmp
+
+latest_release=$(curl -sI "https://github.com/anomalyco/opencode/releases/latest" | grep "location" | sed -n "s/^[Ll]ocation: //p" | tr -d '\r' | xargs | sed 's|/tag/|/download/|')
+
+platform_os=$(uname -s)
+platform_arch=$(uname -m)
+
+if [ "$platform_os" = "Darwin" ] && [ "$platform_arch" = "arm64" ]; then
+    file="opencode-darwin-arm64.zip"
+    extract_cmd="unzip"
+elif [ "$platform_os" = "Linux" ] && [ "$platform_arch" = "x86_64" ]; then
+    file="opencode-linux-x64.tar.gz"
+    extract_cmd="tar -xzvf"
+else
+    echo "Unsupported platform: $platform_os $platform_arch"
+    exit 1
+fi
+
+wget "$latest_release/$file"
+$extract_cmd "$file"
+
+sudo rm /usr/local/bin/opencode
+sudo mv ./opencode /usr/local/bin/opencode
+sudo chmod +x /usr/local/bin/opencode
+
+rm "$file"
