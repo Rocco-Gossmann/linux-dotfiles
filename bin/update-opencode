@@ -10,9 +10,11 @@ platform_arch=$(uname -m)
 if [ "$platform_os" = "Darwin" ] && [ "$platform_arch" = "arm64" ]; then
     file="opencode-darwin-arm64.zip"
     extract_cmd="unzip"
+	extract_file="/opt/homebrew/bin/opencode"
 elif [ "$platform_os" = "Linux" ] && [ "$platform_arch" = "x86_64" ]; then
     file="opencode-linux-x64.tar.gz"
     extract_cmd="tar -xzvf"
+	extract_file="/usr/local/bin/opencode"
 else
     echo "Unsupported platform: $platform_os $platform_arch"
     exit 1
@@ -21,8 +23,8 @@ fi
 wget "$latest_release/$file"
 $extract_cmd "$file"
 
-sudo rm /usr/local/bin/opencode
-sudo mv ./opencode /usr/local/bin/opencode
-sudo chmod +x /usr/local/bin/opencode
+sudo rm -f $extract_file
+sudo mv ./opencode $extract_file
+sudo chmod +x $extract_file
 
-rm "$file"
+rm -f "$file" "opencode"

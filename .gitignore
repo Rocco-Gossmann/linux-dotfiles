@@ -2,3 +2,4 @@
 .config/karabiner/automatic_backups
 .config/ghostty/ghosttybg-symlink
 .config/kitty/kittybg.symlink
+.config/opencode/package-lock.json
