@@ -25,6 +25,17 @@
 				"lfm2_24b:local": {
 					"name": "LFM 2 24B"
 				},
+				"local/gemma4": {
+					"name": "Gemma 4 26B",
+					"limit": {
+						"context": 131072,
+						"output": 65536
+					},
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				},
 				"qwen3.5:local": {
 					"name": "Qwen3.5",
 					"modalities": {
