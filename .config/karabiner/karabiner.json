@@ -1977,6 +1977,27 @@
                             "to": [{ "key_code": "right_option" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 33020,
+                        "vendor_id": 1149
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "mouse_flip_vertical_wheel": true,
+                    "pointing_motion_xy_multiplier": 20.0
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 64016,
+                        "vendor_id": 9639
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [
