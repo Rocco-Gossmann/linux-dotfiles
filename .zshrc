@@ -60,6 +60,16 @@ alias db="nvim -c DBUI"
 alias mr="make run"
 alias doc="docker compose"
 
+# Shortcut tweeks
+#==============================================================================
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line # edit current command in $EDITOR
+bindkey '^x^u' undo
+bindkey '^x^r' redo
+bindkey ' ' magic-space # expand historic commands
+bindkey '^i' menu-complete
+
 # inject envvars to ssh
 #==============================================================================
 alias orig_ssh=`which ssh`
@@ -96,16 +106,13 @@ export HBP=$HOMEBREW_PREFIX
 # [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-bindkey '^I' menu-complete
 
 # activate autocompletion for apps, that don't activate by default
 #==============================================================================
-# [ "`hascmd opencode`" = "yep" ] && source <(opencode completion zsh 2>/dev/null)
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh 2>/dev/null)
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh 2>/dev/null)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh 2>/dev/null)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
-# [ "`hascmd atuin`" = "yep" ] && source <(atuin init zsh 2>/dev/null)
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
