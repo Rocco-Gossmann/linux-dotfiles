@@ -2137,7 +2137,7 @@
                     "ignore": false,
                     "ignore_vendor_events": true,
                     "mouse_flip_vertical_wheel": true,
-                    "pointing_motion_xy_multiplier": 20.0
+                    "pointing_motion_xy_multiplier": 2.0
                 },
                 {
                     "identifiers": {
@@ -2147,7 +2147,8 @@
                     },
                     "ignore": false,
                     "ignore_vendor_events": true,
-                    "mouse_flip_vertical_wheel": true
+                    "mouse_flip_vertical_wheel": true,
+                    "pointing_motion_xy_multiplier": 2.0
                 }
             ],
             "fn_function_keys": [
