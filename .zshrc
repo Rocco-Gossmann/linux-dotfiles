@@ -36,6 +36,9 @@ export GOPRIVATE=github.com/rocco-gossmann
 alias -g NoErr="2>/dev/null"
 alias -g NoOut="1>/dev/null"
 
+# open markdown in nvim, when file called directly
+alias -s md="nvim"
+
 alias ls='ls -G'
 alias ll='ls -Glh'
 alias la='ls -Galh'
