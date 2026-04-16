@@ -19,8 +19,12 @@
 				"baseURL": "http://homeai_large:11434/v1"
 			},
 			"models": {
-				"glm-4.7-flash:local": {
-					"name": "GLM-4.7-Flash"
+				"local/glm-4.7-flash": {
+					"name": "GLM-4.7-Flash",
+					"limit": {
+						"context": 98304,
+						"output": 65536
+					}
 				},
 				"lfm2_24b:local": {
 					"name": "LFM 2 24B"
