@@ -8,7 +8,6 @@ ZSH_DISABLE_COMPFIX=
 
 	autoload -Uz compinit
 	compinit
-
 #fi
 
 
@@ -32,6 +31,11 @@ export GOPRIVATE=github.com/rocco-gossmann
 
 # Usefull Aliasses
 #==============================================================================
+
+# alias help="f(){ bash -c \"help \$@\" }; f"
+alias -g NoErr="2>/dev/null"
+alias -g NoOut="1>/dev/null"
+
 alias ls='ls -G'
 alias ll='ls -Glh'
 alias la='ls -Galh'
