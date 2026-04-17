@@ -73,6 +73,10 @@ bindkey '^x^r' redo
 bindkey ' ' magic-space # expand historic commands
 bindkey '^i' menu-complete
 
+function clear-current-shell { zle clear-screen; }
+zle -N clear-current-shell 
+bindkey '^xc' clear-current-shell 
+
 # inject envvars to ssh
 #==============================================================================
 alias orig_ssh=`which ssh`
