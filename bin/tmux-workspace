@@ -61,7 +61,7 @@ if [ $# != 0 ]; then
     command="tmux -u new ";
 
     if [ $(isCtlArg "$1") == "nope" ]; then 
-        command=$command"-s'$1' "
+        command=$command"-s $1 "
         session_name="$1"
         ((first=2)) 
     else
@@ -74,23 +74,17 @@ if [ $# != 0 ]; then
     else
         cmd="tmux -u attach -t \"${session_name}\""
     fi
-    echo $cmd
-    res=$(eval "$cmd && echo \"success\" || echo \"fail\"")
 
-    if [[ "$res" == "success" ]]; then
-        echo "attach to existing" $cmd
-        exit;
-    fi
-
+	$cmd && exit || echo "session-target not found => create session"
 
     # create Session
     #--------------------------------------------------------------------------
     # echo "--------------------------------------------";
     # echo " start session "
     # echo "--------------------------------------------";
-    command=$command"-d '$seditor' "
-    # echo $command
-    eval $command
+    command=$command" -d '$seditor' "
+
+    $command
 
     if [[ -z ${session_name} ]]; then 
         session_name=`tmux -u ls -F '#{session_created} #{session_name}' | sort | tail -n 1 | cut -d ' ' -f 2-`
@@ -174,7 +168,6 @@ if [ $# != 0 ]; then
     
     command=$command" \; select-window -t '$session_name:0' "
 
-    # echo $command
     eval $command
 
     if [ -n "${TMUX}" ]; then
@@ -182,6 +175,7 @@ if [ $# != 0 ]; then
     else
         tmux -u attach -t "${session_name}"
     fi
+
 else 
     print_help
 fi
