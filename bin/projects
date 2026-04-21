@@ -22,8 +22,9 @@ if [[ "$choice" != "" ]]; then
         tmux-workspace "DIR-$choice"
 
     else
+
        	cd $(dirname $choice)
-       	./workspace.tmux && tmux attach
+       	./workspace.tmux
 
     fi
 fi
