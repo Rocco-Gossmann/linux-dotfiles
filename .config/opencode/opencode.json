@@ -22,7 +22,7 @@
 				"local/glm-4.7-flash": {
 					"name": "GLM-4.7-Flash",
 					"limit": {
-						"context": 98304,
+						"context": 49152,
 						"output": 65536
 					}
 				},
