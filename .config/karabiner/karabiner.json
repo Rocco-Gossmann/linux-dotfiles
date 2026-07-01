@@ -9,6 +9,34 @@
                 },
                 "rules": [
                     {
+                        "description": "Right Ctrl => FalseHyper ('cause MacOS Diagnostics suck)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_control",
+                                        "lazy": true,
+                                        "modifiers": []
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "iTerm2: Cmd h/l => PageDown/-Up ",
                         "manipulators": [
                             {
@@ -267,33 +295,6 @@
                                         "modifiers": ["left_shift"]
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Right Ctrl => FalseHyper ('cause MacOS Diagnostics suck)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_control",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
                                 "type": "basic"
                             }
                         ]
@@ -1414,13 +1415,12 @@
                             {
                                 "conditions": [
                                     {
-                                        "file_paths": [".*java_versions/zulu17\\.50\\.19-ca-jre17\\.0\\.11-macosx_aarch64/zulu-17\\.jre/Contents/Home/bin/java$"],
+                                        "file_paths": [".*/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java$"],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": { "pointing_button": "button4" },
-                                "to": [{ "key_code": "2" }],
-                                "to_after_key_up": [{ "key_code": "f" }],
+                                "to": [{ "key_code": "f5" }],
                                 "type": "basic"
                             }
                         ]
