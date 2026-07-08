@@ -1,5 +1,5 @@
 {
-    "global": { "check_for_updates_on_startup": false },
+    "global": { "check_for_updates": false },
     "profiles": [
         {
             "complex_modifications": {
@@ -8,6 +8,27 @@
                     "basic.to_if_held_down_threshold_milliseconds": 200
                 },
                 "rules": [
+                    {
+                        "description": "Emoji - Key to F13",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": ["left_control", "left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Right Ctrl => FalseHyper ('cause MacOS Diagnostics suck)",
                         "manipulators": [
@@ -984,6 +1005,20 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "non_us_pound",
+                                    "modifiers": { "mandatory": ["right_control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    { "key_code": "spacebar" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": { "mandatory": ["right_control"] }
                                 },
@@ -1711,7 +1746,8 @@
                         "vendor_id": 1149
                     },
                     "ignore": false,
-                    "mouse_flip_vertical_wheel": true
+                    "mouse_flip_vertical_wheel": true,
+                    "pointing_motion_xy_multiplier": 2.0
                 },
                 {
                     "identifiers": {
@@ -1775,6 +1811,7 @@
                         "product_id": 26145,
                         "vendor_id": 12994
                     },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 },
                 {
@@ -1810,14 +1847,6 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 33018,
-                        "vendor_id": 1149
-                    },
-                    "ignore": true
                 },
                 {
                     "identifiers": {
@@ -2042,19 +2071,6 @@
                 {
                     "identifiers": {
                         "is_keyboard": true,
-                        "product_id": 28705,
-                        "vendor_id": 1256
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "delete_or_backspace" },
-                            "to": [{ "key_code": "power" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
                         "product_id": 591,
                         "vendor_id": 1452
                     },
@@ -2142,9 +2158,16 @@
                         "vendor_id": 9639
                     },
                     "ignore": false,
-                    "ignore_vendor_events": true,
-                    "mouse_flip_vertical_wheel": true,
-                    "pointing_motion_xy_multiplier": 2.0
+                    "ignore_vendor_events": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 64,
+                        "vendor_id": 6421
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [
