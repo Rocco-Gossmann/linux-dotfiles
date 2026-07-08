@@ -1,5 +1,5 @@
 {
-    "global": { "check_for_updates_on_startup": false },
+    "global": { "check_for_updates": false },
     "profiles": [
         {
             "complex_modifications": {
@@ -282,6 +282,7 @@
                                 "to": [
                                     {
                                         "key_code": "right_control",
+                                        "lazy": true,
                                         "modifiers": []
                                     }
                                 ],
@@ -970,6 +971,20 @@
                             {
                                 "from": {
                                     "key_code": "backslash",
+                                    "modifiers": { "mandatory": ["right_control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": ["left_shift"]
+                                    },
+                                    { "key_code": "spacebar" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "non_us_pound",
                                     "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [
@@ -1775,6 +1790,7 @@
                         "product_id": 26145,
                         "vendor_id": 12994
                     },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 },
                 {
@@ -1810,14 +1826,6 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 33018,
-                        "vendor_id": 1149
-                    },
-                    "ignore": true
                 },
                 {
                     "identifiers": {
@@ -2042,19 +2050,6 @@
                 {
                     "identifiers": {
                         "is_keyboard": true,
-                        "product_id": 28705,
-                        "vendor_id": 1256
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "delete_or_backspace" },
-                            "to": [{ "key_code": "power" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
                         "product_id": 591,
                         "vendor_id": 1452
                     },
@@ -2142,9 +2137,16 @@
                         "vendor_id": 9639
                     },
                     "ignore": false,
-                    "ignore_vendor_events": true,
-                    "mouse_flip_vertical_wheel": true,
-                    "pointing_motion_xy_multiplier": 2.0
+                    "ignore_vendor_events": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 64,
+                        "vendor_id": 6421
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
                 }
             ],
             "fn_function_keys": [

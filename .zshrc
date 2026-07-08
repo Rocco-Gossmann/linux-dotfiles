@@ -95,6 +95,7 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
 [ -e "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
 [ -e "/opt/homebrew/sbin" ] && export PATH="/opt/homebrew/sbin:$PATH"
+[ -e "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
 
 [ -e "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -e "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
@@ -120,6 +121,7 @@ export HBP=$HOMEBREW_PREFIX
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh 2>/dev/null)
 [ "`hascmd gowas`" = "yep" ] && source <(gowas completion zsh 2>/dev/null)
 [ "`hascmd zoxide`" = "yep" ] && source <(zoxide init zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
+[ "`hascmd jj`" = "yep" ] && source <(jj util completion zsh 2>/dev/null) && eval "$(zoxide init --cmd cd zsh)"
 
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
