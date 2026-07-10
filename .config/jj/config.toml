@@ -1,0 +1,9 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+email = "127580387+Rocco-Gossmann@users.noreply.github.com"
+name = "Rocco Goßmann"
+
+[ui]
+pager = "less -FRX +G"
+default-command = ["log", "--reversed"]
