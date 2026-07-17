@@ -141,3 +141,4 @@ if [ "$ZSH_AUTOLAUNCH" != "" ]; then
 	exit;
 fi
 
+export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
