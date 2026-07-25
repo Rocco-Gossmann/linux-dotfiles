@@ -62,6 +62,7 @@ alias tm="tmux-workspace \"main\""
 alias db="nvim -c DBUI"
 alias mr="make run"
 alias doc="docker compose"
+alias prettyjson="jq --color-output | less -FR"
 
 # Shortcut tweeks
 #==============================================================================
