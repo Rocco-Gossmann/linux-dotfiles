@@ -3,3 +3,8 @@
 .config/ghostty/ghosttybg-symlink
 .config/kitty/kittybg.symlink
 .config/opencode/package-lock.json
+/.config/herdr/session.json
+/.config/herdr/plugins.json
+/.config/herdr/herdr-client.log
+/.config/herdr/herdr-server.log
+/.config/herdr/.plugins.lock
