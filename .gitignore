@@ -8,3 +8,4 @@
 /.config/herdr/herdr-client.log
 /.config/herdr/herdr-server.log
 /.config/herdr/.plugins.lock
+/.config/herdr/herdr.log
