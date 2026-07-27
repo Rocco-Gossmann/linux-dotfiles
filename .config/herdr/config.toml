@@ -81,8 +81,8 @@ goto = "prefix+ß"
 # close_workspace = "prefix+shift+d"
 previous_workspace = "prefix+t" # optional, unset by default
 next_workspace = "prefix+g"     # optional, unset by default
-previous_agent = "prefix+r"     # optional, unset by default
-next_agent = "prefix+f"         # optional, unset by default
+# previous_agent = ""     # optional, unset by default
+# next_agent = ""         # optional, unset by default
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
 # remote_image_paste = "ctrl+v" # only active in herdr --remote; empty disables raw-key image paste
 # new_tab = "prefix+c"
@@ -112,7 +112,7 @@ split_vertical = "prefix+i"
 # split_horizontal = "prefix+minus"
 # close_pane = "prefix+x"
 # zoom = "prefix+z"       # legacy alias: fullscreen
-# resize_mode = "prefix+r"
+resize_mode = "prefix+r"
 toggle_sidebar = "prefix+b"
 
 # Navigate-mode movement. These local shortcuts win while navigate mode is open.
