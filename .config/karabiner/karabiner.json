@@ -1631,7 +1631,8 @@
                         "vendor_id": 1133
                     },
                     "ignore": false,
-                    "mouse_flip_vertical_wheel": true
+                    "mouse_flip_vertical_wheel": true,
+                    "pointing_motion_xy_multiplier": 2.0
                 },
                 {
                     "identifiers": {
@@ -2168,6 +2169,20 @@
                     },
                     "ignore": false,
                     "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_pointing_device": true,
+                        "product_id": 765,
+                        "vendor_id": 1118
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "consumer_key_code": "ac_back" },
+                            "to": [{ "key_code": "escape" }]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
