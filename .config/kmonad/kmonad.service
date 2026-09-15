@@ -1,0 +1,9 @@
+[Unit]
+Description=Keeps KMonad running with my remappings for the internal keyboard
+
+[Service]
+ExecStart=/opt/kmonad/kmonad /opt/kmonad/keys.kbd
+Restart=always
+
+[Install]
+WantedBy=graphical.target
