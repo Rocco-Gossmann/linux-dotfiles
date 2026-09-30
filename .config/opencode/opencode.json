@@ -3,43 +3,24 @@
 	"model": "ollama.homeai_large/glm-4.7-flash:local",
 
 	"agent": {
-
 		"research": {
 			"prompt": "{file:./prompts/research.md}"
 		}
-
 	},
 
 	"provider": {
-
-		"ollama.homeai_large": {
+		"ollama.homemac": {
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "Ollama (Home - Large)",
 			"options": {
-				"baseURL": "http://homeai_large:11434/v1"
+				"baseURL": "http://homemac:11434/v1"
 			},
 			"models": {
-				"glm-4.7-flash:local": {
+				"gemma4:26b": {
+					"name": "Gemma 4 26B"
+				},
+				"local_glm4.7-flash": {
 					"name": "GLM-4.7-Flash"
-				},
-				"lfm2_24b:local": {
-					"name": "LFM 2 24B"
-				},
-				"qwen3.5:local": {
-					"name": "Qwen3.5",
-					"modalities": {
-						"input": ["text", "image"],
-						"output": ["text"]
-					}
-				},
-				"qwen3-coder_30b:local": {
-					"name": "Qwen3-Coder 30B"
-				},
-				"gpt-oss_20b:local": {
-					"name": "GPT-OSS 20B"
-				},
-				"nqc:local": {
-					"name": "Neuralquantum Coder Latest"
 				}
 			}
 		}
