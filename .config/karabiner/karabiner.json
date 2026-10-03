@@ -747,6 +747,14 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": { "mandatory": ["right_control"] }
+                                },
+                                "to_if_alone": [{ "key_code": "application" }],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1590,6 +1598,14 @@
                     },
                     "simple_modifications": [
                         {
+                            "from": { "consumer_key_code": "volume_decrement" },
+                            "to": [{ "key_code": "f12" }]
+                        },
+                        {
+                            "from": { "key_code": "f12" },
+                            "to": [{ "consumer_key_code": "volume_decrement" }]
+                        },
+                        {
                             "from": { "key_code": "grave_accent_and_tilde" },
                             "to": [{ "key_code": "grave_accent_and_tilde" }]
                         },
@@ -1631,6 +1647,7 @@
                         "vendor_id": 1133
                     },
                     "ignore": false,
+                    "ignore_vendor_events": true,
                     "mouse_flip_vertical_wheel": true,
                     "pointing_motion_xy_multiplier": 2.0
                 },
@@ -2112,23 +2129,6 @@
                 },
                 {
                     "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 58501,
-                        "vendor_id": 13357
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
                         "device_address": "c0-08-75-01-b6-23",
                         "is_keyboard": true,
                         "is_pointing_device": true
@@ -2159,7 +2159,8 @@
                         "vendor_id": 9639
                     },
                     "ignore": false,
-                    "ignore_vendor_events": true
+                    "ignore_vendor_events": true,
+                    "mouse_flip_vertical_wheel": true
                 },
                 {
                     "identifiers": {
@@ -2181,6 +2182,61 @@
                         {
                             "from": { "consumer_key_code": "ac_back" },
                             "to": [{ "key_code": "escape" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 45125,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "pointing_motion_xy_multiplier": 2.0
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 2098,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 342,
+                        "vendor_id": 1390
+                    },
+                    "ignore": false,
+                    "pointing_motion_xy_multiplier": 0.5
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
                         }
                     ]
                 }
