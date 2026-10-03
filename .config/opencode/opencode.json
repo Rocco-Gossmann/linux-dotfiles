@@ -15,7 +15,7 @@
 				"baseURL": "http://homemac:11434/v1"
 			},
 			"models": {
-				"local_glm-4.7-flash:latest": {
+				"local_glm4.7-flash:latest": {
 					"name": "GLM-4.7-Flash"
 				},
 				"gemma4:26b": {
