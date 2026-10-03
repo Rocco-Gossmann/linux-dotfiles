@@ -10,3 +10,4 @@
 /.config/herdr/.plugins.lock
 /.config/herdr/herdr.log
 /.config/jj/repos
+/.config/herdr/release-notes.json

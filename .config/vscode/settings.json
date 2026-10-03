@@ -1,0 +1,304 @@
+{
+	"background.fullscreen": {
+		"images": [
+			"~/linux-dotfiles/.config/vscode/wallpaper.png"
+		],
+		"opacity": 0.6,
+		"size": "cover",
+		"position": "center",
+		"interval": 0,
+		"random": false
+	},
+
+	"workbench.colorCustomizations": {
+		"editor.background": "#000000ff",
+		"sideBar.background": "#000000ff",
+		"list.inactiveSelectionBackground": "#181b27",
+		"editorGutter.background": "#181b27",
+		"terminal.background": "#000000ff",
+		"panel.background": "#181b27",
+		"statusBar.background": "#181b27",
+		"window.activeBorder": "#181b27",
+		"tab.activeBackground": "#181b27",
+		"activityBar.background": "#000000ff",
+		"menu.background": "#000000ff",
+		"tab.inactiveBackground": "#000000ff"
+	},
+
+	"editor.useTabStops": false,
+	"workbench.startupEditor": "none",
+	"makefile.configureOnOpen": true,
+	"git.autofetch": true,
+	"git.showInlineOpenFileAction": true,
+	"vim.easymotion": true,
+	"vim.gdefault": true,
+	"vim.highlightedyank.enable": true,
+	"vim.leader": " ",
+	"vim.mouseSelectionGoesIntoVisualMode": false,
+	"vim.sneak": true,
+	"vim.sneakReplacesF": true,
+	"vim.useSystemClipboard": true,
+	"vim.handleKeys": {
+		"<C-d>": true,
+		"<C-u>": true,
+		"/": true,
+		"<leader>cr": true
+	},
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1,
+		"asvetliakov.vscode-neovim": 1
+	},
+
+	"terminal.explorerKind": "both",
+	"zenMode.hideLineNumbers": false,
+	"editor.mouseWheelScrollSensitivity": 2,
+	"editor.scrollbar.horizontalScrollbarSize": 2,
+	"workbench.list.mouseWheelScrollSensitivity": 2,
+	"editor.stickyScroll.maxLineCount": 4,
+	"explorer.excludeGitIgnore": true,
+	"todo-tree.general.statusBar": "current file",
+	"todo-tree.general.tags": [
+		"INFO",
+		"BUG",
+		"FIXME",
+		"HACK",
+		"TODO",
+		"[ ]",
+		"[x]"
+	],
+	"todo-tree.general.tagGroups": {
+		"INFO": [
+			"INFO"
+		]
+	},
+	"todo-tree.highlights.customHighlight": {
+		"TODO": {
+			"background": "#00c8ff20",
+			"foreground": "#00c8ff",
+			"icon": "tag",
+			"type": "line",
+			"gutterIcon": true
+		},
+		"INFO": {
+			"background": "#00ffb720",
+			"foreground": "#00ffb7",
+			"icon": "info",
+			"type": "line",
+			"gutterIcon": true
+		},
+		"FIXME": {
+			"foreground": "#a00",
+			"background": "#faa",
+			"iconColour": "darkred",
+			"gutterIcon": true,
+			"icon": "bug",
+			"type": "line"
+		},
+		"[ ]": {
+			"foreground": "#dddf",
+			"iconColour": "#aaa",
+			"gutterIcon": true,
+			"icon": "checklist",
+			"type": "text"
+		},
+		"[x]": {
+			"foreground": "#aaa6",
+			"gutterIcon": true,
+			"icon": "check",
+			"type": "text"
+		}
+	},
+
+	// Markdown
+	"markdown.styles": [],
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.wordWrap": "off",
+		"editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+	},
+	"markdown-pdf.outputDirectoryRelativePathFile": true,
+
+	// GO / GoLang
+	"[go]": {
+		"editor.formatOnSave": true
+	},
+	"[templ]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "a-h.templ"
+	},
+
+	// PHP
+	"php.suggest.basic": true,
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"intelephense.environment.includePaths": [
+		"/var/lib/phpunit/**"
+	],
+	"[cpp]": {
+		"editor.formatOnSave": true
+	},
+	// Other Langs
+	"[typescript]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
+	},
+	"files.associations": {
+		"*.toml": "ini"
+	},
+	"editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'arial'",
+	"editor.fontVariations": true,
+	"editor.fontWeight": "100",
+	"editor.fontSize": 16,
+	"editor.minimap.sectionHeaderFontSize": 8,
+	"tailwindCSS.rootFontSize": 13,
+	"terminal.integrated.fontSize": 16,
+	"editor.rulers": [
+		80,
+		120
+	],
+	"editor.minimap.enabled": false,
+	"editor.lineNumbers": "relative",
+	"editor.fontLigatures": false,
+	// UI - Features
+	"editor.inlayHints.enabled": "offUnlessPressed",
+	"workbench.activityBar.location": "top",
+	"git.blame.statusBarItem.enabled": false,
+	"workbench.editor.editorActionsLocation": "titleBar",
+	"git.openRepositoryInParentFolders": "always",
+	// Smooth scrolling
+	"editor.smoothScrolling": true,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"terminal.integrated.smoothScrolling": true,
+	// don't know
+	"terminal.integrated.env.osx": {
+		"FIG_NEW_SESSION": "1"
+	},
+	"notebook.breadcrumbs.showCodeCells": false,
+	"editor.renderWhitespace": "boundary",
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.pinnedTabSizing": "compact",
+	"[css]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
+	},
+	"files.trimTrailingWhitespace": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.stickyTabStops": true,
+	"vim.easymotionKeys": "zuiophjklnm,.",
+	"editor.suggest.showReferences": false,
+	"path-intellisense.autoTriggerNextSuggestion": true,
+	"intelephense.completion.suggestObjectOperatorStaticMethods": false,
+	"intelephense.environment.phpVersion": "8.3.0",
+	"chat.implicitContext.suggestedContext": false,
+	"telemetry.feedback.enabled": false,
+	"chat.agent.enabled": false,
+	"chat.detectParticipant.enabled": false,
+	"inlineChat.holdToSpeech": false,
+	"notebook.experimental.generate": false,
+	"chat.agent.codeBlockProgress": false,
+	"workbench.secondarySideBar.defaultVisibility": "hidden",
+	"editor.accessibilitySupport": "off",
+	"editor.mouseWheelZoom": true,
+	"window.zoomLevel": 1.25,
+	"workbench.cloudChanges.autoResume": "off",
+	"workbench.cloudChanges.continueOn": "off",
+	"json.schemaDownload.enable": false,
+	"npm.fetchOnlinePackageInfo": false,
+	"typescript.disableAutomaticTypeAcquisition": true,
+	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"javascript.inlayHints.parameterNames.enabled": "all",
+	"javascript.inlayHints.parameterTypes.enabled": true,
+	"javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+	"javascript.inlayHints.variableTypes.enabled": true,
+	"typescript.inlayHints.enumMemberValues.enabled": true,
+	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"typescript.inlayHints.parameterNames.enabled": "all",
+	"typescript.inlayHints.parameterTypes.enabled": true,
+	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+	"typescript.inlayHints.variableTypes.enabled": true,
+	"terminal.integrated.allowChords": true,
+	"terminal.integrated.altClickMovesCursor": false,
+	"editor.stickyScroll.enabled": false,
+
+	"workbench.navigationControl.enabled": false,
+	"workbench.editor.wrapTabs": true,
+	"workbench.editor.showTabIndex": true,
+	"workbench.editor.titleScrollbarVisibility": "hidden",
+
+	"Lua.runtime.version": "LuaJIT",
+	"Lua.diagnostics.globals": [
+		"love",
+		"vim",
+	],
+	"Lua.workspace.library": [
+		"${3rd}/love2d/library"
+	],
+	"Lua.workspace.checkThirdParty": false,
+	"vim.enableNeovim": true,
+	"vim.foldfix": true,
+	"[jsonc]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
+	},
+
+	"terminalrunner.openasdefault": "tab",
+	"terminalrunner.terminals": {
+
+		"opencode": { "terminalName": "OpenCode", "startCommand": "killall opencode ; opencode --port 8099" },
+		"lazygit": { "terminalName": "LazyGit", "startCommand": "lazygit" },
+		"lazydocker": { "terminalName": "LazyDocker", "startCommand": "lazydocker" },
+		"database": { "terminalName": "DBUI", "startCommand": "nvim -c DBUI" },
+		"ranger": { "terminalName": "Ranger", "startCommand": "ranger" },
+		"neovim": { "terminalName": "NeoVim", "startCommand": "nvim ${file} +${line}" },
+
+		"make": {
+			"terminalName": "Make",
+			"startCommand": "make",
+			"openas": "panel"
+		},
+		"makeRun": {
+			"terminalName": "Make",
+			"startCommand": "make run",
+			"openas": "panel"
+		},
+		"makeBuild": {
+			"terminalName": "Make",
+			"startCommand": "make build",
+			"openas": "panel"
+		},
+		"makeClean": {
+			"terminalName": "Make",
+			"startCommand": "make clean",
+			"openas": "panel"
+		},
+
+		"jujutsuShell": { "terminalName": "JuJutsu - Shell", "openas": "tab", "startCommand": "jj log --no-pager --reversed && zsh" },
+		"jujutsuLog": { "terminalName": "JuJutsu - Log", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX\\ +G jj" },
+		"jujutsuCommit": { "terminalName": "JuJutsu - Commit", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX jj commit" },
+		"jujutsuSplit": { "terminalName": "JuJutsu - Split", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX jj split" },
+		"jujutsuDiff": { "terminalName": "JuJutsu - Diff", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX jj diff" },
+		"jujutsuNew": { "terminalName": "JuJutsu - New", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX jj new" },
+		"jujutsuUndo": { "terminalName": "JuJutsu - Undo", "openas": "tab", "startCommand": "JJ_PAGER=less\\ -RX jj undo" },
+
+		"echo": {
+			"terminalName": "Debugging",
+			"openas": "panel",
+			"startCommand": "echo ${file} +${line}; sleep 5"
+		}
+	},
+	"terminal.integrated.hideOnStartup": "whenEmpty",
+	"chat.mcp.autostart": "never",
+	"debug.terminal.clearBeforeReusing": true,
+	"git.terminalGitEditor": true,
+	"vim.visualstar": true,
+	"terminal.integrated.copyOnSelection": true,
+	"terminal.integrated.macOptionClickForcesSelection": true,
+	"gitlens.showWhatsNewAfterUpgrades": false,
+	"gitlens.outputLevel": "silent",
+	"gitlens.codeLens.enabled": false,
+	"window.commandCenter": false,
+	"workbench.colorTheme": "Catppuccin Mocha",
+
+}
