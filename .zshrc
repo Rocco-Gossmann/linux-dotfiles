@@ -5,7 +5,7 @@
 
 ZSH_DISABLE_COMPFIX=
 #if [[ "$OSTYPE" != darwin* ]]; then
-
+#
 	autoload -Uz compinit
 	compinit
 #fi
@@ -28,6 +28,7 @@ export EDITOR=nvim
 # Own env-Vars
 #==============================================================================
 export GOPRIVATE=github.com/rocco-gossmann
+export DOTNET_CLI_UI_LANGUAGE=en
 
 # Usefull Aliasses
 #==============================================================================
@@ -93,6 +94,7 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 
 # extend $PATH
 #==============================================================================
+export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
 [ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
 [ -e "/opt/homebrew/bin" ] && export PATH="/opt/homebrew/bin:$PATH"
 [ -e "/opt/homebrew/sbin" ] && export PATH="/opt/homebrew/sbin:$PATH"
@@ -104,6 +106,7 @@ alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 [ -e "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 [ -e "$HOME/.local/share/nvim/mason/bin" ] && export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
+
 # source a bunch of stuff from homebrew and fixing homebrew permission
 #==============================================================================
 [ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
@@ -112,7 +115,6 @@ export HBP=$HOMEBREW_PREFIX
 [[ `hascmd brew` == "yep" ]] && ( [[ `stat $HBP | awk '{print $5}'` == `whoami` ]] || sudo chown -R `whoami` /opt/homebrew /usr/local/Homebrew )
 
 [ -f $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# [ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
@@ -127,19 +129,17 @@ export HBP=$HOMEBREW_PREFIX
 [ -f "$HOME/.deno/env" ] && source  "$HOME/.deno/env"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
+
 # Tweaks
 #==============================================================================
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+# [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  # [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/multiverse-neon.omp.json)
   [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.toml)
 fi
-
 
 if [ "$ZSH_AUTOLAUNCH" != "" ]; then
 	$ZSH_AUTOLAUNCH
 	exit;
 fi
 
-export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
