@@ -1,4 +1,0 @@
-#!/bin/bash
-
-killall xremap
-xremap ~/.config/xremap/config.yaml

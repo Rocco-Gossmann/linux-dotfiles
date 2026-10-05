@@ -1,0 +1,40 @@
+(defalias
+  eschpr (tap-hold 100 100 esc (layer-while-held capshypr))
+  Co   RA-7                   ;; {
+  Bo   RA-8                   ;; [
+  Bc   RA-9                   ;; ]
+  Cc   RA-0                   ;; }
+  LsG  S-lsgt                 ;; >
+  LsP  RA-lsgt                ;; Pipe |
+  BkSl RA--                   ;; Backslash
+  ArF  (macro S-0 S-lsgt)     ;; Fat Arrow
+  ArT  (macro / S-lsgt)       ;; Thin Arrow
+  Crt  (macro S-= S-spc)      ;; `
+)
+
+(defsrc
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12   sleep  del
+  grv    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab    q    w    e    r    t    y    u    i    o    p    [    ]    ret
+  caps   a    s    d    f    g    h    j    k    l    ;    '    \
+  lsft  lsgt  z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl  lmet lalt            spc                 ralt rmet cmp  rctl
+)
+
+(deflayer default
+  esc    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12   sleep  del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    ret
+  @eschpr a    s    d    f    g    h    j    k    l    ;    '    \
+  lsft   lsgt  z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl   lmet lalt            spc                 ralt rmet cmp  rctl
+)
+
+(deflayer capshypr
+  esc  f1   f2   f3   f4   f5   f6      f7     f8     f9    f10  f11    f12  sleep  del
+  grv   1    2    3    4    5    6      7      8      9     0    -      =    bspc
+  tab   q    w    e    r    t    @Co    @Bo    @Bc    @Cc   p    [      @Crt    @ArF 
+  _     a    s    d    f    g    left   down    up    right     ;    '      @ArT
+  lsft lsgt  z    x    c    v    b     lsgt    @LsG   @LsP  .    @BkSl    rsft
+  lctl lmet lalt            spc                 ralt rmet cmp  rctl
+)
