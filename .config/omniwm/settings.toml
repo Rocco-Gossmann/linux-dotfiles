@@ -240,32 +240,32 @@ showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
-backgroundOpacity = 0.1
+backgroundOpacity = 0.05
 deduplicateAppIcons = false
 enabled = true
 excludedBundleIDs = []
-height = 36.0
+height = 40.0
 hideEmptyWorkspaces = false
 hideInNativeFullscreen = false
 hoverPreviewsEnabled = true
-inactiveIconOpacity = 0.15000000000000002
+inactiveIconOpacity = 0.35000000000000003
 notchActiveZoneWidth = 180.0
 notchMode = "moveBelowMenuBar"
-notificationBadgeRefreshIntervalSeconds = 5.0
+notificationBadgeRefreshIntervalSeconds = 10.0
 notificationBadges = "dot"
 position = "left"
-reserveLayoutSpace = false
-revealHoldMilliseconds = 200.0
-revealModifier = "off"
+reserveLayoutSpace = true
+revealHoldMilliseconds = 0.0
+revealModifier = "option"
 showAccentHighlights = true
-showFloatingWindows = false
-showItemBackgrounds = false
+showFloatingWindows = true
+showItemBackgrounds = true
 showLabels = true
 solidBlackBackground = false
-systemStatsButton = false
+systemStatsButton = true
 transparentBackground = false
-windowLevel = "floating"
-xOffset = 0.0
+windowLevel = "popup"
+xOffset = 20.0
 yOffset = 0.0
 
 [workspaceBar.iconOverrides]
