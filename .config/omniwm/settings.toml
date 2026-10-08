@@ -7,7 +7,7 @@ schemaVersion = 4
 
 [appearance]
 mode = "automatic"
-tabRailAppIcons = true
+tabRailAppIcons = false
 
 [borders]
 enabled = true
@@ -92,13 +92,13 @@ crossesMonitorAtEdge = false
 followsMouse = false
 followsWindowToMonitor = false
 lockModifier = "off"
-moveCrossesMonitorAtEdge = false
+moveCrossesMonitorAtEdge = true
 moveMouseToFocusedWindow = false
 raiseOnMouseFocus = false
 
 [gaps]
 fullscreenUsesOuterGaps = false
-size = 3.0
+size = 0.0
 
 [gaps.outer]
 bottom = 0.0
@@ -107,13 +107,14 @@ right = 0.0
 top = 0.0
 
 [general]
-animationSpeed = 2.75
+animationSpeed = 1.25
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
-preventSleepEnabled = false
+language = "en"
+preventSleepEnabled = true
 systemHyperTrigger = "None"
 updateChecksEnabled = false
 
@@ -144,26 +145,25 @@ rehideIntervalSeconds = 5.0
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = false
+enabled = true
 margin = 1
 
 [niri]
-alwaysCenterSingleColumn = false
-centerFocusedColumn = "never"
+alwaysCenterSingleColumn = true
+centerFocusedColumn = "onOverflow"
 containerPrimarySpanPresets = [0.25, 0.33, 0.5, 0.66, 0.75]
-defaultContainerPrimarySpan = 0.25
 edgeGaps = false
-infiniteLoop = false
-resizeStepPercent = 5
-singleWindowFit = "1920x1080"
+infiniteLoop = true
+resizeStepPercent = 1
+singleWindowFit = "container_primary_span"
 visibleContainerCount = 3
 
 [overview]
 enabled = true
 invertScrollDirection = false
 matchFocusBorder = true
-mouseScrollSpeed = 1.0
-zoom = 0.8500000000000001
+mouseScrollSpeed = 1.05
+zoom = 0.9
 
 [overview.backdrop]
 alpha = 0.0
@@ -204,7 +204,7 @@ position = "center"
 widthPercent = 50.0
 
 [routing]
-mode = "macOS"
+mode = "custom"
 
 [[routing.arrangements]]
 id = "4CDFE8FE-0C6F-4665-AB88-30E319213BA8"
@@ -215,13 +215,28 @@ gridRow = 0
 monitorDisplayUUID = "A37DA33C-EE5D-4E0C-9087-73EA3C3DC665"
 monitorName = "LS24D60xU"
 
+[[routing.arrangements]]
+id = "9799EBCD-AC6E-454C-BB08-D70117C8E82F"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "FEFEA080-ECA4-E2F7-0857-D6964E3302DB"
+monitorName = "LG ULTRAWIDE"
+
+[[routing.arrangements.monitors]]
+gridColumn = 1
+gridRow = 0
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
+
 [scratchpads]
 
 [scratchpads.labels]
 
 [statusBar]
 showAppNames = true
-showWorkspaceName = true
+showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
@@ -338,6 +353,26 @@ assignToWorkspace = "1"
 bundleId = "org.alacritty"
 id = "1EA242B8-23FB-45F3-9741-AD4A1461CFB1"
 initialContainerPrimarySpan = 0.75
+layout = "tile"
+
+[[appRules]]
+assignToWorkspace = "2"
+bundleId = "com.tinyspeck.slackmacgap"
+id = "013EF12B-4177-42B6-836C-B239E1BFD127"
+initialContainerPrimarySpan = 0.75
+layout = "tile"
+
+[[appRules]]
+assignToWorkspace = "2"
+bundleId = "com.apple.iCal"
+id = "FBA2E315-4038-4801-A4C4-F012E5B1F50C"
+initialContainerPrimarySpan = 0.25
+layout = "tile"
+
+[[appRules]]
+bundleId = "com.apple.mail"
+id = "21ECF945-A59C-48E8-A993-DA5044B8901B"
+initialContainerPrimarySpan = 0.25
 layout = "tile"
 
 [[hotkeys]]
@@ -593,7 +628,7 @@ binding = "Option+L"
 id = "focus.right"
 
 [[hotkeys]]
-binding = "Option+Tab"
+binding = "Unassigned"
 id = "focusPrevious"
 
 [[hotkeys]]
@@ -693,11 +728,11 @@ binding = "Option+Shift+H"
 id = "move.left"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+J"
 id = "move.down"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+Shift+K"
 id = "move.up"
 
 [[hotkeys]]
@@ -713,11 +748,11 @@ binding = "Unassigned"
 id = "moveWindowUp"
 
 [[hotkeys]]
-binding = "Option+Shift+J"
+binding = "Unassigned"
 id = "moveWindowDownOrToWorkspaceDown"
 
 [[hotkeys]]
-binding = "Option+Shift+K"
+binding = "Unassigned"
 id = "moveWindowUpOrToWorkspaceUp"
 
 [[hotkeys]]
@@ -805,7 +840,7 @@ binding = "Control+Option+End"
 id = "moveColumnToLast"
 
 [[hotkeys]]
-binding = "Option+T"
+binding = "Unassigned"
 id = "toggleColumnTabbed"
 
 [[hotkeys]]
@@ -817,27 +852,27 @@ binding = "Unassigned"
 id = "focusColumnLast"
 
 [[hotkeys]]
-binding = "Option+Shift+7"
+binding = "Left Option+7"
 id = "focusColumn.0"
 
 [[hotkeys]]
-binding = "Option+Shift+8"
+binding = "Left Option+8"
 id = "focusColumn.1"
 
 [[hotkeys]]
-binding = "Option+Shift+9"
+binding = "Left Option+9"
 id = "focusColumn.2"
 
 [[hotkeys]]
-binding = "Option+Shift+0"
+binding = "Left Option+0"
 id = "focusColumn.3"
 
 [[hotkeys]]
-binding = "Option+Shift+Minus"
+binding = "Left Option+Minus"
 id = "focusColumn.4"
 
 [[hotkeys]]
-binding = "Option+Shift+Equal"
+binding = "Left Option+Equal"
 id = "focusColumn.5"
 
 [[hotkeys]]
@@ -961,11 +996,11 @@ binding = "Control+Option+R"
 id = "resetWindowSecondarySpan"
 
 [[hotkeys]]
-binding = "Option+Minus"
+binding = "Unassigned"
 id = "setContainerPrimarySpan.decrease10Percent"
 
 [[hotkeys]]
-binding = "Option+Equal"
+binding = "Unassigned"
 id = "setContainerPrimarySpan.increase10Percent"
 
 [[hotkeys]]
@@ -1057,7 +1092,7 @@ binding = "Unassigned"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+T"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -1101,6 +1136,7 @@ binding = "Unassigned"
 id = "toggleSystemStats"
 
 [[workspaces]]
+displayName = "Main"
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
 layoutType = "niri"
 name = "1"
