@@ -409,11 +409,11 @@ layout = "float"
 titleSubstring = "DEBUG"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Command+H"
 id = "toggleScratchpad.1"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Command+Shift+H"
 id = "assignFocusedWindowToScratchpad.1"
 
 [[hotkeys]]
