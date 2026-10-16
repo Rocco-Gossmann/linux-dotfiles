@@ -1117,11 +1117,11 @@ binding = "Unassigned"
 id = "openCommandPalette"
 
 [[hotkeys]]
-binding = "Left Option+Left Shift+R"
+binding = "Left Command+M"
 id = "raiseAllFloatingWindows"
 
 [[hotkeys]]
-binding = "Command+M"
+binding = "Unassigned"
 id = "toggleFloatingFocus"
 
 [[hotkeys]]
