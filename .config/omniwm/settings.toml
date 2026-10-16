@@ -91,7 +91,7 @@ crossesMonitorAtEdge = false
 followsMouse = false
 followsWindowToMonitor = false
 lockModifier = "off"
-moveCrossesMonitorAtEdge = true
+moveCrossesMonitorAtEdge = false
 moveMouseToFocusedWindow = false
 raiseOnMouseFocus = false
 
@@ -113,7 +113,7 @@ hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
 language = "en"
-preventSleepEnabled = true
+preventSleepEnabled = false
 systemHyperTrigger = "Right Shift"
 updateChecksEnabled = false
 
@@ -144,7 +144,7 @@ rehideIntervalSeconds = 5.0
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = true
+enabled = false
 margin = 1
 
 [niri]
@@ -406,6 +406,7 @@ axSubrole = "AXStandardWindow"
 bundleId = ""
 id = "E894AA71-79D0-4F4A-8AC6-A8ED320E4921"
 layout = "float"
+titleSubstring = "DEBUG"
 
 [[hotkeys]]
 binding = "Unassigned"
