@@ -1125,7 +1125,7 @@ binding = "Unassigned"
 id = "toggleFloatingFocus"
 
 [[hotkeys]]
-binding = "Left Control+Left Option+R"
+binding = "Left Option+R"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
