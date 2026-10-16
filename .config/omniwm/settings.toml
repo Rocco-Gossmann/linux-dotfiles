@@ -1129,7 +1129,7 @@ binding = "Left Control+Left Option+R"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Shift+Command+F"
+binding = "Left Shift+Left Command+F"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -1137,7 +1137,7 @@ binding = "Unassigned"
 id = "closeFocusedWindow"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Shift+Command+1"
 id = "openMenuAnywhere"
 
 [[hotkeys]]
