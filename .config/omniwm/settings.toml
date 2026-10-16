@@ -91,7 +91,7 @@ crossesMonitorAtEdge = false
 followsMouse = false
 followsWindowToMonitor = false
 lockModifier = "off"
-moveCrossesMonitorAtEdge = true
+moveCrossesMonitorAtEdge = false
 moveMouseToFocusedWindow = false
 raiseOnMouseFocus = false
 
@@ -113,7 +113,7 @@ hotkeysEnabled = true
 hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
 language = "en"
-preventSleepEnabled = true
+preventSleepEnabled = false
 systemHyperTrigger = "Right Shift"
 updateChecksEnabled = false
 
@@ -144,7 +144,7 @@ rehideIntervalSeconds = 5.0
 
 [mouseWarp]
 constrainToArrangement = false
-enabled = true
+enabled = false
 margin = 1
 
 [niri]
@@ -406,13 +406,14 @@ axSubrole = "AXStandardWindow"
 bundleId = ""
 id = "E894AA71-79D0-4F4A-8AC6-A8ED320E4921"
 layout = "float"
+titleSubstring = "DEBUG"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Command+H"
 id = "toggleScratchpad.1"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Command+Shift+H"
 id = "assignFocusedWindowToScratchpad.1"
 
 [[hotkeys]]
@@ -780,11 +781,11 @@ binding = "Unassigned"
 id = "moveWindowUp"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Down Arrow"
 id = "moveWindowDownOrToWorkspaceDown"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Up Arrow"
 id = "moveWindowUpOrToWorkspaceUp"
 
 [[hotkeys]]
@@ -1116,19 +1117,19 @@ binding = "Unassigned"
 id = "openCommandPalette"
 
 [[hotkeys]]
-binding = "Left Option+Left Shift+R"
+binding = "Left Command+M"
 id = "raiseAllFloatingWindows"
 
 [[hotkeys]]
-binding = "Command+M"
+binding = "Unassigned"
 id = "toggleFloatingFocus"
 
 [[hotkeys]]
-binding = "Left Control+Left Option+R"
+binding = "Left Option+R"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Shift+Command+F"
+binding = "Left Shift+Left Command+F"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]
@@ -1136,7 +1137,7 @@ binding = "Unassigned"
 id = "closeFocusedWindow"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Shift+Command+1"
 id = "openMenuAnywhere"
 
 [[hotkeys]]
