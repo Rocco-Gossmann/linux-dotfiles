@@ -781,11 +781,11 @@ binding = "Unassigned"
 id = "moveWindowUp"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Down Arrow"
 id = "moveWindowDownOrToWorkspaceDown"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Control+Command+Up Arrow"
 id = "moveWindowUpOrToWorkspaceUp"
 
 [[hotkeys]]
