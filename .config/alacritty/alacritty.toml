@@ -1,5 +1,6 @@
 [env]
-TERM = "xterm-256color"
+TERM="xterm-256color"
+ZSH_AUTOLAUNCH="echo \"working around a bug in MacOS 27, by launching an SSH-Session to ::. See ~/.config/alacritty/alacritty.toml.\" ; ssh :: " 
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
