@@ -25,10 +25,12 @@ bindkey -v
 export VISUAL=nvim
 export EDITOR=nvim
 
+
 # Own env-Vars
 #==============================================================================
 export GOPRIVATE=github.com/rocco-gossmann
 export DOTNET_CLI_UI_LANGUAGE=en
+
 
 # Usefull Aliasses
 #==============================================================================
@@ -65,6 +67,7 @@ alias mr="make run"
 alias doc="docker compose"
 alias prettyjson="jq --color-output | less -FR"
 
+
 # Shortcut tweeks
 #==============================================================================
 autoload -Uz edit-command-line
@@ -79,10 +82,12 @@ function clear-current-shell { zle clear-screen; }
 zle -N clear-current-shell 
 bindkey '^xc' clear-current-shell 
 
+
 # inject envvars to ssh
 #==============================================================================
 alias orig_ssh=`which ssh`
 alias ssh="TERM=xterm-256color orig_ssh"
+
 
 # small commands to fix varous things, that break on Mac sometimes
 #==============================================================================
@@ -91,6 +96,7 @@ alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
 alias fix-mac-autoupdate="defaults write com.apple.SoftwareUpdate UserNotificationDate -date \"2090-02-07 23:22:47 +0000\"; defaults write com.apple.SoftwareUpdate MajorOSUserNotificationDate -date \"2090-02-07 23:22:47 +0000\""
 alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client.plist"
 alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
+
 
 # extend $PATH
 #==============================================================================
@@ -138,8 +144,13 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.toml)
 fi
 
+# ZSH - Autolaunch
+# -----------------------------------------------------------------------------
+# Launching bash commands via Env-Var
+#==============================================================================
 if [ "$ZSH_AUTOLAUNCH" != "" ]; then
-	$ZSH_AUTOLAUNCH
-	exit;
+	cmd="$ZSH_AUTOLAUNCH"
+	unset ZSH_AUTOLAUNCH
+	bash -i -c $cmd
 fi
 
