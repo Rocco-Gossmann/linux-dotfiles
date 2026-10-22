@@ -26,6 +26,26 @@
 					}
 				}
 			}
+		},
+
+		"lmstudio.gpdwinmini": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "LMStudio (GPDWinMini)",
+			"limit": {
+				"context": 32768
+			},
+			"options": {
+				"baseURL": "http://homeai:1234/v1"
+			},
+			"models": {
+				"lmstudio": {
+					"name": "GLM-4.7-Flash",
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
+			}
 		}
 	}
 
