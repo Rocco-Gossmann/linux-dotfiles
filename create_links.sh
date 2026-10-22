@@ -1,6 +1,8 @@
 #!/bin/bash
 
 CWD=$(realpath $(dirname $0)) || exit 1
+platform_os=$(uname -s)
+platform_arch=$(uname -m)
 
 [ "$HOME" == "" ] && echo "no \$HOME - EnvVar" && exit 2
 
@@ -13,16 +15,21 @@ ln -s "${CWD}/.tmux.conf"
 mkdir -p $HOME/.config
 cd $HOME/.config
 echo "enter: `pwd`"
-# rm -rf ghostty    ; ln -s $CWD/.config/ghostty
 rm -rf ranger     ; ln -s $CWD/.config/ranger
 rm -rf opencode   ; ln -s $CWD/.config/opencode
 rm -rf oh-my-posh ; ln -s $CWD/.config/oh-my-posh
-# rm -rf ranger     ; ln -s $CWD/.config/ranger
 rm -rf yazi       ; ln -s $CWD/.config/yazi
 
-# cd $HOME/.config/ghostty
-# echo "enter: `pwd`"
-# ln -s $CWD/Bilder/wallpapers/bsp_3x2_conv_16x9_terminal.png ghosttybg-symlink
+if [ "$platform_os" = "Linux" ] && [ "$platform_arch" = "x86_64" ]; then
+	mkdir -p $HOME/.config/vscodium/User
+	cd $HOME/.config/vscodium/User
+	rm -f settings.json    ; ln -s $CWD/.config/vscodium/settings.json
+	rm -f keybindings.json ; ln -s $CWD/.config/vscodium/keybindings.linux.json keybindings.json
+
+elif [ "$platform_os" = "Darwin" ] && [ "$platform_arch" = "arm64" ]; then
+	# MacOS: do something
+	
+fi
 
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin

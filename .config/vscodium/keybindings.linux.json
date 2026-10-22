@@ -1,0 +1,128 @@
+// Place your key bindings in this file to override the defaults
+[
+    //==========================================================================
+    // BM: MacOS Parity cmd(+shift)+p/o/b/j
+    //==========================================================================
+    { "key": "alt+b", "command": "workbench.action.toggleSidebarVisibility"},
+    { "key": "alt+j", "command": "workbench.action.togglePanel", "when": "!sideBarFocus" },
+    { "key": "alt+p", "command": "workbench.action.quickOpen"},
+    { "key": "alt+shift+p", "command": "workbench.action.showCommands"},
+    { "key": "alt+shift+o", "command": "workbench.action.gotoSymbol"},
+    { "key": "alt+o", "command": "workbench.action.openRecent"},
+    { "key": "alt+w", "command": "workbench.action.closeActiveEditor"},
+
+    //==========================================================================
+    // BM: Ctrl + HJKL => Navigate splits
+    //==========================================================================
+    { "key": "ctrl+h", "command": "workbench.action.navigateLeft"},
+    { "key": "ctrl+l", "command": "workbench.action.navigateRight"},
+    { "key": "ctrl+j", "command": "workbench.action.navigateDown"},
+    { "key": "ctrl+k", "command": "workbench.action.navigateUp"},
+
+    //==========================================================================
+    // BM: Alt + HJKL => Navigate Tabs
+    //==========================================================================
+    // Editors
+    { "key": "alt+h", "command": "workbench.action.previousEditorInGroup", "when": "!panelFocus && !sideBarFocus"},
+    { "key": "alt+l", "command": "workbench.action.nextEditorInGroup", "when": "!panelFocus && !sideBarFocus"},
+    // Bottom pannel
+    { "key": "alt+h", "command": "workbench.action.previousPanelView", "when": "panelFocus"},
+    { "key": "alt+l", "command": "workbench.action.nextPanelView", "when": "panelFocus"},
+    // sidebar
+    { "key": "alt+h", "command": "workbench.action.previousSideBarView", "when": "sideBarFocus"},
+    { "key": "alt+l", "command": "workbench.action.nextSideBarView", "when": "sideBarFocus"},
+    { "key": "alt+j", "command": "workbench.action.focus", "when": "sideBarFocus"},
+
+    //==========================================================================
+    // BM: Alt + Shift + HJKL => Move Tabs (In and between groups)
+    //==========================================================================
+    { "key": "alt+shift+h", "command": "workbench.action.moveEditorLeftInGroup", "when": "!activeEditorIsFirstInGroup"},
+    { "key": "alt+shift+l", "command": "workbench.action.moveEditorRightInGroup", "when": "!activeEditorIsLastInGroup"},
+    { "key": "alt+shift+h", "command": "workbench.action.moveEditorToLeftGroup", "when": "activeEditorIsFirstInGroup"},
+    { "key": "alt+shift+l", "command": "workbench.action.moveEditorToRightGroup", "when": "activeEditorIsLastInGroup"},
+    { "key": "alt+shift+j", "command": "workbench.action.moveEditorToBelowGroup"},
+    { "key": "alt+shift+k", "command": "workbench.action.moveEditorToAboveGroup"},
+
+    //==========================================================================
+    // BM: My NeoVim parity
+    //==========================================================================
+    // file / find stuff
+    { "key": "ctrl+space f d", "command": "workbench.action.showErrorsWarnings"},
+    // project actions
+    { "key": "ctrl+space p s", "command": "workbench.view.search.focus"},
+    { "key": "ctrl+space p f", "command": "workbench.action.quickOpen"},
+    // Code navigation
+	{ "key": "ctrl-space g r", "command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" },
+    // Code Actions
+    { "key": "ctrl+space c r", "command": "editor.action.rename"},
+    { "key": "ctrl+space c c", "command": "editor.action.commentLine"},
+    { "key": "ctrl+space c a", "command": "editor.action.quickFix"},
+    //Splits
+    { "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight"},
+    { "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"},
+    // NerdTree-Actions
+    { "key": "m m", "command": "renameFile", "when": "explorerViewletFocus && !inputFocus"},
+    { "key": "m a", "command": "explorer.newFile", "when": "explorerViewletFocus && !inputFocus"},
+    { "key": "m shift+a", "command": "explorer.newFolder", "when": "explorerViewletFocus && !inputFocus"},
+    // Find Replace Macro
+    { "key": "ctrl+r", "command": "runCommands", "args": {
+		"commands": [
+			"actions.find",
+			"toggleFindInSelection"
+		]
+	}, "when": "!findWidgetVisible && editorHasSelection" },
+	{ "key": "ctrl+r", "command": "editor.action.startFindReplaceAction", "when": "findWidgetVisible" },
+
+    // Terminal control
+	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u0000" } },
+
+    //==========================================================================
+    // BM: Runners / Launchers
+    //==========================================================================
+    { "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"},
+    { "key": "ctrl+space l l", "command": "terminalrunner.run.llm"},
+    { "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup"},
+    { "key": "ctrl+space b", "command": "bookmarkcomments.bm"},
+
+    //==========================================================================
+    // BM: OpenCode-Communicator
+    //==========================================================================
+    { "key": "ctrl+space o r", "command": "openCodeCommunicator.ocreference"},
+	{ "key": "ctrl+space o c", "command": "openCodeCommunicator.occopy"},
+	{ "key": "ctrl+space o o", "command": "openCodeCommunicator.ocfocus"},
+
+    //==========================================================================
+    // BM: Disable Stuff
+    //==========================================================================
+    { "key": "ctrl+b", "command": "-markdown.editor.cursorLeft", "when": "false" },
+    { "key": "ctrl+b", "command": "-extension.vim_ctrl+b", "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'" },
+    { "key": "alt+h", "command": "-editor.action.accessibilityHelpOpenHelpLink", "when": "accessibilityHelpIsShown" },
+    { "key": "alt+h", "command": "-testing.toggleTestingPeekHistory", "when": "testing.isPeekVisible" },
+    { "key": "alt+l", "command": "-toggleSearchEditorContextLines", "when": "inSearchEditor" },
+    { "key": "alt+l", "command": "-toggleFindInSelection", "when": "editorFocus" },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "true"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFolderViaWorkspace",
+        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openLocalFile",
+        "when": "remoteFileDialogVisible"
+    }
+]
