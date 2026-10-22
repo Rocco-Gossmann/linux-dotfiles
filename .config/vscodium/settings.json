@@ -1,140 +1,167 @@
 {
-    //==========================================================================
-    // BM: Theme / layout
-    //==========================================================================
-    "workbench.startupEditor": "none",
-    "workbench.iconTheme": "catppuccin-mocha",
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.activityBar.location": "top",
-    "excalidraw.theme": "light",
-    "window.density.editorTabHeight": "compact",
-    "window.density.layout": "compact",
-    "workbench.browser.showInTitleBar": false,
-    "workbench.layoutControl.enabled": true,
-    "window.commandCenter": false,
-    "workbench.editor.showTabs": "multiple",
-    "workbench.navigationControl.enabled": false,
-    "workbench.editor.editorActionsLocation": "titleBar",
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.editor.wrapTabs": true,
-    "workbench.browser.newTabPlacement": "window",
-    "explorer.autoReveal": true,
-    "editor.stickyScroll.enabled": false,
-    "workbench.editor.highlightModifiedTabs": true,
+  //==========================================================================
+  // BM: Theme / layout
+  //==========================================================================
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.activityBar.location": "top",
+  "excalidraw.theme": "light",
+  "window.density.editorTabHeight": "compact",
+  "window.density.layout": "compact",
+  "workbench.browser.showInTitleBar": false,
+  "workbench.layoutControl.enabled": true,
+  "window.commandCenter": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.navigationControl.enabled": false,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.wrapTabs": true,
+  "workbench.browser.newTabPlacement": "window",
+  "explorer.autoReveal": true,
+  "editor.stickyScroll.enabled": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "autoOpenPreviewPanel.openPreviewToSide": false,
+  "background.fullscreen": {
+    "images": ["~/linux-dotfiles/.config/vscodium/background.png"],
+    "opacity": 0.2,
+    "size": "cover",
+    "position": "center",
+    "styles": [],
+    "interval": 0,
+    "random": false
+  },
+  "workbench.colorCustomizations": {
+    "editor.background": "#040808",
+    "tab.activeBorder": "#ffff00ff",
+    "tab.activeForeground": "#a9d2b9",
+    "tab.activeBackground": "#1f6d3e4d"
+  },
 
-    "background.fullscreen": {
-        "images":  [ "~/linux-dotfiles/.config/vscodium/background.png" ],
-        "opacity": 0.2,
-        "size": "cover",
-        "position": "center",
-        "styles": [],
-        "interval": 0,
-        "random": false
-    },
-    "workbench.colorCustomizations": {
-        "editor.background": "#040808",
-        "tab.activeBorder": "#ffff00ff",
-        "tab.activeForeground": "#a9d2b9",
-        "tab.activeBackground": "#1f6d3e4d",
-    },
+  //==========================================================================
+  // BM: Editor
+  //==========================================================================
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "vim.foldfix": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.renderWhitespace": "trailing",
+  "editor.autoIndentOnPaste": true,
+  "editor.detectIndentation": false,
+  "editor.indentSize": "tabSize",
+  "editor.useTabStops": true,
+  "editor.stickyTabStops": true,
+  "editor.tabCompletion": "on",
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "files.trimTrailingWhitespace": true,
 
+  //==========================================================================
+  // BM: Misc
+  //==========================================================================
+  "workbench.quickOpen.preserveInput": true,
+  "search.quickOpen.includeHistory": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "workbench.startupEditor": "terminal",
 
-    //==========================================================================
-    // BM: Editor
-    //==========================================================================
-    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "vim.foldfix": true,
-    "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling": true,
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "editor.renderWhitespace": "trailing",
-    "editor.autoIndentOnPaste": true,
-    "editor.detectIndentation": false,
-    "editor.indentSize": "tabSize",
-    "editor.useTabStops": true,
-    "editor.stickyTabStops": true,
-    "editor.tabCompletion": "on",
-    "editor.inlayHints.enabled": "onUnlessPressed",
-    "files.trimTrailingWhitespace": true,
+  //==========================================================================
+  // BM: LSP - C#
+  //==========================================================================
+  "csharp-dev-tools.homepage.enabled": false,
+  "csharp-dev-tools.codeLens.enableEnumAssignments": false,
+  "csharp-dev-tools.codeLens.enableGoToImplementation": false,
+  "csharp-dev-tools.codeLens.enableMemberAssignments": false,
+  "csharp-dev-tools.codeLens.enableTestGeneration": false,
+  "csharp-dev-tools.codeLens.enableReferences": false,
+  "csharp-dev-tools.codeLens.enableTestRunner": false,
+  "csharp-dev-tools.codeLens.enableTypeInitializations": false,
+  "csharp-dev-tools.roslyn.diagnosticsFormat": "InfosAsHints",
+  "csharp-dev-tools.inlayHints.enableParameterHints": true,
+  "csharp-dev-tools.inlayHints.enableTypeHints": false,
+  "csharp-dev-tools.solutionViewer.revealOnLoad": false,
+  "csharp-dev-tools.solutionViewer.expandCsFilesOutline": true,
+  "csharp-dev-tools.nuget.checkVulnerabilities": false,
+  "csharp-dev-tools.solutionViewer.trackActiveFile": false,
+  "csharp-dev-tools.solutionViewer.folderIconVariant": "Phosphor",
+  "csharp-dev-tools.solutionViewer.folderColorTheme": "default",
+  "csharp-dev-tools.solutionViewer.folderThickness": "large",
+  "csharp-dev-tools.editor.autoCollapseUsings": false,
+  "csharp-dev-tools.highlights.xmlComments": false,
+  "csharp-dev-tools.highlights.controllerTemplates": false,
+  "csharp-dev-tools.inlineDebugValues.highlightChangedValues": true,
+  "csharp-dev-tools.roslyn.csharpDevToolsAnalyzersEnabled": false,
+  "csharp-dev-tools.roslyn.roslynatorAnalyzersEnabled": false,
+  "csharp-dev-tools.tools.showAzure": false,
+  "csharp-dev-tools.tools.showRunners": false,
+  "csharp-dev-tools.tools.showNuGet": false,
+  "csharp-dev-tools.highlights.sqlHighlighting": false,
+  "csharp-dev-tools.highlights.todoComments": false,
+  "csharp-dev-tools.semanticColors.theme": "off",
+  "csharp-dev-tools.solutionViewer.autoNamespaceAdjustment": true,
+  "csharp-dev-tools.solutionViewer.useCSharpDevToolsIconPack": false,
+  "csharp-dev-tools.solutionViewer.differentiateFolderOpenState": true,
 
-    //==========================================================================
-    // BM: Misc
-    //==========================================================================
-    "workbench.quickOpen.preserveInput": true,
-    "search.quickOpen.includeHistory": true,
-    "workbench.editor.enablePreviewFromQuickOpen": true,
-    "search.quickOpen.history.filterSortOrder": "recency",
+  //==========================================================================
+  // BM: LSP - Haskell
+  //==========================================================================
+  "haskell.plugin.class.codeLensOn": false,
+  "haskell.plugin.importLens.codeLensOn": false,
+  "haskell.plugin.eval.codeLensOn": false,
 
-    //==========================================================================
-    // BM: LSP - C#
-    //==========================================================================
-    "csharp-dev-tools.homepage.enabled": false,
-    "csharp-dev-tools.codeLens.enableEnumAssignments": false,
-    "csharp-dev-tools.codeLens.enableGoToImplementation": false,
-    "csharp-dev-tools.codeLens.enableMemberAssignments": false,
-    "csharp-dev-tools.codeLens.enableTestGeneration": false,
-    "csharp-dev-tools.codeLens.enableReferences": false,
-    "csharp-dev-tools.codeLens.enableTestRunner": false,
-    "csharp-dev-tools.codeLens.enableTypeInitializations": false,
-    "csharp-dev-tools.roslyn.diagnosticsFormat": "InfosAsHints",
-    "csharp-dev-tools.inlayHints.enableParameterHints": true,
-    "csharp-dev-tools.inlayHints.enableTypeHints": false,
-    "csharp-dev-tools.solutionViewer.revealOnLoad": false,
-    "csharp-dev-tools.solutionViewer.expandCsFilesOutline": true,
-    "csharp-dev-tools.nuget.checkVulnerabilities": false,
-    "csharp-dev-tools.solutionViewer.trackActiveFile": false,
-    "csharp-dev-tools.solutionViewer.folderIconVariant": "Phosphor",
-    "csharp-dev-tools.solutionViewer.folderColorTheme": "default",
-    "csharp-dev-tools.solutionViewer.folderThickness": "large",
-    "csharp-dev-tools.editor.autoCollapseUsings": false,
-    "csharp-dev-tools.highlights.xmlComments": false,
-    "csharp-dev-tools.highlights.controllerTemplates": false,
-    "csharp-dev-tools.inlineDebugValues.highlightChangedValues": true,
-    "csharp-dev-tools.roslyn.csharpDevToolsAnalyzersEnabled": false,
-    "csharp-dev-tools.roslyn.roslynatorAnalyzersEnabled": false,
-    "csharp-dev-tools.tools.showAzure": false,
-    "csharp-dev-tools.tools.showRunners": false,
-    "csharp-dev-tools.tools.showNuGet": false,
-    "csharp-dev-tools.highlights.sqlHighlighting": false,
-    "csharp-dev-tools.highlights.todoComments": false,
-    "csharp-dev-tools.semanticColors.theme": "off",
-    "csharp-dev-tools.solutionViewer.autoNamespaceAdjustment": true,
-    "csharp-dev-tools.solutionViewer.useCSharpDevToolsIconPack": false,
-    "csharp-dev-tools.solutionViewer.differentiateFolderOpenState": true,
+  //==========================================================================
+  // BM: LSP - TS/JS (Javascript/Typescript)
+  //==========================================================================
+  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
 
-    //==========================================================================
-    // BM: LSP - Haskell
-    //==========================================================================
-    "haskell.plugin.class.codeLensOn": false,
-    "haskell.plugin.importLens.codeLensOn": false,
-    "haskell.plugin.eval.codeLensOn": false,
+  //==========================================================================
+  // BM: Terminal
+  //==========================================================================
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.moveEditorLeftInGroup",
+    "workbench.action.moveEditorRightInGroup",
+    "workbench.action.moveEditorToBelowGroup",
+    "workbench.action.moveEditorToAboveGroup",
+    "workbench.action.moveEditorToLeftGroup",
+    "workbench.action.moveEditorToRightGroup"
+  ],
+  "terminal.integrated.smoothScrolling": true,
+  "terminalrunner.openasdefault": "tab",
+  "terminalrunner.terminals": {
+    "lazygit": { "startCommand": "lazygit", "terminalName": "LazyGit" },
+    "llm": { "startCommand": "opencode --port 8099", "terminalName": "LLM" }
+  },
 
-    //==========================================================================
-    // BM: LSP - TS/JS (Javascript/Typescript)
-    //==========================================================================
-    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
-    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  //==========================================================================
+  // BM: Vim
+  //==========================================================================
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<S-m>"], "after": ["m"] },
+    { "before": ["m"], "after": ["`"] },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": [{
+        "command": "editor.action.rename"
+      }]
+    }
+  ],
 
-    //==========================================================================
-    // BM: Terminal
-    //==========================================================================
-    "terminal.integrated.commandsToSkipShell": [
-        "workbench.action.moveEditorLeftInGroup",
-        "workbench.action.moveEditorRightInGroup",
-        "workbench.action.moveEditorToBelowGroup",
-        "workbench.action.moveEditorToAboveGroup",
-        "workbench.action.moveEditorToLeftGroup",
-        "workbench.action.moveEditorToRightGroup",
-    ],
-    "terminal.integrated.smoothScrolling": true,
-    "terminalrunner.openasdefault": "tab",
-    "terminalrunner.terminals": {
-        "lazygit": { "startCommand": "lazygit", "terminalName": "LazyGit" },
-        "llm": { "startCommand": "opencode --port 8099", "terminalName": "LLM" },
-    },
+  "vim.easymotion": true,
+  "vim.gdefault": true,
+  "vim.highlightedyank.enable": true,
+  "vim.leader": " ",
+  "vim.mouseSelectionGoesIntoVisualMode": false,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true,
+    "<leader>cr": true
+  }
 }
