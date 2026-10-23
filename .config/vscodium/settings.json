@@ -23,6 +23,13 @@
 
         { "before": [ "<leader>", "p", "f" ], "commands": [ { "command": "workbench.action.quickOpen" } ] },
         { "before": [ "<leader>", "p", "s" ], "commands": [ { "command": "workbench.view.search.focus" } ] },
+        { "before": [ "<leader>", "p", "w" ],
+			"after": [ "v", "i", "w", ],
+			"commands": [
+				{ "command": "workbench.action.findInFiles" },
+				{ "command": "search.action.focusSearchList" }
+			]
+		},
 
         { "before": [ "<leader>", "s", "v" ], "commands": [ { "command": "workbench.action.splitEditorRight" } ] },
         { "before": [ "<leader>", "s", "h" ], "commands": [ { "command": "workbench.action.splitEditorDown" } ] },
@@ -43,7 +50,7 @@
         { "before": [ "<leader>", "o", "r" ], "commands": [ { "command": "openCodeCommunicator.ocreference" } ] },
         { "before": [ "<leader>", "o", "c" ], "commands": [ { "command": "openCodeCommunicator.occopy"} ] },
         { "before": [ "<leader>", "o", "o" ], "commands": [ { "command": "openCodeCommunicator.ocfocus"} ] },
-        { "before": [ "<leader>", "p", "w" ], "commands": [ { "command": "runCommands", "args": { "commands": [ "workbench.action.findInFiles", "search.action.focusSearchList" ]}, "when": "editorHasSelection"} ] }
+        { "before": [ "<leader>", "p", "w" ], "commands": [ { "command": "runCommands", "args": { "commands": [ "workbench.action.findInFiles", "search.action.focusSearchList" ]}} ] }
     ],
 
     "vim.easymotion": true,
@@ -52,6 +59,7 @@
     "vim.sneak": true,
     "vim.sneakReplacesF": true,
     "vim.useSystemClipboard": true,
+	"vim.incsearch": true,
     "vim.autoindent": false,
     "vim.handleKeys": {
         "<C-d>": true,
