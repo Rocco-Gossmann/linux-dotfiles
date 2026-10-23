@@ -1,9 +1,9 @@
 // Place your key bindings in this file to override the defaults
 [
     //==========================================================================
-    // BM: Linux Parity alt(+shift)+p/o/b/j
+    // BM: Misc
     //==========================================================================
-    { "key": "cmd+shift+o", "command": "workbench.action.gotoSymbol"},
+    { "key": "cmd+o", "command": "workbench.action.openRecent"},
 
     //==========================================================================
     // BM: Ctrl + HJKL => Navigate splits
@@ -40,25 +40,14 @@
     //==========================================================================
     // BM: My NeoVim parity
     //==========================================================================
-    // file / find stuff
-    { "key": "ctrl+space f d", "command": "workbench.action.showErrorsWarnings"},
-    { "key": "ctrl+space f d", "command": "actions.find"},
-    // project actions
-    { "key": "ctrl+space p s", "command": "workbench.view.search.focus"},
-    { "key": "ctrl+space p f", "command": "workbench.action.quickOpen"},
-    // Code navigation
-	{ "key": "ctrl-space g r", "command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" },
-    // Code Actions
-    { "key": "ctrl+space c r", "command": "editor.action.rename"},
-    { "key": "ctrl+space c c", "command": "editor.action.commentLine"},
-    { "key": "ctrl+space c a", "command": "editor.action.quickFix"},
-    //Splits
-    { "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight"},
-    { "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"},
     // NerdTree-Actions
+    { "key": "ctrl+n", "command": "workbench.explorer.fileView.focus", "when": "!explorerViewletFocus" },
+    { "key": "ctrl+n", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletFocus" },
     { "key": "m m", "command": "renameFile", "when": "explorerViewletFocus && !inputFocus"},
+    { "key": "m d", "command": "moveFileToTrash", "when": "explorerViewletFocus && !inputFocus"},
     { "key": "m a", "command": "explorer.newFile", "when": "explorerViewletFocus && !inputFocus"},
     { "key": "m shift+a", "command": "explorer.newFolder", "when": "explorerViewletFocus && !inputFocus"},
+
     // Find Replace Macro
     { "key": "ctrl+r", "command": "runCommands", "args": {
 		"commands": [
@@ -72,21 +61,6 @@
 	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u0000" } },
 
     //==========================================================================
-    // BM: Runners / Launchers
-    //==========================================================================
-    { "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"},
-    { "key": "ctrl+space l l", "command": "terminalrunner.run.llm"},
-    { "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup"},
-    { "key": "ctrl+space b", "command": "bookmarkcomments.bm"},
-
-    //==========================================================================
-    // BM: OpenCode-Communicator
-    //==========================================================================
-    { "key": "ctrl+space o r", "command": "openCodeCommunicator.ocreference"},
-	{ "key": "ctrl+space o c", "command": "openCodeCommunicator.occopy"},
-	{ "key": "ctrl+space o o", "command": "openCodeCommunicator.ocfocus"},
-
-    //==========================================================================
     // BM: Disable Stuff
     //==========================================================================
     { "key": "ctrl+b", "command": "-markdown.editor.cursorLeft", "when": "false" },
@@ -95,9 +69,9 @@
     { "key": "alt+h", "command": "-testing.toggleTestingPeekHistory", "when": "testing.isPeekVisible" },
     { "key": "alt+l", "command": "-toggleSearchEditorContextLines", "when": "inSearchEditor" },
     { "key": "alt+l", "command": "-toggleFindInSelection", "when": "editorFocus" },
-    { "key": "f5", "command": "-workbench.action.debug.start", "when": "debuggersAvailable && debugState == 'inactive'" },
     { "key": "ctrl+o", "command": "-workbench.action.files.openFile", "when": "true" },
     { "key": "ctrl+o", "command": "-workbench.action.files.openFolderViaWorkspace", "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'" },
     { "key": "ctrl+o", "command": "-workbench.action.files.openFileFolder", "when": "isMacNative && openFolderWorkspaceSupport" },
-    { "key": "ctrl+o", "command": "-workbench.action.files.openLocalFile", "when": "remoteFileDialogVisible" }
+    { "key": "ctrl+o", "command": "-workbench.action.files.openLocalFile", "when": "remoteFileDialogVisible" },
+    { "key": "enter", "command": "-renameFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" }
 ]
