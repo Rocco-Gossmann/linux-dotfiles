@@ -42,8 +42,9 @@
         { "before": [ "<leader>", "o", "o" ], "commands": [ { "command": "openCodeCommunicator.ocfocus"} ] },
         { "before": [ "<leader>", "o", "r" ], "commands": [ { "command": "openCodeCommunicator.ocreference" } ] },
 
-        { "before": [ "g", "r" ], "commands": [ {"command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" } ] }
+        { "before": [ "g", "r" ], "commands": [ {"command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" } ] },
 
+		{ "before": [ "<leader>", "t", "z" ], "commands": [ { "command": "workbench.action.toggleZenMode" } ]}
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -66,6 +67,9 @@
         "<C-u>": true,
         "<leader>cr": true
     },
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1
+	},
 
     //==========================================================================
     // BM: Theme / layout
@@ -148,12 +152,18 @@
     "workbench.startupEditor": "terminal",
     "editor.accessibilitySupport": "off",
 	"debug.onTaskErrors": "showErrors",
+	"workbench.editor.useModal": "off",
+	"zenMode.fullScreen": false,
+	"zenMode.hideLineNumbers": false,
+	"zenMode.showTabs": "none",
 
     //==========================================================================
     // BM: LSP - C#
     //==========================================================================
 	"dotnet.codeLens.enableReferencesCodeLens": false,
 	"dotnet.codeLens.enableTestsCodeLens": false,
+	"csharp.inlayHints.enableInlayHintsForTypes": true,
+	"dotnet.inlayHints.enableInlayHintsForParameters": true,
 
     //==========================================================================
     // BM: LSP - Haskell
@@ -191,6 +201,4 @@
             "terminalName": "LLM"
         }
 	},
-	"csharp.inlayHints.enableInlayHintsForTypes": true,
-	"dotnet.inlayHints.enableInlayHintsForParameters": true
 }
