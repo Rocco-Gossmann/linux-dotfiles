@@ -7,6 +7,8 @@
         { "before": [ "<S-m>" ], "after": [ "m" ] },
         { "before": [ "m" ], "after": [ "`" ] },
 
+        { "before": [ "<leader>", "<leader>" ], "commands": [ { "command": "workbench.action.showAllEditorsByMostRecentlyUsed" } ] },
+
         { "before": [ "<leader>", "c", "r" ], "commands": [ { "command": "editor.action.rename" } ] },
         { "before": [ "<leader>", "c", "c" ], "commands": [ { "command": "editor.action.commentLine"} ] },
         { "before": [ "<leader>", "c", "a" ], "commands": [ { "command": "editor.action.quickFix"} ] },

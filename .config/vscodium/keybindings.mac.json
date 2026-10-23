@@ -58,7 +58,7 @@
 	{ "key": "ctrl+r", "command": "editor.action.startFindReplaceAction", "when": "findWidgetVisible" },
 
     // Terminal control
-	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u0000" } },
+	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
 
     //==========================================================================
     // BM: Disable Stuff
