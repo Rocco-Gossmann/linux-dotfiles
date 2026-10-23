@@ -59,6 +59,7 @@
 
     // Terminal control
 	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
+	{ "key": "shift+[period]", "command": "vim.showQuickpickCmdLine", "when": "textInputFocus && vim.mode != 'Insert'" },
 
     //==========================================================================
     // BM: Disable Stuff
