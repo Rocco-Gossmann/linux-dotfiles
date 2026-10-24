@@ -6,6 +6,8 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         { "before": [ "<S-m>" ], "after": [ "m" ] },
         { "before": [ "m" ], "after": [ "`" ] },
+        { "before": [ "<S-q>" ], "after": [ "q" ] },
+        { "before": [ "q" ], "after": [ "@" ] },
 
         { "before": [ "<leader>", "<leader>" ], "commands": [ { "command": "workbench.action.showAllEditorsByMostRecentlyUsed" } ] },
 
@@ -44,6 +46,7 @@
 
         { "before": [ "g", "r" ], "commands": [ {"command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" } ] },
 
+
 		{ "before": [ "<leader>", "t", "z" ], "commands": [ { "command": "workbench.action.toggleZenMode" } ]}
     ],
 
@@ -51,8 +54,14 @@
         { "before": [ "<leader>", "o", "r" ], "commands": [ { "command": "openCodeCommunicator.ocreference" } ] },
         { "before": [ "<leader>", "o", "c" ], "commands": [ { "command": "openCodeCommunicator.occopy"} ] },
         { "before": [ "<leader>", "o", "o" ], "commands": [ { "command": "openCodeCommunicator.ocfocus"} ] },
-        { "before": [ "<leader>", "p", "w" ], "commands": [ { "command": "runCommands", "args": { "commands": [ "workbench.action.findInFiles", "search.action.focusSearchList" ]}} ] }
+        { "before": [ "<leader>", "p", "w" ], "commands": [ { "command": "runCommands", "args": { "commands": [ "workbench.action.findInFiles", "search.action.focusSearchList" ]}} ] },
+
+        { "before": [ "g", "a" ], "commands": [ {"command": "align.regex" } ] },
     ],
+
+	"vim.insertModeKeyBindingsNonRecursive": [
+		{ "before": [ "<C-h>" ], "commands": [ {"command": "editor.action.triggerSuggest" } ] },
+	],
 
     "vim.easymotion": true,
     "vim.gdefault": true,
@@ -65,7 +74,7 @@
     "vim.handleKeys": {
         "<C-d>": true,
         "<C-u>": true,
-        "<leader>cr": true
+        "<C-h>": true,
     },
 	"extensions.experimental.affinity": {
 		"vscodevim.vim": 1
@@ -160,6 +169,21 @@
 	"zenMode.fullScreen": false,
 	"zenMode.hideLineNumbers": false,
 	"zenMode.showTabs": "none",
+
+    "align.regex.templates": {
+        "Fat Arrow => ": "=>",
+        "Thin Arrow -> ": "->",
+        "brackets ()": "\\(|\\)",
+        "square brackets []": "[|]",
+        "curly braces {}": "{|}",
+        "Period .": ".",
+        "Comma ,": ",",
+        "JSON-Object-Line": "{|}|,",
+        "Multiple signs": "=|,|:",
+        "Trailing comments #": "(?<=\\S.*)\\s+#",
+        "Trailing comments //": "(?<=\\S.*)\\s+//",
+        "Trailing comments %": "(?<=\\S.*)\\s+%",
+    },
 
     //==========================================================================
     // BM: Browser
