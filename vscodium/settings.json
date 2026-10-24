@@ -79,13 +79,13 @@
     "terminal.integrated.fontSize": 14,
     "workbench.tabs.experimental.fontSize": 11,
     "workbench.sideBar.experimental.fontSize": 12,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Rosé Pine Moon",
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.activityBar.location": "top",
     "excalidraw.theme": "light",
     "window.density.editorTabHeight": "compact",
     "window.density.layout": "compact",
-    "workbench.browser.showInTitleBar": false,
+    "workbench.browser.showInTitleBar": true,
     "workbench.layoutControl.enabled": true,
     "window.commandCenter": false,
     "workbench.editor.showTabs": "multiple",
@@ -93,13 +93,13 @@
     "workbench.editor.editorActionsLocation": "titleBar",
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.wrapTabs": true,
-    "workbench.browser.newTabPlacement": "window",
+    "workbench.browser.newTabPlacement": "sideGroup",
     "explorer.autoReveal": true,
     "editor.stickyScroll.enabled": false,
     "workbench.editor.highlightModifiedTabs": true,
     "background.fullscreen": {
         "images": [
-            "/Users/st/linux-dotfiles/.config/vscodium/background.png"
+            "${HOME}/linux-dotfiles/vscodium/background.png"
         ],
         "opacity": 0.2,
         "size": "cover",
@@ -109,20 +109,23 @@
         "random": false
     },
     "workbench.colorCustomizations": {
-        "editor.background": "#040808",
-        "tab.activeBorder": "#ffff00ff",
-        "tab.activeForeground": "#a9d2b9",
-        "tab.activeBackground": "#1f6d3e4d"
+        "editor.background"      : "#040808"  ,
+		"editorGutter.background": "#040808"  ,
+		"breadcrumb.background"  : "#040808"  ,
+		"terminal.background"    : "#040808"  ,
+        "tab.activeBorder"       : "#ffff00ff",
+        "tab.activeForeground"   : "#a9d2b9"  ,
+        "tab.activeBackground"   : "#1f6d3e4d"
     },
     //==========================================================================
     // BM: Editor
     //==========================================================================
-    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "vim.foldfix": true,
+    "editor.fontFamily"             : "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
+    "editor.lineNumbers"            : "relative",
+    "editor.minimap.enabled"        : false,
+    "vim.foldfix"                   : true,
     "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling": true,
+    "editor.smoothScrolling"        : true,
     "editor.rulers": [
         80,
         120
@@ -133,14 +136,15 @@
     "editor.indentSize": "tabSize",
     "editor.useTabStops": true,
     "editor.stickyTabStops": true,
-    "editor.tabCompletion": "on",
-    "editor.inlayHints.enabled": "onUnlessPressed",
+	"editor.tabCompletion": "on",
     "files.trimTrailingWhitespace": true,
 	"editor.insertSpaces": false,
 	"editor.fontLigatures": true,
 	"editor.autoIndent": "keep",
 	"editor.wrappingIndent": "indent",
 	"editor.foldingStrategy": "indentation",
+	"explorer.confirmDelete": false,
+	"docsView.documentationView.updateMode": "sticky",
 
     //==========================================================================
     // BM: Misc
@@ -158,7 +162,17 @@
 	"zenMode.showTabs": "none",
 
     //==========================================================================
-    // BM: LSP - C#
+    // BM: Browser
+    //==========================================================================
+	"workbench.browser.dataStorage": "workspace",
+	"workbench.browser.searchEngine": "none",
+	"workbench.browser.enableChatTools": false,
+	"workbench.browser.openLocalhostLinks": true,
+	"workbench.browser.pageZoom": "100%",
+	"workbench.browser.sendElementsToChat.attachImages": false,
+
+    //==========================================================================
+    // BM: LSP - C# / DotNet
     //==========================================================================
 	"dotnet.codeLens.enableReferencesCodeLens": false,
 	"dotnet.codeLens.enableTestsCodeLens": false,
@@ -200,5 +214,5 @@
             "startCommand": "opencode --port 8099",
             "terminalName": "LLM"
         }
-	},
+	}
 }
