@@ -1,16 +1,15 @@
 // Place your key bindings in this file to override the defaults
 [
-
     //==========================================================================
     // BM: Misc / Mac-Parity
     //==========================================================================
-    { "key": "alt+b", "command": "workbench.action.toggleSidebarVisibility"},
-    { "key": "alt+j", "command": "workbench.action.togglePanel", "when": "!sideBarFocus" },
-    { "key": "alt+p", "command": "workbench.action.quickOpen"},
-    { "key": "alt+shift+p", "command": "workbench.action.showCommands"},
-    { "key": "alt+shift+o", "command": "workbench.action.gotoSymbol"},
-    { "key": "alt+o", "command": "workbench.action.openRecent"},
-    { "key": "alt+w", "command": "workbench.action.closeActiveEditor"},
+    { "key": "alt+b", "command": "workbench.action.toggleSidebarVisibility", "when": "!isMac" },
+    { "key": "alt+j", "command": "workbench.action.togglePanel", "when": "!sideBarFocus && !isMac" },
+    { "key": "alt+p", "command": "workbench.action.quickOpen", "when": "!isMac"},
+    { "key": "alt+shift+p", "command": "workbench.action.showCommands", "when": "!isMac"},
+    { "key": "alt+shift+o", "command": "workbench.action.gotoSymbol", "when": "!isMac"},
+    { "key": "alt+o", "command": "workbench.action.openRecent", "when": "!isMac"},
+    { "key": "alt+w", "command": "workbench.action.closeActiveEditor", "when": "!isMac"},
 
     //==========================================================================
     // BM: Ctrl + HJKL => Navigate splits
