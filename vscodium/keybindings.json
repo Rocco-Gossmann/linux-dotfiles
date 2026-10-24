@@ -95,7 +95,7 @@
 	{ "key": "ctrl+r", "command": "editor.action.startFindReplaceAction", "when": "findWidgetVisible" },
 
 	// Terminal control
-	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
+	{ "key": "alt+space alt+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
 	{ "key": "shift+[period]", "command": "vim.showQuickpickCmdLine", "when": "textInputFocus && vim.mode != 'Insert'" },
 
 	//==========================================================================
@@ -221,5 +221,11 @@
 	{ "key": "cmd+k up", "command": "-views.moveViewUp", "when": "focusedView != ''" },
 	{ "key": "cmd+k p", "command": "-workbench.action.files.copyPathOfActiveFile" },
 	{ "key": "cmd+k r", "command": "-workbench.action.files.revealActiveFileInWindows" },
-	{ "key": "cmd+k cmd+i", "command": "-workbench.action.showHover" }
+	{ "key": "cmd+k cmd+i", "command": "-workbench.action.showHover" },
+	{ "key": "ctrl+space", "command": "-workbench.action.terminal.triggerSuggest", "when": "config.terminal.integrated.suggest.enabled && terminalFocus && terminalProcessSupported && !terminalSuggestWidgetVisible" },
+	{ "key": "ctrl+space o r", "command": "-openCodeCommunicator.ocreference", "when": "!terminalFocus" },
+	{ "key": "ctrl+space o c", "command": "-openCodeCommunicator.occopy", "when": "!terminalFocus" },
+	{ "key": "ctrl+space l l", "command": "-openCodeCommunicator.ocfocus", "when": "!terminalFocus" },
+	{ "key": "ctrl+space o l", "command": "-openCodeCommunicator.ocfocus", "when": "!terminalFocus" }
+
 ]
