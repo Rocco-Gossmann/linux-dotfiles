@@ -3,55 +3,55 @@
 	//==========================================================================
 	// BM: Linux/Windows - Parity
 	//==========================================================================
-	{ "key": "alt+b", "command": "workbench.action.toggleSidebarVisibility", "when": "!isMac" },
-	{ "key": "alt+j", "command": "workbench.action.togglePanel", "when": "!sideBarFocus && !isMac" },
-	{ "key": "alt+p", "command": "workbench.action.quickOpen", "when": "!isMac"},
-	{ "key": "alt+shift+p", "command": "workbench.action.showCommands", "when": "!isMac"},
-	{ "key": "alt+shift+o", "command": "workbench.action.gotoSymbol", "when": "!isMac"},
-	{ "key": "alt+w", "command": "workbench.action.closeActiveEditor", "when": "!isMac"},
+	{ "key": "alt+b"      , "command": "workbench.action.toggleSidebarVisibility", "when": "!isMac"                  },
+	{ "key": "alt+j"      , "command": "workbench.action.togglePanel"            , "when": "!sideBarFocus && !isMac" },
+	{ "key": "alt+p"      , "command": "workbench.action.quickOpen"              , "when": "!isMac"                  },
+	{ "key": "alt+shift+p", "command": "workbench.action.showCommands"           , "when": "!isMac"                  },
+	{ "key": "alt+shift+o", "command": "workbench.action.gotoSymbol"             , "when": "!isMac"                  },
+	{ "key": "alt+w"      , "command": "workbench.action.closeActiveEditor"      , "when": "!isMac"                  },
 
 	//==========================================================================
 	// BM: Misc
 	//==========================================================================
-	{ "key": "f8", "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" },
-	{ "key": "cmd+o", "command": "workbench.action.openRecent", "when": "isMac"},
-	{ "key": "alt+o", "command": "workbench.action.openRecent", "when": "!isMac"},
+	{ "key": "f8"   , "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" },
+	{ "key": "cmd+o", "command": "workbench.action.openRecent", "when": "isMac"                                  },
+	{ "key": "alt+o", "command": "workbench.action.openRecent", "when": "!isMac"                                 },
 
 	//==========================================================================
 	// BM: Ctrl + HJKL => Navigate splits
 	//==========================================================================
-	{ "key": "ctrl+h", "command": "workbench.action.navigateLeft"},
-	{ "key": "ctrl+l", "command": "workbench.action.navigateRight"},
-	{ "key": "ctrl+j", "command": "workbench.action.navigateDown"},
-	{ "key": "ctrl+k", "command": "workbench.action.navigateUp"},
+	{ "key": "ctrl+h", "command": "workbench.action.navigateLeft" , "when": "vim.mode != 'Insert'"},
+	{ "key": "ctrl+l", "command": "workbench.action.navigateRight", "when": "vim.mode != 'Insert'"},
+	{ "key": "ctrl+j", "command": "workbench.action.navigateDown" , "when": "vim.mode != 'Insert'"},
+	{ "key": "ctrl+k", "command": "workbench.action.navigateUp"   , "when": "vim.mode != 'Insert'"},
 
-	{ "key": "cmd+k", "command": "workbench.action.toggleMaximizedPanel", "when":  "isMac && panelFocus" },
-	{ "key": "alt+k", "command": "workbench.action.toggleMaximizedPanel", "when": "!isMac && panelFocus" },
+	{ "key": "cmd+k", "command": "workbench.action.toggleMaximizedPanel"      , "when":  "isMac && panelFocus"     },
+	{ "key": "alt+k", "command": "workbench.action.toggleMaximizedPanel"      , "when": "!isMac && panelFocus"     },
 	{ "key": "cmd+k", "command": "workbench.action.toggleModalEditorMaximized", "when":  "isMac && inModelsEditor" },
 	{ "key": "alt+k", "command": "workbench.action.toggleModalEditorMaximized", "when": "!isMac && inModelsEditor" },
-	{ "key": "cmd+k", "command": "workbench.action.toggleMaximizeEditorGroup", "when":  "isMac && editorFocus" },
-	{ "key": "alt+k", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "!isMac && editorFocus" },
+	{ "key": "cmd+k", "command": "workbench.action.toggleMaximizeEditorGroup" , "when":  "isMac && editorFocus"    },
+	{ "key": "alt+k", "command": "workbench.action.toggleMaximizeEditorGroup" , "when": "!isMac && editorFocus"    },
 
 	//==========================================================================
 	// BM: Alt + HJKL => Navigate Tabs
 	//==========================================================================
 	// Editors
-	{ "key": "cmd+h", "command": "workbench.action.previousEditorInGroup", "when": "!panelFocus && !sideBarFocus && isMac"},
+	{ "key": "cmd+h", "command": "workbench.action.previousEditorInGroup", "when": "!panelFocus && !sideBarFocus && isMac" },
 	{ "key": "alt+h", "command": "workbench.action.previousEditorInGroup", "when": "!panelFocus && !sideBarFocus && !isMac"},
-	{ "key": "cmd+l", "command": "workbench.action.nextEditorInGroup", "when": "!panelFocus && !sideBarFocus && isMac"},
-	{ "key": "alt+l", "command": "workbench.action.nextEditorInGroup", "when": "!panelFocus && !sideBarFocus && !isMac"},
+	{ "key": "cmd+l", "command": "workbench.action.nextEditorInGroup"    , "when": "!panelFocus && !sideBarFocus && isMac" },
+	{ "key": "alt+l", "command": "workbench.action.nextEditorInGroup"    , "when": "!panelFocus && !sideBarFocus && !isMac"},
 	// Bottom panel
-	{ "key": "cmd+h", "command": "workbench.action.previousPanelView", "when": "panelFocus && isMac"},
+	{ "key": "cmd+h", "command": "workbench.action.previousPanelView", "when": "panelFocus && isMac" },
 	{ "key": "alt+h", "command": "workbench.action.previousPanelView", "when": "panelFocus && !isMac"},
-	{ "key": "cmd+l", "command": "workbench.action.nextPanelView", "when": "panelFocus && isMac"},
-	{ "key": "alt+l", "command": "workbench.action.nextPanelView", "when": "panelFocus && !isMac"},
+	{ "key": "cmd+l", "command": "workbench.action.nextPanelView"    , "when": "panelFocus && isMac" },
+	{ "key": "alt+l", "command": "workbench.action.nextPanelView"    , "when": "panelFocus && !isMac"},
 	// sidebar
-	{ "key": "cmd+h", "command": "workbench.action.previousSideBarView", "when": "sideBarFocus && isMac"},
+	{ "key": "cmd+h", "command": "workbench.action.previousSideBarView", "when": "sideBarFocus && isMac" },
 	{ "key": "alt+h", "command": "workbench.action.previousSideBarView", "when": "sideBarFocus && !isMac"},
-	{ "key": "cmd+l", "command": "workbench.action.nextSideBarView", "when": "sideBarFocus && isMac"},
-	{ "key": "alt+l", "command": "workbench.action.nextSideBarView", "when": "sideBarFocus && !isMac"},
-	{ "key": "cmd+j", "command": "workbench.action.focus", "when": "sideBarFocus && isMac"},
-	{ "key": "alt+j", "command": "workbench.action.focus", "when": "sideBarFocus && !isMac"},
+	{ "key": "cmd+l", "command": "workbench.action.nextSideBarView"    , "when": "sideBarFocus && isMac" },
+	{ "key": "alt+l", "command": "workbench.action.nextSideBarView"    , "when": "sideBarFocus && !isMac"},
+	{ "key": "cmd+j", "command": "workbench.action.focus"              , "when": "sideBarFocus && isMac" },
+	{ "key": "alt+j", "command": "workbench.action.focus"              , "when": "sideBarFocus && !isMac"},
 
 	//==========================================================================
 	// BM: Alt + Shift + HJKL => Move Tabs (In and between groups)
@@ -78,12 +78,12 @@
 	// BM: My NeoVim parity
 	//==========================================================================
 	// NerdTree-Actions
-	{ "key": "ctrl+n", "command": "workbench.explorer.fileView.focus", "when": "!explorerViewletFocus" },
-	{ "key": "ctrl+n", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletFocus" },
-	{ "key": "m m", "command": "renameFile", "when": "explorerViewletFocus && !inputFocus"},
-	{ "key": "m d", "command": "moveFileToTrash", "when": "explorerViewletFocus && !inputFocus"},
-	{ "key": "m a", "command": "explorer.newFile", "when": "explorerViewletFocus && !inputFocus"},
-	{ "key": "m shift+a", "command": "explorer.newFolder", "when": "explorerViewletFocus && !inputFocus"},
+	{ "key": "ctrl+n"   , "command": "workbench.explorer.fileView.focus"       , "when": "!explorerViewletFocus"              },
+	{ "key": "ctrl+n"   , "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletFocus"               },
+	{ "key": "m m"      , "command": "renameFile"                              , "when": "explorerViewletFocus && !inputFocus"},
+	{ "key": "m d"      , "command": "moveFileToTrash"                         , "when": "explorerViewletFocus && !inputFocus"},
+	{ "key": "m a"      , "command": "explorer.newFile"                        , "when": "explorerViewletFocus && !inputFocus"},
+	{ "key": "m shift+a", "command": "explorer.newFolder"                      , "when": "explorerViewletFocus && !inputFocus"},
 
 	// Find Replace Macro
 	{ "key": "ctrl+r", "command": "runCommands", "args": {
@@ -97,6 +97,7 @@
 	// Terminal control
 	{ "key": "alt+space alt+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed" },
 	{ "key": "shift+[period]", "command": "vim.showQuickpickCmdLine", "when": "textInputFocus && vim.mode != 'Insert'" },
+
 
 	//==========================================================================
 	// BM: Disable Stuff
