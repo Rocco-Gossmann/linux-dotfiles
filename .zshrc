@@ -8,10 +8,8 @@ ZSH_DISABLE_COMPFIX=
 #
 	autoload -Uz compinit
 	compinit
-#fi
 
-
-# ZSH / Terminal config
+# BM: ZSH / Terminal config
 #==============================================================================
 HISTFILE=~/.zshhistory
 HISTSIZE=1000
@@ -21,23 +19,23 @@ setopt notify
 unsetopt beep
 bindkey -v
 
-# export TERM=xterm-256color
-export VISUAL=nvim
-export EDITOR=nvim
-
-
-# Own env-Vars
+# BM: Own env-Vars
 #==============================================================================
 export GOPRIVATE=github.com/rocco-gossmann
 export DOTNET_CLI_UI_LANGUAGE=en
-
+# export TERM=xterm-256color
+export VISUAL=codium
+export EDITOR=nvim
 
 # Usefull Aliasses
 #==============================================================================
 
+alias edit=$VISUAL
+
 # alias help="f(){ bash -c \"help \$@\" }; f"
 alias -g NoErr="2>/dev/null"
 alias -g NoOut="1>/dev/null"
+alias -g Silent="1>/dev/null 2>/dev/null"
 
 # open markdown in nvim, when file called directly
 alias -s md="nvim"
@@ -68,28 +66,21 @@ alias doc="docker compose"
 alias prettyjson="jq --color-output | less -FR"
 
 
-# Shortcut tweeks
+# BM: Shortcut tweeks
 #==============================================================================
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^x^e' edit-command-line # edit current command in $EDITOR
-bindkey '^x^u' undo
-bindkey '^x^r' redo
 bindkey ' ' magic-space # expand historic commands
-bindkey '^i' menu-complete
+bindkey '^ ' menu-complete
 
 function clear-current-shell { zle clear-screen; }
-zle -N clear-current-shell 
-bindkey '^xc' clear-current-shell 
+zle -N clear-current-shell
+bindkey '^ c' clear-current-shell
 
-
-# inject envvars to ssh
+# BM: inject envvars to ssh
 #==============================================================================
 alias orig_ssh=`which ssh`
 alias ssh="TERM=xterm-256color orig_ssh"
 
-
-# small commands to fix varous things, that break on Mac sometimes
+# BM: small commands to fix varous things, that break on Mac sometimes
 #==============================================================================
 alias fix-alttab="killall AltTab && open /Applications/AltTab.app"
 alias fix-gpg="gpgconf --kill gpg-agent && gpgconf --launch gpg-agent"
@@ -98,7 +89,7 @@ alias fix-openvpn="sudo launchctl load /Library/LaunchDaemons/org.openvpn.client
 alias fix-cleansysdiagnosis="sudo rm /private/var/tmp/sysdiagnose*.tar.gz"
 
 
-# extend $PATH
+# BM: extend $PATH
 #==============================================================================
 export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
 [ -e "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
@@ -113,7 +104,7 @@ export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
 [ -e "$HOME/.local/share/nvim/mason/bin" ] && export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
 
-# source a bunch of stuff from homebrew and fixing homebrew permission
+# BM: source a bunch of stuff from homebrew and fixing homebrew permission
 #==============================================================================
 [ "$HOMEBREW_PREFIX" = "" ] && [ "`hascmd brew`" = "yep" ] && export HOMEBREW_PREFIX=$(brew --prefix)
 
@@ -124,7 +115,7 @@ export HBP=$HOMEBREW_PREFIX
 [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-# activate autocompletion for apps, that don't activate by default
+# BM: activate autocompletion for apps, that don't activate by default
 #==============================================================================
 [ "`hascmd docker`" = "yep" ] && source <(docker completion zsh 2>/dev/null)
 [ "`hascmd tnt`" = "yep" ] && source <(tnt completion zsh 2>/dev/null)
@@ -136,7 +127,7 @@ export HBP=$HOMEBREW_PREFIX
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 
-# Tweaks
+# BM: Tweaks
 #==============================================================================
 # [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
@@ -144,7 +135,7 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   [ "`hascmd oh-my-posh`" = "yep" ] && source <(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.toml)
 fi
 
-# ZSH - Autolaunch
+# BM: ZSH - Autolaunch
 # -----------------------------------------------------------------------------
 # Launching bash commands via Env-Var
 #==============================================================================
