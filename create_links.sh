@@ -6,12 +6,18 @@ platform_arch=$(uname -m)
 
 [ "$HOME" == "" ] && echo "no \$HOME - EnvVar" && exit 2
 
+#==============================================================================
+# BM: ZSH + TMUX
+#==============================================================================
 cd $HOME
 echo "enter: `pwd`"
 ln -s "${CWD}/.zshrc"
 ln -s "${CWD}/.zsh"
 ln -s "${CWD}/.tmux.conf"
 
+#==============================================================================
+# BM: .configs
+#==============================================================================
 mkdir -p $HOME/.config
 cd $HOME/.config
 echo "enter: `pwd`"
@@ -20,17 +26,28 @@ rm -rf opencode   ; ln -s $CWD/.config/opencode
 rm -rf oh-my-posh ; ln -s $CWD/.config/oh-my-posh
 rm -rf yazi       ; ln -s $CWD/.config/yazi
 
-if [ "$platform_os" = "Linux" ] && [ "$platform_arch" = "x86_64" ]; then
+#==============================================================================
+# BM: VSCodium
+#==============================================================================
+if [ "$platform_os" = "Linux" ]; then
 	mkdir -p $HOME/.config/vscodium/User
 	cd $HOME/.config/vscodium/User
-	rm -f settings.json    ; ln -s $CWD/.config/vscodium/settings.json
-	rm -f keybindings.json ; ln -s $CWD/.config/vscodium/keybindings.linux.json keybindings.json
+	echo "enter: `pwd`"
+	rm -f settings.json    ; ln -s $CWD/vscodium/settings.json
+	rm -f keybindings.json ; ln -s $CWD/vscodium/keybindings.json keybindings.json
 
-elif [ "$platform_os" = "Darwin" ] && [ "$platform_arch" = "arm64" ]; then
-	# MacOS: do something
+elif [ "$platform_os" = "Darwin" ]; then
+	mkdir -p $HOME/Library/Application\ Support/VSCodium/User
+	cd $HOME/Library/Application\ Support/VSCodium/User
+	echo "enter: `pwd`"
+	rm -f settings.json    ; ln -s $CWD/vscodium/settings.json
+	rm -f keybindings.json ; ln -s $CWD/vscodium/keybindings.json keybindings.json
 	
 fi
 
+#==============================================================================
+# BM: custom bins
+#==============================================================================
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
 echo "enter: `pwd`"
