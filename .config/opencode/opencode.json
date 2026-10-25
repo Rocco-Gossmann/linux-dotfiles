@@ -32,7 +32,7 @@
 			"npm": "@ai-sdk/openai-compatible",
 			"name": "LMStudio (GPDWinMini)",
 			"limit": {
-				"context": 32768
+				"context": 24000
 			},
 			"options": {
 				"baseURL": "http://homeai:1234/v1"
