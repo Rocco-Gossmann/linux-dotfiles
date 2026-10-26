@@ -46,8 +46,8 @@
 
         { "before": [ "g", "r" ], "commands": [ {"command": "editor.action.goToReferences", "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor" } ] },
 
-
 		{ "before": [ "<leader>", "t", "z" ], "commands": [ { "command": "workbench.action.toggleZenMode" } ]}
+
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -106,7 +106,6 @@
     "window.density.layout": "compact",
     "workbench.browser.showInTitleBar": true,
 	"workbench.layoutControl.enabled": true,
-    "workbench.editor.showTabs": "none",
 	"workbench.navigationControl.enabled": false,
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.wrapTabs": true,
@@ -163,7 +162,6 @@
 	"editor.wrappingIndent": "indent",
 	"editor.foldingStrategy": "indentation",
 	"explorer.confirmDelete": false,
-	"docsView.documentationView.updateMode": "sticky",
 
     //==========================================================================
     // BM: Misc
@@ -172,7 +170,7 @@
     "search.quickOpen.includeHistory": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "search.quickOpen.history.filterSortOrder": "recency",
-    "workbench.startupEditor": "terminal",
+    "workbench.startupEditor": "none",
     "editor.accessibilitySupport": "off",
 	"debug.onTaskErrors": "showErrors",
 	"workbench.editor.useModal": "off",
