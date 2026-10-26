@@ -3,6 +3,12 @@
     // BM: Vim
     //==========================================================================
     "vim.leader": " ",
+    "vim.foldfix": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-u>": true,
+        "<C-h>": true,
+    },
     "vim.normalModeKeyBindingsNonRecursive": [
         { "before": [ "<S-m>" ], "after": [ "m" ] },
         { "before": [ "m" ], "after": [ "`" ] },
@@ -71,11 +77,6 @@
     "vim.useSystemClipboard": true,
 	"vim.incsearch": true,
     "vim.autoindent": false,
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-u>": true,
-        "<C-h>": true,
-    },
 	"extensions.experimental.affinity": {
 		"vscodevim.vim": 1
 	},
@@ -93,17 +94,16 @@
     //==========================================================================
     // BM: Theme / layout
     //==========================================================================
-    "window.zoomLevel": 1,
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14,
-    "workbench.tabs.experimental.fontSize": 11,
-    "workbench.sideBar.experimental.fontSize": 12,
-    "workbench.colorTheme": "Rosé Pine",
+	"workbench.colorTheme": "Catppuccin Mocha",
+    "window.zoomLevel": 2,
+    "editor.fontSize": 15,
+    "terminal.integrated.fontSize": 15,
+    "workbench.tabs.experimental.fontSize": 12,
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.activityBar.location": "top",
     "excalidraw.theme": "light",
     "window.density.editorTabHeight": "compact",
-    "window.density.layout": "compact",
+    "window.density.layout": "default",
     "workbench.browser.showInTitleBar": true,
 	"workbench.layoutControl.enabled": true,
 	"workbench.navigationControl.enabled": false,
@@ -114,11 +114,14 @@
     "explorer.autoReveal": true,
     "editor.stickyScroll.enabled": false,
     "workbench.editor.highlightModifiedTabs": true,
+
+	//==============================================================================
+	// BM: Background
+	//==============================================================================
+	"background.enabled": true,
     "background.fullscreen": {
-        "images": [
-            "${HOME}/linux-dotfiles/vscodium/background.png"
-        ],
-        "opacity": 0.2,
+        "images": [ "${HOME}/.config/vscodium/background.png" ],
+        "opacity": 0.3,
         "size": "cover",
         "position": "center",
         "styles": [],
@@ -126,11 +129,11 @@
         "random": false
     },
     "workbench.colorCustomizations": {
-        "editor.background"      : "#040808"  ,
-		"editorGutter.background": "#040808"  ,
-		"breadcrumb.background"  : "#040808"  ,
-		"terminal.background"    : "#040808"  ,
-		"panel.background"       : "#040808"  ,
+        "editor.background"      : "#020608"  ,
+		"editorGutter.background": "#020608"  ,
+		"breadcrumb.background"  : "#020608"  ,
+		"terminal.background"    : "#020608"  ,
+		"panel.background"       : "#020608"  ,
         "tab.activeBorder"       : "#ffff00ff",
         "tab.activeForeground"   : "#a9d2b9"  ,
         "tab.activeBackground"   : "#1f6d3e4d"
@@ -138,12 +141,11 @@
     //==========================================================================
     // BM: Editor
     //==========================================================================
-    "editor.fontFamily"             : "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
+    "editor.fontFamily"             : "\"JetBrainsMono Nerd Font Mono\", Menlo, Monaco, 'Courier New', monospace",
     "editor.lineNumbers"            : "relative",
     "editor.minimap.enabled"        : false,
-    "vim.foldfix"                   : true,
     "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling"        : false,
+    "editor.smoothScrolling"        : true,
     "editor.rulers": [
         80,
         120
@@ -238,13 +240,15 @@
     "terminal.integrated.smoothScrolling": true,
     "terminalrunner.openasdefault": "tab",
     "terminalrunner.terminals": {
-        "lazygit": {
-            "startCommand": "lazygit",
-            "terminalName": "LazyGit"
-        },
-        "llm": {
-            "startCommand": "opencode --port 8099",
-            "terminalName": "LLM"
-        }
+		"lazygit": { "terminalName": "LazyGit", "startCommand": "lazygit" },
+		"lazydocker": { "terminalName": "LazyDocker", "startCommand": "lazydocker" },
+		"database": { "terminalName": "DBUI", "startCommand": "nvim -c DBUI" },
+		"ranger": { "terminalName": "Ranger", "startCommand": "ranger" },
+		"neovim": { "terminalName": "NeoVim", "startCommand": "nvim ${file} +${line}" },
+        "llm": { "terminalName": "LLM - Client", "startCommand": "opencode --port 8099" }
 	},
+	"window.commandCenter": false,
+	"git.openRepositoryInParentFolders": "never",
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.hideOnboarding": true,
 }
