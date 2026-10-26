@@ -11,12 +11,18 @@
 	{ "key": "alt+w"      , "command": "workbench.action.closeActiveEditor"      , "when": "!isMac"                  },
 
 	//==========================================================================
-	// BM: Misc
+	// BM: Misc/Tweaks
 	//==========================================================================
-	{ "key": "f8"   , "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" },
-	{ "key": "g h", "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode" },
-	{ "key": "cmd+o", "command": "workbench.action.openRecent", "when": "isMac"                                  },
-	{ "key": "alt+o", "command": "workbench.action.openRecent", "when": "!isMac"                                 },
+	// Open Recent
+	{ "key": "cmd+o", "command": "workbench.action.openRecent"       , "when": "isMac"                                  },
+	{ "key": "alt+o", "command": "workbench.action.openRecent"       , "when": "!isMac"                                 },
+	// Debugger Tweaks
+	{ "key": "f8"   , "command": "workbench.action.debug.stop"       , "when": "inDebugMode && !focusedSessionIsAttach" },
+	{ "key": "g h"  , "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode"         },
+    // Zooming
+    { "key": "ctrl+[BracketRIght]", "command": "workbench.action.zoomIn"},
+    { "key": "ctrl+-", "command": "workbench.action.zoomOut"},
+    { "key": "ctrl+0", "command": "workbench.action.zoomReset"},
 
 	//==========================================================================
 	// BM: Ctrl + HJKL => Navigate splits
@@ -97,6 +103,20 @@
 
 	// Terminal control
 	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed", "when": "!terminalFocus" },
+
+	//==============================================================================
+	// BM: Splits
+	//==============================================================================
+	{ "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight" , "when": "terminalFocus"                  },
+	{ "key": "space s v"     , "command": "workbench.action.splitEditorRight" , "when": "!terminalFocus && !editorFocus" },
+	{ "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"  , "when": "terminalFocus"                  },
+	{ "key": "space s h"     , "command": "workbench.action.splitEditorDown"  , "when": "!terminalFocus && !editorFocus" },
+
+	// BM: Splits - Resize
+    { "key": "cmd+[BracketRIght]", "command": "workbench.action.increaseViewSize", "when": "isMac" },
+    { "key": "cmd+-"             , "command": "workbench.action.decreaseViewSize", "when": "isMac" },
+    { "key": "alt+[BracketRIght]", "command": "workbench.action.increaseViewSize", "when": "!isMac"},
+    { "key": "alt+-"             , "command": "workbench.action.decreaseViewSize", "when": "!isMac"},
 
 	//==========================================================================
 	// BM: Launchers
@@ -237,5 +257,4 @@
 	{ "key": "ctrl+space o c", "command": "-openCodeCommunicator.occopy", "when": "!terminalFocus" },
 	{ "key": "ctrl+space l l", "command": "-openCodeCommunicator.ocfocus", "when": "!terminalFocus" },
 	{ "key": "ctrl+space o l", "command": "-openCodeCommunicator.ocfocus", "when": "!terminalFocus" }
-
 ]
