@@ -14,6 +14,7 @@
 	// BM: Misc
 	//==========================================================================
 	{ "key": "f8"   , "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" },
+	{ "key": "g h", "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode" },
 	{ "key": "cmd+o", "command": "workbench.action.openRecent", "when": "isMac"                                  },
 	{ "key": "alt+o", "command": "workbench.action.openRecent", "when": "!isMac"                                 },
 
