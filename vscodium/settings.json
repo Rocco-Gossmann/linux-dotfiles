@@ -106,7 +106,6 @@
     "window.density.layout": "compact",
     "workbench.browser.showInTitleBar": true,
 	"workbench.layoutControl.enabled": true,
-	"workbench.navigationControl.enabled": false,
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.wrapTabs": true,
 	"workbench.editor.editorActionsLocation": "titleBar",
@@ -193,6 +192,13 @@
         "Trailing comments %": "(?<=\\S.*)\\s+%",
     },
 
+	//==========================================================================
+	// BM: File Association
+	//==========================================================================
+	"workbench.editorAssociations": {
+		"*.md": "vscode.markdown.preview.editor"
+	},
+
     //==========================================================================
     // BM: Browser
     //==========================================================================
@@ -246,5 +252,5 @@
             "startCommand": "opencode --port 8099",
             "terminalName": "LLM"
         }
-	},
+	}
 }
