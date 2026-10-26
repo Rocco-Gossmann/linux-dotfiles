@@ -114,7 +114,7 @@ hyperKeyModifiers = "Control+Option+Shift+Command"
 ipcEnabled = false
 language = "en"
 preventSleepEnabled = false
-systemHyperTrigger = "Right Shift"
+systemHyperTrigger = "None"
 updateChecksEnabled = false
 
 [gestures]
@@ -1165,7 +1165,7 @@ binding = "Unassigned"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
-binding = "Command+Minus"
+binding = "Option+Tab"
 id = "toggleOverview"
 
 [[hotkeys]]
