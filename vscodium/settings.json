@@ -120,7 +120,7 @@
 	//==============================================================================
 	"background.enabled": true,
     "background.fullscreen": {
-        "images": [ "${HOME}/.config/vscodium/background.png" ],
+        "images": [ "${HOME}/.config/VSCodium/background.png" ],
         "opacity": 0.3,
         "size": "cover",
         "position": "center",
