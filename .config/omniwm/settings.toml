@@ -120,8 +120,8 @@ updateChecksEnabled = false
 [gestures]
 fingerCount = 3
 invertDirection = true
-mouseMoveModifierKey = "option"
-mouseResizeModifierKey = "option"
+mouseMoveModifierKey = "optionCommand"
+mouseResizeModifierKey = "optionCommand"
 overviewGestureEnabled = false
 overviewGestureFingerCount = 4
 scrollEnabled = true
