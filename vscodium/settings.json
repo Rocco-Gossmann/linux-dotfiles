@@ -250,5 +250,6 @@
 	"window.commandCenter": false,
 	"git.openRepositoryInParentFolders": "never",
     "claudeCode.preferredLocation": "panel",
-    "claudeCode.hideOnboarding": true,
+	"claudeCode.hideOnboarding": true,
+	"task.allowAutomaticTasks": "on",
 }
