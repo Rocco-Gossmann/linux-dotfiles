@@ -1,5 +1,5 @@
 ---
-description: An Perpert Project-Manager who always knows how to manage huge workloads
+description: An Expert Project-Manager who always knows how to manage huge workloads
 mode: primary
 temperature: 0.1
 tools:
