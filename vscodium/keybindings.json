@@ -17,10 +17,10 @@
 	{ "key": "cmd+o", "command": "workbench.action.openRecent"       , "when": "isMac"                                  },
 	{ "key": "alt+o", "command": "workbench.action.openRecent"       , "when": "!isMac"                                 },
 	// Debugger Tweaks
-	{ "key": "f8"   , "command": "workbench.action.debug.stop"       , "when": "inDebugMode && !focusedSessionIsAttach" },
-	{ "key": "g h"  , "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode"         },
+	{ "key": "f8"  , "command": "workbench.action.debug.stop"       , "when": "inDebugMode && !focusedSessionIsAttach"                 },
+	{ "key": "g h" , "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode && vim.mode != 'Insert'" },
     // Zooming
-    { "key": "ctrl+[BracketRIght]", "command": "workbench.action.zoomIn"},
+    { "key": "ctrl+[BracketRight]", "command": "workbench.action.zoomIn"},
     { "key": "ctrl+-", "command": "workbench.action.zoomOut"},
     { "key": "ctrl+0", "command": "workbench.action.zoomReset"},
 
@@ -107,10 +107,8 @@
 	//==============================================================================
 	// BM: Splits
 	//==============================================================================
-	{ "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight" , "when": "terminalFocus"                  },
-	{ "key": "space s v"     , "command": "workbench.action.splitEditorRight" , "when": "!terminalFocus && !editorFocus" },
-	{ "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"  , "when": "terminalFocus"                  },
-	{ "key": "space s h"     , "command": "workbench.action.splitEditorDown"  , "when": "!terminalFocus && !editorFocus" },
+	{ "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight" },
+	{ "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"  },
 
 	// BM: Splits - Resize
     { "key": "cmd+[BracketRIght]", "command": "workbench.action.increaseViewSize", "when": "isMac" },
@@ -124,9 +122,6 @@
 	{ "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup", "when": "!terminalFocus"                 },
 	{ "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"                    , "when": "!terminalFocus"                 },
 	{ "key": "ctrl+space l l", "command": "terminalrunner.run.llm"                        , "when": "!terminalFocus"                 },
-	{ "key": "space l t"     , "command": "workbench.action.createTerminalEditorSameGroup", "when": "!terminalFocus && !editorFocus" },
-	{ "key": "space l g"     , "command": "terminalrunner.run.lazygit"                    , "when": "!terminalFocus && !editorFocus" },
-	{ "key": "space l l"     , "command": "terminalrunner.run.llm"                        , "when": "!terminalFocus && !editorFocus" },
 
 	//==========================================================================
 	// BM: Disable Stuff

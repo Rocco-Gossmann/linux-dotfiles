@@ -106,7 +106,6 @@
     "window.density.layout": "default",
     "workbench.browser.showInTitleBar": true,
 	"workbench.layoutControl.enabled": true,
-	"workbench.navigationControl.enabled": false,
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.wrapTabs": true,
 	"workbench.editor.editorActionsLocation": "titleBar",
@@ -114,13 +113,14 @@
     "explorer.autoReveal": true,
     "editor.stickyScroll.enabled": false,
     "workbench.editor.highlightModifiedTabs": true,
+	"window.commandCenter": false,
 
 	//==============================================================================
 	// BM: Background
 	//==============================================================================
 	"background.enabled": true,
     "background.fullscreen": {
-        "images": [ "${HOME}/.config/vscodium/background.png" ],
+        "images": [ "${HOME}/.config/VSCodium/background.png" ],
         "opacity": 0.3,
         "size": "cover",
         "position": "center",
@@ -195,6 +195,13 @@
         "Trailing comments %": "(?<=\\S.*)\\s+%",
     },
 
+	//==========================================================================
+	// BM: File Association
+	//==========================================================================
+	"workbench.editorAssociations": {
+		"*.md": "vscode.markdown.preview.editor"
+	},
+
     //==========================================================================
     // BM: Browser
     //==========================================================================
@@ -240,15 +247,17 @@
     "terminal.integrated.smoothScrolling": true,
     "terminalrunner.openasdefault": "tab",
     "terminalrunner.terminals": {
-		"lazygit": { "terminalName": "LazyGit", "startCommand": "lazygit" },
-		"lazydocker": { "terminalName": "LazyDocker", "startCommand": "lazydocker" },
-		"database": { "terminalName": "DBUI", "startCommand": "nvim -c DBUI" },
-		"ranger": { "terminalName": "Ranger", "startCommand": "ranger" },
-		"neovim": { "terminalName": "NeoVim", "startCommand": "nvim ${file} +${line}" },
-        "llm": { "terminalName": "LLM - Client", "startCommand": "opencode --port 8099" }
+		"lazygit":    { "terminalName": "LazyGit"     , "startCommand": "lazygit"              },
+		"lazydocker": { "terminalName": "LazyDocker"  , "startCommand": "lazydocker"           },
+		"database":   { "terminalName": "DBUI"        , "startCommand": "nvim -c DBUI"         },
+		"ranger":     { "terminalName": "Ranger"      , "startCommand": "ranger"               },
+		"neovim":     { "terminalName": "NeoVim"      , "startCommand": "nvim ${file}+${line}" },
+        "llm":        { "terminalName": "LLM - Client", "startCommand": "opencode --port 8099" }
 	},
-	"window.commandCenter": false,
-	"git.openRepositoryInParentFolders": "never",
+
+	//==========================================================================
+	// BM: VSCode-Exclusive
+	//==========================================================================
     "claudeCode.preferredLocation": "panel",
 	"claudeCode.hideOnboarding": true,
 	"task.allowAutomaticTasks": "on",
