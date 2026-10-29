@@ -145,3 +145,8 @@ if [ "$ZSH_AUTOLAUNCH" != "" ]; then
 	bash -i -c $cmd
 fi
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/st/.lmstudio/bin"
+# End of LM Studio CLI section
+
