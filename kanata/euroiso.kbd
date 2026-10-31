@@ -1,5 +1,5 @@
 (defalias
-  eschpr (tap-hold 100 100 esc (layer-while-held capshypr))
+  eschpr (tap-hold 200 200 esc (layer-while-held capshypr))
   Co   RA-7                   ;; {
   Bo   RA-8                   ;; [
   Bc   RA-9                   ;; ]
@@ -14,9 +14,9 @@
 
 (defsrc
   esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12   sleep  del
-  grv    1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab    q    w    e    r    t    y    u    i    o    p    [    ]    ret
-  caps   a    s    d    f    g    h    j    k    l    ;    '    \
+  grv    1    2    3    4    5    6    7    8    9    0    -    =    bspc     
+  tab    q    w    e    r    t    y    u    i    o    p    [    ]    ret      
+  caps   a    s    d    f    g    h    j    k    l    ;    '    \             
   lsft  lsgt  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl  lmet lalt            spc                 ralt rmet cmp  rctl
 )
@@ -31,10 +31,10 @@
 )
 
 (deflayer capshypr
-  esc  f1   f2   f3   f4   f5   f6      f7     f8     f9    f10  f11    f12  sleep  del
-  grv   1    2    3    4    5    6      7      8      9     0    -      =    bspc
-  tab   q    w    e    r    t    @Co    @Bo    @Bc    @Cc   p    [      @Crt    @ArF 
-  _     a    s    d    f    g    left   down    up    right     ;    '      @ArT
-  lsft lsgt  z    x    c    v    b     lsgt    @LsG   @LsP  .    @BkSl    rsft
-  lctl lmet lalt            spc                 ralt rmet cmp  rctl
+  esc  f1   f2   f3   f4   f5   f6      f7     f8     f9    f10  f11    f12  sleep  del 
+  grv  f1   f2   f3   f4   f5   f6      f7     f8     f9    f10  f11    f12    bspc
+  tab  f9   f10  f11  f12  t    @Co    @Bo    @Bc    @Cc   p    [      @ArT    @ArF
+  _     a    s   d   f     g    left   down    up    right     ;    @ArT   @Crt
+  lsft lsgt  z   x   c     v    b     lsgt    @LsG   @LsP  .    @BkSl    rsft
+  lctl lmet lalt            kp5                 ralt rmet cmp  rctl
 )
