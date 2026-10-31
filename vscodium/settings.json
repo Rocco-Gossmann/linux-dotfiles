@@ -140,7 +140,7 @@
     //==========================================================================
     // BM: Editor
     //==========================================================================
-    "editor.fontFamily"             : "\"JetBrainsMono Nerd Font Mono\", Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily"             : "\"JetBrainsMono Nerd Font Mono\", \"FiraCode Nerd Font\", Menlo, Monaco, 'Courier New', monospace",
     "editor.lineNumbers"            : "relative",
     "editor.minimap.enabled"        : false,
     "workbench.list.smoothScrolling": true,
