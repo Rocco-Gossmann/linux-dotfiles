@@ -30,7 +30,7 @@
         { "before": [ "<leader>", "f", "f" ], "commands": [ { "command": "workbench.action.quickOpen" } ] },
 
         { "before": [ "<leader>", "p", "f" ], "commands": [ { "command": "workbench.action.quickOpen" } ] },
-        { "before": [ "<leader>", "p", "s" ], "commands": [ { "command": "workbench.view.search.focus" } ] },
+        { "before": [ "<leader>", "p", "s" ], "commands": [ { "command": "wvorkbench.view.search.focus" } ] },
         { "before": [ "<leader>", "p", "w" ],
 			"after": [ "v", "i", "w" ],
 			"commands": [
@@ -252,7 +252,8 @@
 		"database":   { "terminalName": "DBUI"        , "startCommand": "nvim -c DBUI"         },
 		"ranger":     { "terminalName": "Ranger"      , "startCommand": "ranger"               },
 		"neovim":     { "terminalName": "NeoVim"      , "startCommand": "nvim ${file}+${line}" },
-        "llm":        { "terminalName": "LLM - Client", "startCommand": "opencode --port 8099" }
+        // "llm":        { "terminalName": "LLM - Client", "startCommand": "opencode --port 8099" }
+        "llm":        { "terminalName": "LLM - Client", "startCommand": "claude" }
 	},
 
 	//==========================================================================

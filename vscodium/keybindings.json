@@ -104,6 +104,8 @@
 	// Terminal control
 	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed", "when": "!terminalFocus" },
 
+	{ "key": "ctrl+space p s", "command": "workbench.view.search.focus" },
+
 	//==============================================================================
 	// BM: Splits
 	//==============================================================================
@@ -122,6 +124,7 @@
 	{ "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup", "when": "!terminalFocus"                 },
 	{ "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"                    , "when": "!terminalFocus"                 },
 	{ "key": "ctrl+space l l", "command": "terminalrunner.run.llm"                        , "when": "!terminalFocus"                 },
+	{ "key": "ctrl+space l s", "command": "terminalrunner.run.database"                   , "when": "!terminalFocus"                 },
 
 	//==========================================================================
 	// BM: Disable Stuff
