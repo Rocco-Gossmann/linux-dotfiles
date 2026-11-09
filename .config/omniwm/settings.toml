@@ -1121,15 +1121,15 @@ binding = "Left Command+M"
 id = "raiseAllFloatingWindows"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Option+R"
 id = "toggleFloatingFocus"
 
 [[hotkeys]]
-binding = "Left Option+R"
+binding = "Left Option+Left Shift+R"
 id = "rescueOffscreenWindows"
 
 [[hotkeys]]
-binding = "Left Shift+Left Command+F"
+binding = "Left Option+Left Shift+F"
 id = "toggleFocusedWindowFloating"
 
 [[hotkeys]]

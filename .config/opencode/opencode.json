@@ -46,7 +46,26 @@
 					}
 				}
 			}
+		},
+
+		"local": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Local AI",
+			"limit": {
+				"context": 32768
+			},
+			"options": {
+				"baseURL": "http://localhost:9931/v1"
+			},
+			"models": {
+				"lmstudio": {
+					"name": "LLama Server",
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
+			}
 		}
 	}
-
 }

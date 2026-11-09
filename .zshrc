@@ -24,13 +24,14 @@ bindkey -v
 export GOPRIVATE=github.com/rocco-gossmann
 export DOTNET_CLI_UI_LANGUAGE=en
 # export TERM=xterm-256color
-export VISUAL=codium
+export VISUAL=nvim
 export EDITOR=nvim
 
 # Usefull Aliasses
 #==============================================================================
 
 alias edit=$VISUAL
+alias disk=yazi
 
 # alias help="f(){ bash -c \"help \$@\" }; f"
 alias -g NoErr="2>/dev/null"
@@ -68,6 +69,9 @@ alias prettyjson="jq --color-output | less -FR"
 
 # BM: Shortcut tweeks
 #==============================================================================
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^ e' edit-command-line # edit current command in $VISUAL
 bindkey ' ' magic-space # expand historic commands
 bindkey '^ ' menu-complete
 
@@ -144,4 +148,9 @@ if [ "$ZSH_AUTOLAUNCH" != "" ]; then
 	unset ZSH_AUTOLAUNCH
 	bash -i -c $cmd
 fi
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/st/.lmstudio/bin"
+# End of LM Studio CLI section
 

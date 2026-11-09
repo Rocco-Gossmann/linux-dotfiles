@@ -104,8 +104,7 @@
     "excalidraw.theme": "light",
     "window.density.editorTabHeight": "compact",
     "window.density.layout": "default",
-    "workbench.browser.showInTitleBar": true,
-	"workbench.layoutControl.enabled": true,
+	"workbench.browser.showInTitleBar": true,
     "workbench.editor.tabSizing": "shrink",
     "workbench.editor.wrapTabs": true,
 	"workbench.editor.editorActionsLocation": "titleBar",
@@ -141,7 +140,7 @@
     //==========================================================================
     // BM: Editor
     //==========================================================================
-    "editor.fontFamily"             : "\"JetBrainsMono Nerd Font Mono\", Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily"             : "\"JetBrainsMono Nerd Font Mono\", \"FiraCode Nerd Font\", Menlo, Monaco, 'Courier New', monospace",
     "editor.lineNumbers"            : "relative",
     "editor.minimap.enabled"        : false,
     "workbench.list.smoothScrolling": true,
@@ -262,4 +261,5 @@
     "claudeCode.preferredLocation": "panel",
 	"claudeCode.hideOnboarding": true,
 	"task.allowAutomaticTasks": "on",
+	"security.workspace.trust.untrustedFiles": "open",
 }
