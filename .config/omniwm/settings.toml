@@ -106,7 +106,7 @@ right = 4.0
 top = 0.0
 
 [general]
-animationSpeed = 2.0
+animationSpeed = 1.0
 animationsEnabled = true
 defaultLayoutType = "niri"
 hotkeysEnabled = true
@@ -1181,6 +1181,12 @@ monitorDisplayUUID = "5DAE3D25-5D07-4416-B5AA-07B9412424AF"
 monitorName = "LS24D60xU"
 singleWindowFit = "container_primary_span"
 visibleContainerCount = 2
+
+[[monitorNiriOverrides]]
+id = "0CA32E44-8377-4460-BBD3-84463458E8D4"
+monitorDisplayUUID = "FEFEA080-ECA4-E2F7-0857-D6964E3302DB"
+monitorName = "LG ULTRAWIDE"
+visibleContainerCount = 3
 
 [[workspaces]]
 displayName = "Main"
