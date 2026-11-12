@@ -3,16 +3,21 @@
 	"model": "ollama.homemac/local_glm-4.7-flash:latest",
 	"autoupdate": false,
 
+	"compaction": {
+		"auto": true,
+		"keep": { "tokens": 15000 }
+	},
+
 	"provider": {
 
-		"ollama.homemac": {
+		"ollama.homeai": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (MacMini)",
+			"name": "HomeAI (Ollama)",
 			"limit": {
 				"context": 32768
 			},
 			"options": {
-				"baseURL": "http://homemac:11434/v1"
+				"baseURL": "http://homeai:11434/v1"
 			},
 			"models": {
 				"local_glm4.7-flash:latest": {
@@ -28,12 +33,9 @@
 			}
 		},
 
-		"lmstudio.gpdwinmini": {
+		"lmstudio.homeai": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "GPDWinMini",
-			"limit": {
-				"context": 32768
-			},
+			"name": "HomeAI (LMStudio)",
 			"options": {
 				"baseURL": "http://homeai:1234/v1"
 			},
@@ -48,18 +50,32 @@
 			}
 		},
 
-		"local": {
+		"llama.local": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Local AI",
-			"limit": {
-				"context": 32768
-			},
+			"name": "Local AI (LLamaServer)",
 			"options": {
 				"baseURL": "http://localhost:9931/v1"
 			},
 			"models": {
-				"lmstudio": {
+				"llama-serve": {
 					"name": "LLama Server",
+					"modalities": {
+						"input": ["text", "image"],
+						"output": ["text"]
+					}
+				}
+			}
+		},
+
+		"lmstudio.local": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Local AI (LMStudio)",
+			"options": {
+				"baseURL": "http://localhost:1234/v1"
+			},
+			"models": {
+				"lmstudio": {
+					"name": "LMStudio",
 					"modalities": {
 						"input": ["text", "image"],
 						"output": ["text"]
