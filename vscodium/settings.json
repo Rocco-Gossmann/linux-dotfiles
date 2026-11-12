@@ -264,4 +264,6 @@
 	"problems.defaultViewMode": "table",
 	"problems.showCurrentInStatus": true,
 	"eslint.problems.shortenToSingleLine": true,
+	"resharper.dataSharing.allowDataSharing": false,
+	"sharplsp.tutorial.showOnStartup": false,
 }

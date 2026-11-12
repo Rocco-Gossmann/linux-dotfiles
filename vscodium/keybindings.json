@@ -66,7 +66,6 @@
 	{ "key": "cmd+shift+h", "command": "workbench.action.moveEditorLeftInGroup", "when": "!activeEditorIsFirstInGroup && isMac"},
 	{ "key": "alt+shift+h", "command": "workbench.action.moveEditorLeftInGroup", "when": "!activeEditorIsFirstInGroup && !isMac"},
 
-	{ "key": "cmd+shift+l", "command": "workbench.action.moveEditorRightInGroup", "when": "!activeEditorIsLastInGroup && isMac"},
 	{ "key": "alt+shift+l", "command": "workbench.action.moveEditorRightInGroup", "when": "!activeEditorIsLastInGroup && !isMac"},
 
 	{ "key": "cmd+shift+h", "command": "workbench.action.moveEditorToLeftGroup", "when": "activeEditorIsFirstInGroup && isMac"},
@@ -101,8 +100,16 @@
 	}, "when": "!findWidgetVisible && editorHasSelection" },
 	{ "key": "ctrl+r", "command": "editor.action.startFindReplaceAction", "when": "findWidgetVisible" },
 
-	// Terminal control
+
 	{ "key": "ctrl+space ctrl+space", "command": "workbench.action.showAllEditorsByMostRecentlyUsed", "when": "!terminalFocus" },
+	{ "key": "ctrl+space b", "command": "bookmarkcomments.bm", "when": "!terminalFocus" },
+
+
+	 //==============================================================================
+	 // BM: Code -Actions
+	 //==============================================================================
+	{ "key": "ctrl+space c r", "command": "editor.action.rename" },
+	{ "key": "ctrl+space c a", "command": "editor.action.quickFix" },
 
 	{ "key": "ctrl+space p d", "command": "workbench.action.showErrorsWarnings" },
 	{ "key": "ctrl+space p s", "command": "workbench.view.search.focus" },
@@ -113,19 +120,32 @@
 	{ "key": "ctrl+space s v", "command": "workbench.action.splitEditorRight" },
 	{ "key": "ctrl+space s h", "command": "workbench.action.splitEditorDown"  },
 
+	{ "key": "ctrl+space t z", "command": "workbench.action.toggleZenMode" },
+
+
 	// BM: Splits - Resize
     { "key": "cmd+[BracketRIght]", "command": "workbench.action.increaseViewSize", "when": "isMac" },
     { "key": "cmd+-"             , "command": "workbench.action.decreaseViewSize", "when": "isMac" },
+
     { "key": "alt+[BracketRIght]", "command": "workbench.action.increaseViewSize", "when": "!isMac"},
     { "key": "alt+-"             , "command": "workbench.action.decreaseViewSize", "when": "!isMac"},
 
 	//==========================================================================
 	// BM: Launchers
 	//==========================================================================
-	{ "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup", "when": "!terminalFocus"                 },
-	{ "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"                    , "when": "!terminalFocus"                 },
-	{ "key": "ctrl+space l l", "command": "terminalrunner.run.llm"                        , "when": "!terminalFocus"                 },
-	{ "key": "ctrl+space l s", "command": "terminalrunner.run.database"                   , "when": "!terminalFocus"                 },
+	{ "key": "ctrl+space l t", "command": "workbench.action.createTerminalEditorSameGroup" },
+	{ "key": "ctrl+space l g", "command": "terminalrunner.run.lazygit"                     },
+	{ "key": "ctrl+space l l", "command": "terminalrunner.run.llm"                         },
+	{ "key": "ctrl+space l s", "command": "terminalrunner.run.database"                    },
+
+	//==========================================================================
+	// BM: Just
+	//==========================================================================
+	{ "key": "ctrl+space j j", "command": "terminalrunner.run.just" },
+	{ "key": "ctrl+space j b", "command": "terminalrunner.run.just.build" },
+	{ "key": "ctrl+space j r", "command": "terminalrunner.run.just.run" },
+	{ "key": "ctrl+space j t", "command": "terminalrunner.run.just.test" },
+	{ "key": "ctrl+space j c", "command": "terminalrunner.run.just.clean" },
 
 	//==========================================================================
 	// BM: Disable Stuff
