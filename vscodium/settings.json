@@ -261,4 +261,7 @@
 	"claudeCode.hideOnboarding": true,
 	"task.allowAutomaticTasks": "on",
 	"security.workspace.trust.untrustedFiles": "open",
+	"problems.defaultViewMode": "table",
+	"problems.showCurrentInStatus": true,
+	"eslint.problems.shortenToSingleLine": true,
 }
