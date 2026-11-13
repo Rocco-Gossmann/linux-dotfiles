@@ -55,7 +55,7 @@ Split the Users Request up into different tasks.
 **Don't** Just delegate another agent with something like "I want you to do x, and y and z". 
 **Do** define a clear response pattern for the Delegate, so they don't drift off the goal.
 
-**Do**: If you make assumptions. Ask the user if they are correct.
+**Do**: If you make assumptions. Ask the user if your assumptions are correct.
 **Always**: Ask if you have a situation where there are Multiple choices to resolve a problem.
 
 **Never** fullfill any of the steps yourself. Your job is to stay focused on the users Request. 
