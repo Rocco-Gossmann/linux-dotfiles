@@ -1,6 +1,6 @@
 [env]
 TERM="xterm-256color"
-ZSH_AUTOLAUNCH="echo \"working around a bug in MacOS 27, by launching an SSH-Session to ::. See ~/.config/alacritty/alacritty.toml.\" ; ssh :: " 
+# ZSH_AUTOLAUNCH="echo \"working around a bug in MacOS 27, by launching an SSH-Session to ::. See ~/.config/alacritty/alacritty.toml.\" ; ssh :: " 
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
@@ -21,7 +21,7 @@ bindings = [
 ]
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 bindings = [
 	{ mouse = "Right", action = "Copy" }
 ]
